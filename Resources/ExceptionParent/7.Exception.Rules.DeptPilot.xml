@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="ns:workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="ns:workflow resource:WorkflowData">
+  <rules xmlns="ns:workflow/Rule" xsi:schemaLocation="ns:workflow/Rule resource:Rule">
+    <!-- ++++++++DEPARTMENT BL-MSCH RULES+++++++++ -->
+    <rule>
+      <name>UGS.Exception.Department1.SECREC.BL-MSCH</name>
+      <documentType>UGS.Exception.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.Department1.SECREC</ruleTemplate>
+      <description>BL-MSCH - Dept1 Rule for SECREC approval</description>
+      <forceAction>true</forceAction>
+      <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionDept1Attribute</attribute>
+          <ruleTemplate>UGS.Exception.Department1.SECREC</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>department1</key>
+              <value>BL-MSCH</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.BL.SECREC.MSCH</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+    <!-- ++++++++DEPARTMENT BL-MSCH RULES+++++++++ -->
+    <rule>
+      <name>UGS.Exception.Department2.SECREC.BL-MSCH</name>
+      <documentType>UGS.Exception.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.Department2.SECREC</ruleTemplate>
+      <description>BL-MSCH - Dept2 Rule for SECREC approval</description>
+      <forceAction>true</forceAction>
+      <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionDept2Attribute</attribute>
+          <ruleTemplate>UGS.Exception.Department2.SECREC</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>department2</key>
+              <value>BL-MSCH</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.BL.SECREC.MSCH</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+    <!-- ++++++++DEPARTMENT BL-MSCH RULES+++++++++ -->
+    <rule>
+      <name>UGS.Exception.Department1.DGS.BL-MSCH</name>
+      <documentType>UGS.Exception.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.Department1.DGS</ruleTemplate>
+      <description>BL-MSCH - Dept1 Rule for DGS approval</description>
+      <forceAction>true</forceAction>
+      <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionDept1Attribute</attribute>
+          <ruleTemplate>UGS.Exception.Department1.DGS</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>department1</key>
+              <value>BL-MSCH</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.BL.DGS.MSCH</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+    <!-- ++++++++DEPARTMENT BL-MSCH RULES+++++++++ -->
+    <rule>
+      <name>UGS.Exception.Department2.DGS.BL-MSCH</name>
+      <documentType>UGS.Exception.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.Department2.DGS</ruleTemplate>
+      <description>BL-MSCH - Dept2 Rule for SECREC approval</description>
+      <forceAction>true</forceAction>
+      <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionDept2Attribute</attribute>
+          <ruleTemplate>UGS.Exception.Department2.DGS</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>department2</key>
+              <value>BL-MSCH</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.BL.DGS.MSCH</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+    <!-- ++++++++DEPARTMENT BL-MSCH RULES+++++++++ -->
+    <rule>
+      <name>UGS.Exception.Department1.SECREC.FYI.BL-MSCH</name>
+      <documentType>UGS.Exception.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.Department1.SECREC.FYI</ruleTemplate>
+      <description>BL-MSCH - Dept1 Rule for SECREC FYI</description>
+      <forceAction>true</forceAction>
+      <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionDept1Attribute</attribute>
+          <ruleTemplate>UGS.Exception.Department1.SECREC.FYI</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>department1</key>
+              <value>BL-MSCH</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.BL.SECREC.MSCH</groupName>
+          <actionRequested>F</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+    <!-- ++++++++DEPARTMENT BL-MSCH RULES+++++++++ -->
+    <rule>
+      <name>UGS.Exception.Department2.SECREC.FYIBL-MSCH</name>
+      <documentType>UGS.Exception.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.Department2.SECREC.FYI</ruleTemplate>
+      <description>BL-MSCH - Dept2 Rule for SECREC approval</description>
+      <forceAction>true</forceAction>
+      <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionDept2Attribute</attribute>
+          <ruleTemplate>UGS.Exception.Department2.SECREC.FYI</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>department2</key>
+              <value>BL-MSCH</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.BL.SECREC.MSCH</groupName>
+          <actionRequested>F</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+    <!-- ++++++++DEPARTMENT BL-MUS RULES+++++++++ -->
+    <rule>
+      <name>UGS.Exception.Department1.SECREC.BL-MUS</name>
+      <documentType>UGS.Exception.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.Department1.SECREC</ruleTemplate>
+      <description>BL-MUS - Dept1 Rule for SECREC approval</description>
+      <forceAction>true</forceAction>
+      <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionDept1Attribute</attribute>
+          <ruleTemplate>UGS.Exception.Department1.SECREC</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>department1</key>
+              <value>BL-MUS</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.BL.SECREC.MUS</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+    <!-- ++++++++DEPARTMENT BL-MUS RULES+++++++++ -->
+    <rule>
+      <name>UGS.Exception.Department2.SECREC.BL-MUS</name>
+      <documentType>UGS.Exception.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.Department2.SECREC</ruleTemplate>
+      <description>BL-MUS - Dept2 Rule for SECREC approval</description>
+      <forceAction>true</forceAction>
+      <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionDept2Attribute</attribute>
+          <ruleTemplate>UGS.Exception.Department2.SECREC</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>department2</key>
+              <value>BL-MUS</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.BL.SECREC.MUS</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+    <!-- ++++++++DEPARTMENT BL-MUS RULES+++++++++ -->
+    <rule>
+      <name>UGS.Exception.Department1.DGS.BL-MUS</name>
+      <documentType>UGS.Exception.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.Department1.DGS</ruleTemplate>
+      <description>BL-MUS - Dept1 Rule for DGS approval</description>
+      <forceAction>true</forceAction>
+      <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionDept1Attribute</attribute>
+          <ruleTemplate>UGS.Exception.Department1.DGS</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>department1</key>
+              <value>BL-MUS</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.BL.DGS.MUS</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+    <!-- ++++++++DEPARTMENT BL-MUS RULES+++++++++ -->
+    <rule>
+      <name>UGS.Exception.Department2.DGS.BL-MUS</name>
+      <documentType>UGS.Exception.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.Department2.DGS</ruleTemplate>
+      <description>BL-MUS - Dept2 Rule for SECREC approval</description>
+      <forceAction>true</forceAction>
+      <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionDept2Attribute</attribute>
+          <ruleTemplate>UGS.Exception.Department2.DGS</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>department2</key>
+              <value>BL-MUS</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.BL.DGS.MUS</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+    <!-- ++++++++DEPARTMENT BL-MUS RULES+++++++++ -->
+    <rule>
+      <name>UGS.Exception.Department1.SECREC.FYI.BL-MUS</name>
+      <documentType>UGS.Exception.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.Department1.SECREC.FYI</ruleTemplate>
+      <description>BL-MUS - Dept1 Rule for SECREC FYI</description>
+      <forceAction>true</forceAction>
+      <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionDept1Attribute</attribute>
+          <ruleTemplate>UGS.Exception.Department1.SECREC.FYI</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>department1</key>
+              <value>BL-MUS</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.BL.SECREC.MUS</groupName>
+          <actionRequested>F</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+    <!-- ++++++++DEPARTMENT BL-MUS RULES+++++++++ -->
+    <rule>
+      <name>UGS.Exception.Department2.SECREC.FYIBL-MUS</name>
+      <documentType>UGS.Exception.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.Department2.SECREC.FYI</ruleTemplate>
+      <description>BL-MUS - Dept2 Rule for SECREC approval</description>
+      <forceAction>true</forceAction>
+      <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionDept2Attribute</attribute>
+          <ruleTemplate>UGS.Exception.Department2.SECREC.FYI</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>department2</key>
+              <value>BL-MUS</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.BL.SECREC.MUS</groupName>
+          <actionRequested>F</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+    <!-- ++++++++DEPARTMENT BL-CHEM RULES+++++++++ -->
+    <rule>
+      <name>UGS.Exception.Department1.SECREC.BL-CHEM</name>
+      <documentType>UGS.Exception.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.Department1.SECREC</ruleTemplate>
+      <description>BL-CHEM - Dept1 Rule for SECREC approval</description>
+      <forceAction>true</forceAction>
+      <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionDept1Attribute</attribute>
+          <ruleTemplate>UGS.Exception.Department1.SECREC</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>department1</key>
+              <value>BL-CHEM</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.BL.SECREC.CHEM</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+    <!-- ++++++++DEPARTMENT BL-CHEM RULES+++++++++ -->
+    <rule>
+      <name>UGS.Exception.Department2.SECREC.BL-CHEM</name>
+      <documentType>UGS.Exception.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.Department2.SECREC</ruleTemplate>
+      <description>BL-CHEM - Dept2 Rule for SECREC approval</description>
+      <forceAction>true</forceAction>
+      <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionDept2Attribute</attribute>
+          <ruleTemplate>UGS.Exception.Department2.SECREC</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>department2</key>
+              <value>BL-CHEM</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.BL.SECREC.CHEM</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+    <!-- ++++++++DEPARTMENT BL-CHEM RULES+++++++++ -->
+    <rule>
+      <name>UGS.Exception.Department1.DGS.BL-CHEM</name>
+      <documentType>UGS.Exception.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.Department1.DGS</ruleTemplate>
+      <description>BL-CHEM - Dept1 Rule for DGS approval</description>
+      <forceAction>true</forceAction>
+      <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionDept1Attribute</attribute>
+          <ruleTemplate>UGS.Exception.Department1.DGS</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>department1</key>
+              <value>BL-CHEM</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.BL.DGS.CHEM</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+    <!-- ++++++++DEPARTMENT BL-CHEM RULES+++++++++ -->
+    <rule>
+      <name>UGS.Exception.Department2.DGS.BL-CHEM</name>
+      <documentType>UGS.Exception.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.Department2.DGS</ruleTemplate>
+      <description>BL-CHEM - Dept2 Rule for SECREC approval</description>
+      <forceAction>true</forceAction>
+      <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionDept2Attribute</attribute>
+          <ruleTemplate>UGS.Exception.Department2.DGS</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>department2</key>
+              <value>BL-CHEM</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.BL.DGS.CHEM</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+    <!-- ++++++++DEPARTMENT BL-CHEM RULES+++++++++ -->
+    <rule>
+      <name>UGS.Exception.Department1.SECREC.FYI.BL-CHEM</name>
+      <documentType>UGS.Exception.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.Department1.SECREC.FYI</ruleTemplate>
+      <description>BL-CHEM - Dept1 Rule for SECREC FYI</description>
+      <forceAction>true</forceAction>
+      <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionDept1Attribute</attribute>
+          <ruleTemplate>UGS.Exception.Department1.SECREC.FYI</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>department1</key>
+              <value>BL-CHEM</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.BL.SECREC.CHEM</groupName>
+          <actionRequested>F</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+    <!-- ++++++++DEPARTMENT BL-CHEM RULES+++++++++ -->
+    <rule>
+      <name>UGS.Exception.Department2.SECREC.FYIBL-CHEM</name>
+      <documentType>UGS.Exception.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.Department2.SECREC.FYI</ruleTemplate>
+      <description>BL-CHEM - Dept2 Rule for SECREC approval</description>
+      <forceAction>true</forceAction>
+      <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionDept2Attribute</attribute>
+          <ruleTemplate>UGS.Exception.Department2.SECREC.FYI</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>department2</key>
+              <value>BL-CHEM</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.BL.SECREC.CHEM</groupName>
+          <actionRequested>F</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+  </rules>
+  <!-- Do not copy data tag-->
+</data>

@@ -1,0 +1,2382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="ns:workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="ns:workflow resource:WorkflowData">
+    <ruleAttributes xmlns="ns:workflow/RuleAttribute" xsi:schemaLocation="ns:workflow/RuleAttribute resource:RuleAttribute">
+        <!-- INITIATOR ATTRIBUTE -->
+        <ruleAttribute>
+            <name>UGSCandidacyInitiatorAttribute</name>
+            <className>org.kuali.rice.kew.rule.InitiatorRoleAttribute</className>
+            <label>Initiator Role Attribute</label>
+            <description>Initiator Role Attribute</description>
+            <type>RuleAttribute</type>
+        </ruleAttribute>
+        <!-- NETWORK ID ATTRIBUTES -->
+        <ruleAttribute>
+            <name>UGS.CandidacyMember1NetworkIdRoleAttribute</name>
+            <className>org.kuali.rice.kew.rule.NetworkIdRoleAttribute</className>
+            <label>UGS.CandidacyMember1NetworkIdRoleAttribute</label>
+            <description>UGS Committee Member 1 NetworkId Role Attribute</description>
+            <type>RuleXmlAttribute</type>
+            <configuration>
+                <xmlElementLabel>CommitteeMember1NetId</xmlElementLabel>
+            </configuration>
+        </ruleAttribute>
+        <ruleAttribute>
+            <name>UGS.CandidacyMember2NetworkIdRoleAttribute</name>
+            <className>org.kuali.rice.kew.rule.NetworkIdRoleAttribute</className>
+            <label>UGS.CandidacyMember2NetworkIdRoleAttribute</label>
+            <description>UGS Committee Member 2 NetworkId Role Attribute</description>
+            <type>RuleXmlAttribute</type>
+            <configuration>
+                <xmlElementLabel>CommitteeMember2NetId</xmlElementLabel>
+            </configuration>
+        </ruleAttribute>
+        <ruleAttribute>
+            <name>UGS.CandidacyMember3NetworkIdRoleAttribute</name>
+            <className>org.kuali.rice.kew.rule.NetworkIdRoleAttribute</className>
+            <label>UGS.CandidacyMember3NetworkIdRoleAttribute</label>
+            <description>UGS Committee Member 3 NetworkId Role Attribute</description>
+            <type>RuleXmlAttribute</type>
+            <configuration>
+                <xmlElementLabel>CommitteeMember3NetId</xmlElementLabel>
+            </configuration>
+        </ruleAttribute>
+        <ruleAttribute>
+            <name>UGS.CandidacyMember4NetworkIdRoleAttribute</name>
+            <className>org.kuali.rice.kew.rule.NetworkIdRoleAttribute</className>
+            <label>UGS.CandidacyMember4NetworkIdRoleAttribute</label>
+            <description>UGS Committee Member 4 NetworkId Role Attribute</description>
+            <type>RuleXmlAttribute</type>
+            <configuration>
+                <xmlElementLabel>CommitteeMember4NetId</xmlElementLabel>
+            </configuration>
+        </ruleAttribute>
+        <ruleAttribute>
+            <name>UGS.CandidacyMember5NetworkIdRoleAttribute</name>
+            <className>org.kuali.rice.kew.rule.NetworkIdRoleAttribute</className>
+            <label>UGS.CandidacyMember5NetworkIdRoleAttribute</label>
+            <description>UGS Committee Member 5 NetworkId Role Attribute</description>
+            <type>RuleXmlAttribute</type>
+            <configuration>
+                <xmlElementLabel>CommitteeMember5NetId</xmlElementLabel>
+            </configuration>
+        </ruleAttribute>
+        <ruleAttribute>
+            <name>UGS.CandidacyMinor1NetworkIdRoleAttribute</name>
+            <className>org.kuali.rice.kew.rule.NetworkIdRoleAttribute</className>
+            <label>UGS.CandidacyMinorRep1NetworkIdRoleAttribute</label>
+            <description>UGS Committee Minor Representative 1 NetworkId Role Attribute</description>
+            <type>RuleXmlAttribute</type>
+            <configuration>
+                <xmlElementLabel>CommitteeMinorRep1NetId</xmlElementLabel>
+            </configuration>
+        </ruleAttribute>
+        <ruleAttribute>
+            <name>UGS.CandidacyMinor2NetworkIdRoleAttribute</name>
+            <className>org.kuali.rice.kew.rule.NetworkIdRoleAttribute</className>
+            <label>UGS.CandidacyMinorRep2NetworkIdRoleAttribute</label>
+            <description>UGS Committee Minor Representative 2 NetworkId Role Attribute</description>
+            <type>RuleXmlAttribute</type>
+            <configuration>
+                <xmlElementLabel>CommitteeMinorRep2NetId</xmlElementLabel>
+            </configuration>
+        </ruleAttribute>
+
+
+
+        <!-- MAJOR ATTRIBUTE -->
+        <ruleAttribute>
+            <name>UGSPhDCandidMajor1Attribute</name>
+            <className>org.kuali.rice.kew.rule.xmlrouting.StandardGenericXMLRuleAttribute</className>
+            <label>UGS Department</label>
+            <description>UGS Department/Program Attribute</description>
+            <type>RuleXmlAttribute</type>
+            <routingConfig>
+                <fieldDef name="major1" title="Major 1" workflowType="ALL">
+                    <display>
+                        <type>select</type>
+                        <!--Begin BL section -->
+                        <values title="**Please Select**">Select</values>
+                        <values title="Afr Am &amp; Afr Diaspora St PHD">BL-AAADPHD</values>
+                        <values title="American Studies PhD">BL-AMSTPHD</values>
+                        <values title="Anthropology PhD">BL-ANTHPHD</values>
+                        <values title="Astronomy PhD">BL-ASTYPHD</values>
+                        <values title="Astrophysics (Astronomy) PhD">BL-ASTPAPHD</values>
+                        <values title="Biochemistry PhD">BL-BIOCPHD</values>
+                        <values title="Biology PHD">BL-BIPHD</values>
+                        <values title="Evolution, Ecology &amp; Behvr PhD">BL-EEBPHD</values>
+                        <values title="Genetics PhD">BL-GENPHD</values>
+                        <values title="Microbiology PhD">BL-MICRPHD</values>
+                        <values title="Mol Cel &amp; Dev Biol (Biol) PhD">BL-MCDBPHD</values>
+                        <values title="Plant Sciences PhD">BL-PLSCPHD</values>
+                        <values title="Zoology PhD">BL-ZOOLPHD</values>
+                        <values title="Business PHD">BL-BUSPHD</values>
+                        <values title="Central Eurasian Studies PhD">BL-CEUSPHD</values>
+                        <values title="Chemical Physics (Chem) PhD">BL-CPHYSCPHD</values>
+                        <values title="Chemistry PhD">BL-CHEMPHD</values>
+                        <values title="Criminal Justice PhD">BL-CJUSPHD</values>
+                        <values title="Classical St:Latin&amp;Greek PhD">BL-CLSTPHD</values>
+                        <values title="Communication &amp; Culture PhD">BL-CMCLPHD</values>
+                        <values title="Comparative Literature PhD">BL-CMLTPHD</values>
+                        <values title="Cognitive Science PhD">BL-COGSPHD</values>
+                        <values title="Computer Science PhD">BL-CSCIPHD</values>
+                        <values title="Chinese PhD">BL-CHINPHD</values>
+                        <values title="Japanese PhD">BL-JAPAPHD</values>
+                        <values title="Economics PhD">BL-ECONPHD</values>
+                        <values title="Counseling Psychology PHD">BL-COPSYPHD</values>
+                        <values title="Educational Psychology PHD">BL-EDPSYPHD</values>
+                        <values title="Inquiry Methodology PHD">BL-INQMTHPHD</values>
+                        <values title="Learning &amp; Development Sci PHD">BL-LRNDEVPHD</values>
+                        <values title="School Psychology PHD">BL-SCPSYPHD</values>
+                        <values title="Curriculum&amp;Instruction PHD">BL-CRINPHD</values>
+                        <values title="Special Education PHD">BL-SPCEDPHD</values>
+                        <values title="Instructional Sys Tech PHD">BL-INSYTPHD</values>
+                        <values title="Language Education PHD">BL-LNGEDPHD</values>
+                        <values title="Lit, Culture &amp; Lang Educ PHD">BL-LCLNGPHD</values>
+                        <values title="Higher Education PHD">BL-HIEDPHD</values>
+                        <values title="Hist/Phil/Policy in Ed PHD">BL-HPPEDPHD</values>
+                        <values title="English PhD">BL-ENGPHD</values>
+                        <values title="Fine Arts - Art History PhD">BL-FINAHPHD</values>
+                        <values title="Folklore &amp; Ethnomusicology PhD">BL-FOLKPHD</values>
+                        <values title="French PhD">BL-FRENPHD</values>
+                        <values title="Italian PhD">BL-ITALPHD</values>
+                        <values title="Geography PhD">BL-GEOGPHD</values>
+                        <values title="Geological Sciences PhD">BL-GEOLPHD</values>
+                        <values title="Germanic Studies PhD">BL-GERPHD</values>
+                        <values title="Gender Studies PHD">BL-GNDRPHD</values>
+                        <values title="Portuguese PhD">BL-PORTPHD</values>
+                        <values title="Spanish PhD">BL-SPANPHD</values>
+                        <values title="History PhD">BL-HISTPHD</values>
+                        <values title="Hist &amp; Philos of Science PhD">BL-HPSCPHD</values>
+                        <values title="Information Science PHD">BL-INFSCPHD1</values>
+                        <values title="Informatics PHD">BL-INFOPHD</values>
+                        <values title="Mass Communications PHD">BL-MCOMJPHD</values>
+                        <values title="Law &amp; Social Science PHD">BL-LAWSSPHD</values>
+                        <values title="Linguistics PhD">BL-LINGPHD</values>
+                        <values title="Linguistics:TESOL&amp;Applied PhD">BL-LINGTESPHD</values>
+                        <values title="Mathemat Physics (Math) PhD">BL-MPHYSMPHD</values>
+                        <values title="Mathematics PhD">BL-MATHPHD</values>
+                        <values title="Anatomy PHD">BL-ANATPHD</values>
+                        <values title="Pathology PHD">BL-PATHOPHD</values>
+                        <values title="Pharmacology PHD">BL-PHARMPHD</values>
+                        <values title="Physiology PHD">BL-PYSOLPHD</values>
+                        <values title="Music Education PHD">BL-MSEDPHD</values>
+                        <values title="Music Theory PHD">BL-MSTHRYPHD</values>
+                        <values title="Musicology PHD">BL-MSCLOGYPHD</values>
+                        <values title="Near Eastern Lang &amp; Cult PhD">BL-NELCPHD</values>
+                        <values title="Neural Sciences PhD">BL-NEUSPHD</values>
+                        <values title="Vision Science PHD">BL-VISSCPHD</values>
+                        <values title="Philosophy PhD">BL-PHILPHD</values>
+                        <values title="Astrophysics (Physics) PhD">BL-ASTPPPHD</values>
+                        <values title="Chemical Physics (Phys) PhD">BL-CPHYPPHD</values>
+                        <values title="Mathemat Physics (Phys) PhD">BL-MPHYSPPHD</values>
+                        <values title="Physics PhD">BL-PHYSPHD</values>
+                        <values title="Political Science PhD">BL-POLSPHD</values>
+                        <values title="Psychology PhD">BL-PSYPHD</values>
+                        <values title="Religious Studies PhD">BL-RELPHD</values>
+                        <values title="Slavic Languages and Lit PhD">BL-SLAVPHD</values>
+                        <values title="Second Language Studies PHD">BL-SLSTPHD</values>
+                        <values title="Sociology PhD">BL-SOCPHD</values>
+                        <values title="Environmental Science PHD">BL-ENSCIPHD2</values>
+                        <values title="Environmental Health PHD">BL-ENVHLPHD</values>
+                        <values title="Epidemiology PHD">BL-EPIDPHD</values>
+                        <values title="Health Behavior PHD">BL-AHHBPHD</values>
+                        <values title="Human Performance PHD">BL-KYHPPHD</values>
+                        <values title="Leisure Behavior PHD">BL-RLEIBEHPHD</values>
+                        <values title="Speech &amp; Hearing Sciences PhD">BL-SPHSPHD</values>
+                        <values title="Public Affairs PHD">BL-PBAFFPHD2</values>
+                        <values title="Public Policy PHD">BL-PPOLPHD2</values>
+                        <values title="Statistical Science PHD">BL-STATSCPHD</values>
+                        <values title="Mass Communications (Tel) PhD">BL-MTELPHD</values>
+                        <values title="Theatre and Drama PhD">BL-THTRPHD</values>
+                        <!-- Begin IN section -->
+                        <values title="Anatomy &amp; Cell Biology Ph.D.">IN-ANTCBPHD</values>
+                        <values title="Biochem &amp; Molecular Bio PHD">IN-BIOCMBPHD</values>
+                        <values title="Bioml Imaging &amp; Biophysics PHD">IN-BIMIPHD</values>
+                        <values title="Biostatistics PHD">IN-BISTPHD</values>
+                        <values title="Health Communication PHD">IN-HLTHCOMPHD</values>
+                        <values title="Dental Science PHD">IN-DNTPHPHD</values>
+                        <values title="Economics PhD">IN-ECONPHD</values>
+                        <values title="Counseling Psychology PHD">IN-COPSYPHDPR</values>
+                        <values title="Curriculum &amp; Instruction PHD">IN-CRINPHDPR</values>
+                        <values title="Educational Psychology PHD">IN-EDPSYPHDPR</values>
+                        <values title="Higher Education PHD">IN-HEIDPHDPR</values>
+                        <values title="Higher Education PHD">IN-HIEDPHDPR</values>
+                        <values title="Hist/Phil/Policy in Ed PHD">IN-HPPEDPHDPR</values>
+                        <values title="Instructional Sys Tech PHD">IN-INSYTPHDPR</values>
+                        <values title="Language Education PHD">IN-LNGEDPHDPR</values>
+                        <values title="Special Education PHD">IN-SPCEDPHDP</values>
+                        <values title="Urban Education Studies PHD">IN-UREDSTPHD</values>
+                        <values title="Applied Earth Sciences PHD">IN-ERTHSCIPHD</values>
+                        <values title="Prep Blmgtn Informatics PHD">IN-INFOPHDP</values>
+                        <values title="Epidemiology PHD">IN-EPIDEMPHD</values>
+                        <values title="Health Policy Management PHD">IN-HLPMPHD</values>
+                        <values title="Med &amp; Molecular Genetics PHD">IN-MMGENTPHD</values>
+                        <values title="Microbiol &amp; Immunology PHD">IN-MIIMPHD</values>
+                        <values title="Medical Neuroscience PHD">IN-MNEURSPHD</values>
+                        <values title="Nursing Science Ph.D">IN-NURSCPHD</values>
+                        <values title="Pathology PHD">IN-PATHOPHD</values>
+                        <values title="Epidemiology PHD">IN-EPIDEMPHD1</values>
+                        <values title="Health Policy &amp; Management PHD">IN-HLPMPHD1</values>
+                        <values title="Pharmacology PHD">IN-PHARMPHD</values>
+                        <values title="Toxicology PHD">IN-TOXIPHD</values>
+                        <values title="Philosophy PHD">IN-PHILPHD</values>
+                        <values title="Cellular&amp; Integ Physiology PHD">IN-CELINPHPHD</values>
+                        <values title="Philanthropic Studies Ph.D">IN-PHSTDPHD</values>
+                        <values title="Health and Rehab Science PHD">IN-HREBSCPHD</values>
+                        <values title="Social Work PHD">IN-SWKPHD</values>
+                    </display>
+                    <validation required="true"/>
+                    <fieldEvaluation>
+                        <xpathexpression>//major1 = wf:ruledata('major1')</xpathexpression>
+                    </fieldEvaluation>
+                </fieldDef>
+                <xmlDocumentContent>
+                    <major1>%major1%</major1>
+                </xmlDocumentContent>
+            </routingConfig>
+        </ruleAttribute>
+        <ruleAttribute>
+            <name>UGSPhDCandidMajor2Attribute</name>
+            <className>org.kuali.rice.kew.rule.xmlrouting.StandardGenericXMLRuleAttribute</className>
+            <label>UGS Department</label>
+            <description>UGS Major2</description>
+            <type>RuleXmlAttribute</type>
+            <routingConfig>
+                <fieldDef name="major2" title="Major 2" workflowType="ALL">
+                    <display>
+                        <type>select</type>
+                        <!--Begin BL section -->
+                        <values title="**Please Select**">Select</values>
+                        <values title="Afr Am &amp; Afr Diaspora St PHD">BL-AAADPHD</values>
+                        <values title="American Studies PhD">BL-AMSTPHD</values>
+                        <values title="Anthropology PhD">BL-ANTHPHD</values>
+                        <values title="Astronomy PhD">BL-ASTYPHD</values>
+                        <values title="Astrophysics (Astronomy) PhD">BL-ASTPAPHD</values>
+                        <values title="Biochemistry PhD">BL-BIOCPHD</values>
+                        <values title="Biology PHD">BL-BIPHD</values>
+                        <values title="Evolution, Ecology &amp; Behvr PhD">BL-EEBPHD</values>
+                        <values title="Genetics PhD">BL-GENPHD</values>
+                        <values title="Microbiology PhD">BL-MICRPHD</values>
+                        <values title="Mol Cel &amp; Dev Biol (Biol) PhD">BL-MCDBPHD</values>
+                        <values title="Plant Sciences PhD">BL-PLSCPHD</values>
+                        <values title="Zoology PhD">BL-ZOOLPHD</values>
+                        <values title="Business PHD">BL-BUSPHD</values>
+                        <values title="Central Eurasian Studies PhD">BL-CEUSPHD</values>
+                        <values title="Chemical Physics (Chem) PhD">BL-CPHYSCPHD</values>
+                        <values title="Chemistry PhD">BL-CHEMPHD</values>
+                        <values title="Criminal Justice PhD">BL-CJUSPHD</values>
+                        <values title="Classical St:Latin&amp;Greek PhD">BL-CLSTPHD</values>
+                        <values title="Communication &amp; Culture PhD">BL-CMCLPHD</values>
+                        <values title="Comparative Literature PhD">BL-CMLTPHD</values>
+                        <values title="Cognitive Science PhD">BL-COGSPHD</values>
+                        <values title="Computer Science PhD">BL-CSCIPHD</values>
+                        <values title="Chinese PhD">BL-CHINPHD</values>
+                        <values title="Japanese PhD">BL-JAPAPHD</values>
+                        <values title="Economics PhD">BL-ECONPHD</values>
+                        <values title="Counseling Psychology PHD">BL-COPSYPHD</values>
+                        <values title="Educational Psychology PHD">BL-EDPSYPHD</values>
+                        <values title="Inquiry Methodology PHD">BL-INQMTHPHD</values>
+                        <values title="Learning &amp; Development Sci PHD">BL-LRNDEVPHD</values>
+                        <values title="School Psychology PHD">BL-SCPSYPHD</values>
+                        <values title="Curriculum&amp;Instruction PHD">BL-CRINPHD</values>
+                        <values title="Special Education PHD">BL-SPCEDPHD</values>
+                        <values title="Instructional Sys Tech PHD">BL-INSYTPHD</values>
+                        <values title="Language Education PHD">BL-LNGEDPHD</values>
+                        <values title="Lit, Culture &amp; Lang Educ PHD">BL-LCLNGPHD</values>
+                        <values title="Higher Education PHD">BL-HIEDPHD</values>
+                        <values title="Hist/Phil/Policy in Ed PHD">BL-HPPEDPHD</values>
+                        <values title="English PhD">BL-ENGPHD</values>
+                        <values title="Fine Arts - Art History PhD">BL-FINAHPHD</values>
+                        <values title="Folklore &amp; Ethnomusicology PhD">BL-FOLKPHD</values>
+                        <values title="French PhD">BL-FRENPHD</values>
+                        <values title="Italian PhD">BL-ITALPHD</values>
+                        <values title="Geography PhD">BL-GEOGPHD</values>
+                        <values title="Geological Sciences PhD">BL-GEOLPHD</values>
+                        <values title="Germanic Studies PhD">BL-GERPHD</values>
+                        <values title="Gender Studies PHD">BL-GNDRPHD</values>
+                        <values title="Portuguese PhD">BL-PORTPHD</values>
+                        <values title="Spanish PhD">BL-SPANPHD</values>
+                        <values title="History PhD">BL-HISTPHD</values>
+                        <values title="Hist &amp; Philos of Science PhD">BL-HPSCPHD</values>
+                        <values title="Information Science PHD">BL-INFSCPHD1</values>
+                        <values title="Informatics PHD">BL-INFOPHD</values>
+                        <values title="Mass Communications PHD">BL-MCOMJPHD</values>
+                        <values title="Law &amp; Social Science PHD">BL-LAWSSPHD</values>
+                        <values title="Linguistics PhD">BL-LINGPHD</values>
+                        <values title="Linguistics:TESOL&amp;Applied PhD">BL-LINGTESPHD</values>
+                        <values title="Mathemat Physics (Math) PhD">BL-MPHYSMPHD</values>
+                        <values title="Mathematics PhD">BL-MATHPHD</values>
+                        <values title="Anatomy PHD">BL-ANATPHD</values>
+                        <values title="Pathology PHD">BL-PATHOPHD</values>
+                        <values title="Pharmacology PHD">BL-PHARMPHD</values>
+                        <values title="Physiology PHD">BL-PYSOLPHD</values>
+                        <values title="Music Education PHD">BL-MSEDPHD</values>
+                        <values title="Music Theory PHD">BL-MSTHRYPHD</values>
+                        <values title="Musicology PHD">BL-MSCLOGYPHD</values>
+                        <values title="Near Eastern Lang &amp; Cult PhD">BL-NELCPHD</values>
+                        <values title="Neural Sciences PhD">BL-NEUSPHD</values>
+                        <values title="Vision Science PHD">BL-VISSCPHD</values>
+                        <values title="Philosophy PhD">BL-PHILPHD</values>
+                        <values title="Astrophysics (Physics) PhD">BL-ASTPPPHD</values>
+                        <values title="Chemical Physics (Phys) PhD">BL-CPHYPPHD</values>
+                        <values title="Mathemat Physics (Phys) PhD">BL-MPHYSPPHD</values>
+                        <values title="Physics PhD">BL-PHYSPHD</values>
+                        <values title="Political Science PhD">BL-POLSPHD</values>
+                        <values title="Psychology PhD">BL-PSYPHD</values>
+                        <values title="Religious Studies PhD">BL-RELPHD</values>
+                        <values title="Slavic Languages and Lit PhD">BL-SLAVPHD</values>
+                        <values title="Second Language Studies PHD">BL-SLSTPHD</values>
+                        <values title="Sociology PhD">BL-SOCPHD</values>
+                        <values title="Environmental Science PHD">BL-ENSCIPHD2</values>
+                        <values title="Environmental Health PHD">BL-ENVHLPHD</values>
+                        <values title="Epidemiology PHD">BL-EPIDPHD</values>
+                        <values title="Health Behavior PHD">BL-AHHBPHD</values>
+                        <values title="Human Performance PHD">BL-KYHPPHD</values>
+                        <values title="Leisure Behavior PHD">BL-RLEIBEHPHD</values>
+                        <values title="Speech &amp; Hearing Sciences PhD">BL-SPHSPHD</values>
+                        <values title="Public Affairs PHD">BL-PBAFFPHD2</values>
+                        <values title="Public Policy PHD">BL-PPOLPHD2</values>
+                        <values title="Statistical Science PHD">BL-STATSCPHD</values>
+                        <values title="Mass Communications (Tel) PhD">BL-MTELPHD</values>
+                        <values title="Theatre and Drama PhD">BL-THTRPHD</values>
+                        <!-- Begin IN section -->
+                        <values title="Anatomy &amp; Cell Biology Ph.D.">IN-ANTCBPHD</values>
+                        <values title="Biochem &amp; Molecular Bio PHD">IN-BIOCMBPHD</values>
+                        <values title="Bioml Imaging &amp; Biophysics PHD">IN-BIMIPHD</values>
+                        <values title="Biostatistics PHD">IN-BISTPHD</values>
+                        <values title="Health Communication PHD">IN-HLTHCOMPHD</values>
+                        <values title="Dental Science PHD">IN-DNTPHPHD</values>
+                        <values title="Economics PhD">IN-ECONPHD</values>
+                        <values title="Counseling Psychology PHD">IN-COPSYPHDPR</values>
+                        <values title="Curriculum &amp; Instruction PHD">IN-CRINPHDPR</values>
+                        <values title="Educational Psychology PHD">IN-EDPSYPHDPR</values>
+                        <values title="Higher Education PHD">IN-HEIDPHDPR</values>
+                        <values title="Higher Education PHD">IN-HIEDPHDPR</values>
+                        <values title="Hist/Phil/Policy in Ed PHD">IN-HPPEDPHDPR</values>
+                        <values title="Instructional Sys Tech PHD">IN-INSYTPHDPR</values>
+                        <values title="Language Education PHD">IN-LNGEDPHDPR</values>
+                        <values title="Special Education PHD">IN-SPCEDPHDP</values>
+                        <values title="Urban Education Studies PHD">IN-UREDSTPHD</values>
+                        <values title="Applied Earth Sciences PHD">IN-ERTHSCIPHD</values>
+                        <values title="Prep Blmgtn Informatics PHD">IN-INFOPHDP</values>
+                        <values title="Epidemiology PHD">IN-EPIDEMPHD</values>
+                        <values title="Health Policy Management PHD">IN-HLPMPHD</values>
+                        <values title="Med &amp; Molecular Genetics PHD">IN-MMGENTPHD</values>
+                        <values title="Microbiol &amp; Immunology PHD">IN-MIIMPHD</values>
+                        <values title="Medical Neuroscience PHD">IN-MNEURSPHD</values>
+                        <values title="Nursing Science Ph.D">IN-NURSCPHD</values>
+                        <values title="Pathology PHD">IN-PATHOPHD</values>
+                        <values title="Epidemiology PHD">IN-EPIDEMPHD1</values>
+                        <values title="Health Policy &amp; Management PHD">IN-HLPMPHD1</values>
+                        <values title="Pharmacology PHD">IN-PHARMPHD</values>
+                        <values title="Toxicology PHD">IN-TOXIPHD</values>
+                        <values title="Philosophy PHD">IN-PHILPHD</values>
+                        <values title="Cellular&amp; Integ Physiology PHD">IN-CELINPHPHD</values>
+                        <values title="Philanthropic Studies Ph.D">IN-PHSTDPHD</values>
+                        <values title="Health and Rehab Science PHD">IN-HREBSCPHD</values>
+                        <values title="Social Work PHD">IN-SWKPHD</values>
+                    </display>
+                    <validation required="false"/>
+                    <fieldEvaluation>
+                        <xpathexpression>//major2 = wf:ruledata('major2')</xpathexpression>
+                    </fieldEvaluation>
+                </fieldDef>
+                <xmlDocumentContent>
+                    <major2>%major2%</major2>
+                </xmlDocumentContent>
+            </routingConfig>
+        </ruleAttribute>
+        <ruleAttribute>
+            <name>UGSPhDCandidMajor1SearchAttribute</name>
+            <className>org.kuali.rice.kew.docsearch.xml.StandardGenericXMLSearchableAttribute</className>
+            <label>UGS major 1</label>
+            <description>UGS Major Search</description>
+            <type>SearchableXmlAttribute</type>
+            <searchingConfig>
+                <fieldDef name="major1" title="Major 1" workflowType="ALL">
+                    <display>
+                        <type>select</type>
+                        <!--Begin BL section -->
+                        <values title="**Please Select**">Select</values>
+                        <values title="Afr Am &amp; Afr Diaspora St PHD">BL-AAADPHD</values>
+                        <values title="American Studies PhD">BL-AMSTPHD</values>
+                        <values title="Anthropology PhD">BL-ANTHPHD</values>
+                        <values title="Astronomy PhD">BL-ASTYPHD</values>
+                        <values title="Astrophysics (Astronomy) PhD">BL-ASTPAPHD</values>
+                        <values title="Biochemistry PhD">BL-BIOCPHD</values>
+                        <values title="Biology PHD">BL-BIPHD</values>
+                        <values title="Evolution, Ecology &amp; Behvr PhD">BL-EEBPHD</values>
+                        <values title="Genetics PhD">BL-GENPHD</values>
+                        <values title="Microbiology PhD">BL-MICRPHD</values>
+                        <values title="Mol Cel &amp; Dev Biol (Biol) PhD">BL-MCDBPHD</values>
+                        <values title="Plant Sciences PhD">BL-PLSCPHD</values>
+                        <values title="Zoology PhD">BL-ZOOLPHD</values>
+                        <values title="Business PHD">BL-BUSPHD</values>
+                        <values title="Central Eurasian Studies PhD">BL-CEUSPHD</values>
+                        <values title="Chemical Physics (Chem) PhD">BL-CPHYSCPHD</values>
+                        <values title="Chemistry PhD">BL-CHEMPHD</values>
+                        <values title="Criminal Justice PhD">BL-CJUSPHD</values>
+                        <values title="Classical St:Latin&amp;Greek PhD">BL-CLSTPHD</values>
+                        <values title="Communication &amp; Culture PhD">BL-CMCLPHD</values>
+                        <values title="Comparative Literature PhD">BL-CMLTPHD</values>
+                        <values title="Cognitive Science PhD">BL-COGSPHD</values>
+                        <values title="Computer Science PhD">BL-CSCIPHD</values>
+                        <values title="Chinese PhD">BL-CHINPHD</values>
+                        <values title="Japanese PhD">BL-JAPAPHD</values>
+                        <values title="Economics PhD">BL-ECONPHD</values>
+                        <values title="Counseling Psychology PHD">BL-COPSYPHD</values>
+                        <values title="Educational Psychology PHD">BL-EDPSYPHD</values>
+                        <values title="Inquiry Methodology PHD">BL-INQMTHPHD</values>
+                        <values title="Learning &amp; Development Sci PHD">BL-LRNDEVPHD</values>
+                        <values title="School Psychology PHD">BL-SCPSYPHD</values>
+                        <values title="Curriculum&amp;Instruction PHD">BL-CRINPHD</values>
+                        <values title="Special Education PHD">BL-SPCEDPHD</values>
+                        <values title="Instructional Sys Tech PHD">BL-INSYTPHD</values>
+                        <values title="Language Education PHD">BL-LNGEDPHD</values>
+                        <values title="Lit, Culture &amp; Lang Educ PHD">BL-LCLNGPHD</values>
+                        <values title="Higher Education PHD">BL-HIEDPHD</values>
+                        <values title="Hist/Phil/Policy in Ed PHD">BL-HPPEDPHD</values>
+                        <values title="English PhD">BL-ENGPHD</values>
+                        <values title="Fine Arts - Art History PhD">BL-FINAHPHD</values>
+                        <values title="Folklore &amp; Ethnomusicology PhD">BL-FOLKPHD</values>
+                        <values title="French PhD">BL-FRENPHD</values>
+                        <values title="Italian PhD">BL-ITALPHD</values>
+                        <values title="Geography PhD">BL-GEOGPHD</values>
+                        <values title="Geological Sciences PhD">BL-GEOLPHD</values>
+                        <values title="Germanic Studies PhD">BL-GERPHD</values>
+                        <values title="Gender Studies PHD">BL-GNDRPHD</values>
+                        <values title="Portuguese PhD">BL-PORTPHD</values>
+                        <values title="Spanish PhD">BL-SPANPHD</values>
+                        <values title="History PhD">BL-HISTPHD</values>
+                        <values title="Hist &amp; Philos of Science PhD">BL-HPSCPHD</values>
+                        <values title="Information Science PHD">BL-INFSCPHD1</values>
+                        <values title="Informatics PHD">BL-INFOPHD</values>
+                        <values title="Mass Communications PHD">BL-MCOMJPHD</values>
+                        <values title="Law &amp; Social Science PHD">BL-LAWSSPHD</values>
+                        <values title="Linguistics PhD">BL-LINGPHD</values>
+                        <values title="Linguistics:TESOL&amp;Applied PhD">BL-LINGTESPHD</values>
+                        <values title="Mathemat Physics (Math) PhD">BL-MPHYSMPHD</values>
+                        <values title="Mathematics PhD">BL-MATHPHD</values>
+                        <values title="Anatomy PHD">BL-ANATPHD</values>
+                        <values title="Pathology PHD">BL-PATHOPHD</values>
+                        <values title="Pharmacology PHD">BL-PHARMPHD</values>
+                        <values title="Physiology PHD">BL-PYSOLPHD</values>
+                        <values title="Music Education PHD">BL-MSEDPHD</values>
+                        <values title="Music Theory PHD">BL-MSTHRYPHD</values>
+                        <values title="Musicology PHD">BL-MSCLOGYPHD</values>
+                        <values title="Near Eastern Lang &amp; Cult PhD">BL-NELCPHD</values>
+                        <values title="Neural Sciences PhD">BL-NEUSPHD</values>
+                        <values title="Vision Science PHD">BL-VISSCPHD</values>
+                        <values title="Philosophy PhD">BL-PHILPHD</values>
+                        <values title="Astrophysics (Physics) PhD">BL-ASTPPPHD</values>
+                        <values title="Chemical Physics (Phys) PhD">BL-CPHYPPHD</values>
+                        <values title="Mathemat Physics (Phys) PhD">BL-MPHYSPPHD</values>
+                        <values title="Physics PhD">BL-PHYSPHD</values>
+                        <values title="Political Science PhD">BL-POLSPHD</values>
+                        <values title="Psychology PhD">BL-PSYPHD</values>
+                        <values title="Religious Studies PhD">BL-RELPHD</values>
+                        <values title="Slavic Languages and Lit PhD">BL-SLAVPHD</values>
+                        <values title="Second Language Studies PHD">BL-SLSTPHD</values>
+                        <values title="Sociology PhD">BL-SOCPHD</values>
+                        <values title="Environmental Science PHD">BL-ENSCIPHD2</values>
+                        <values title="Environmental Health PHD">BL-ENVHLPHD</values>
+                        <values title="Epidemiology PHD">BL-EPIDPHD</values>
+                        <values title="Health Behavior PHD">BL-AHHBPHD</values>
+                        <values title="Human Performance PHD">BL-KYHPPHD</values>
+                        <values title="Leisure Behavior PHD">BL-RLEIBEHPHD</values>
+                        <values title="Speech &amp; Hearing Sciences PhD">BL-SPHSPHD</values>
+                        <values title="Public Affairs PHD">BL-PBAFFPHD2</values>
+                        <values title="Public Policy PHD">BL-PPOLPHD2</values>
+                        <values title="Statistical Science PHD">BL-STATSCPHD</values>
+                        <values title="Mass Communications (Tel) PhD">BL-MTELPHD</values>
+                        <values title="Theatre and Drama PhD">BL-THTRPHD</values>
+                        <!-- Begin IN section -->
+                        <values title="Anatomy &amp; Cell Biology Ph.D.">IN-ANTCBPHD</values>
+                        <values title="Biochem &amp; Molecular Bio PHD">IN-BIOCMBPHD</values>
+                        <values title="Bioml Imaging &amp; Biophysics PHD">IN-BIMIPHD</values>
+                        <values title="Biostatistics PHD">IN-BISTPHD</values>
+                        <values title="Health Communication PHD">IN-HLTHCOMPHD</values>
+                        <values title="Dental Science PHD">IN-DNTPHPHD</values>
+                        <values title="Economics PhD">IN-ECONPHD</values>
+                        <values title="Counseling Psychology PHD">IN-COPSYPHDPR</values>
+                        <values title="Curriculum &amp; Instruction PHD">IN-CRINPHDPR</values>
+                        <values title="Educational Psychology PHD">IN-EDPSYPHDPR</values>
+                        <values title="Higher Education PHD">IN-HEIDPHDPR</values>
+                        <values title="Higher Education PHD">IN-HIEDPHDPR</values>
+                        <values title="Hist/Phil/Policy in Ed PHD">IN-HPPEDPHDPR</values>
+                        <values title="Instructional Sys Tech PHD">IN-INSYTPHDPR</values>
+                        <values title="Language Education PHD">IN-LNGEDPHDPR</values>
+                        <values title="Special Education PHD">IN-SPCEDPHDP</values>
+                        <values title="Urban Education Studies PHD">IN-UREDSTPHD</values>
+                        <values title="Applied Earth Sciences PHD">IN-ERTHSCIPHD</values>
+                        <values title="Prep Blmgtn Informatics PHD">IN-INFOPHDP</values>
+                        <values title="Epidemiology PHD">IN-EPIDEMPHD</values>
+                        <values title="Health Policy Management PHD">IN-HLPMPHD</values>
+                        <values title="Med &amp; Molecular Genetics PHD">IN-MMGENTPHD</values>
+                        <values title="Microbiol &amp; Immunology PHD">IN-MIIMPHD</values>
+                        <values title="Medical Neuroscience PHD">IN-MNEURSPHD</values>
+                        <values title="Nursing Science Ph.D">IN-NURSCPHD</values>
+                        <values title="Pathology PHD">IN-PATHOPHD</values>
+                        <values title="Epidemiology PHD">IN-EPIDEMPHD1</values>
+                        <values title="Health Policy &amp; Management PHD">IN-HLPMPHD1</values>
+                        <values title="Pharmacology PHD">IN-PHARMPHD</values>
+                        <values title="Toxicology PHD">IN-TOXIPHD</values>
+                        <values title="Philosophy PHD">IN-PHILPHD</values>
+                        <values title="Cellular&amp; Integ Physiology PHD">IN-CELINPHPHD</values>
+                        <values title="Philanthropic Studies Ph.D">IN-PHSTDPHD</values>
+                        <values title="Health and Rehab Science PHD">IN-HREBSCPHD</values>
+                        <values title="Social Work PHD">IN-SWKPHD</values>
+                    </display>
+                    <fieldEvaluation>
+                        <xpathexpression>//version[@current='true']/field[@name='major1']/value</xpathexpression>
+                    </fieldEvaluation>
+                </fieldDef>
+            </searchingConfig>
+        </ruleAttribute>
+        <ruleAttribute>
+            <name>UGSPhDCandidMajor2SearchAttribute</name>
+            <className>org.kuali.rice.kew.docsearch.xml.StandardGenericXMLSearchableAttribute</className>
+            <label>UGS major 2</label>
+            <description>UGS Major Search</description>
+            <type>SearchableXmlAttribute</type>
+            <searchingConfig>
+                <fieldDef name="major2" title="Major 2" workflowType="ALL">
+                    <display>
+                        <type>select</type>
+                        <!--Begin BL section -->
+                        <values title="**Please Select**">Select</values>
+                        <values title="Afr Am &amp; Afr Diaspora St PHD">BL-AAADPHD</values>
+                        <values title="American Studies PhD">BL-AMSTPHD</values>
+                        <values title="Anthropology PhD">BL-ANTHPHD</values>
+                        <values title="Astronomy PhD">BL-ASTYPHD</values>
+                        <values title="Astrophysics (Astronomy) PhD">BL-ASTPAPHD</values>
+                        <values title="Biochemistry PhD">BL-BIOCPHD</values>
+                        <values title="Biology PHD">BL-BIPHD</values>
+                        <values title="Evolution, Ecology &amp; Behvr PhD">BL-EEBPHD</values>
+                        <values title="Genetics PhD">BL-GENPHD</values>
+                        <values title="Microbiology PhD">BL-MICRPHD</values>
+                        <values title="Mol Cel &amp; Dev Biol (Biol) PhD">BL-MCDBPHD</values>
+                        <values title="Plant Sciences PhD">BL-PLSCPHD</values>
+                        <values title="Zoology PhD">BL-ZOOLPHD</values>
+                        <values title="Business PHD">BL-BUSPHD</values>
+                        <values title="Central Eurasian Studies PhD">BL-CEUSPHD</values>
+                        <values title="Chemical Physics (Chem) PhD">BL-CPHYSCPHD</values>
+                        <values title="Chemistry PhD">BL-CHEMPHD</values>
+                        <values title="Criminal Justice PhD">BL-CJUSPHD</values>
+                        <values title="Classical St:Latin&amp;Greek PhD">BL-CLSTPHD</values>
+                        <values title="Communication &amp; Culture PhD">BL-CMCLPHD</values>
+                        <values title="Comparative Literature PhD">BL-CMLTPHD</values>
+                        <values title="Cognitive Science PhD">BL-COGSPHD</values>
+                        <values title="Computer Science PhD">BL-CSCIPHD</values>
+                        <values title="Chinese PhD">BL-CHINPHD</values>
+                        <values title="Japanese PhD">BL-JAPAPHD</values>
+                        <values title="Economics PhD">BL-ECONPHD</values>
+                        <values title="Counseling Psychology PHD">BL-COPSYPHD</values>
+                        <values title="Educational Psychology PHD">BL-EDPSYPHD</values>
+                        <values title="Inquiry Methodology PHD">BL-INQMTHPHD</values>
+                        <values title="Learning &amp; Development Sci PHD">BL-LRNDEVPHD</values>
+                        <values title="School Psychology PHD">BL-SCPSYPHD</values>
+                        <values title="Curriculum&amp;Instruction PHD">BL-CRINPHD</values>
+                        <values title="Special Education PHD">BL-SPCEDPHD</values>
+                        <values title="Instructional Sys Tech PHD">BL-INSYTPHD</values>
+                        <values title="Language Education PHD">BL-LNGEDPHD</values>
+                        <values title="Lit, Culture &amp; Lang Educ PHD">BL-LCLNGPHD</values>
+                        <values title="Higher Education PHD">BL-HIEDPHD</values>
+                        <values title="Hist/Phil/Policy in Ed PHD">BL-HPPEDPHD</values>
+                        <values title="English PhD">BL-ENGPHD</values>
+                        <values title="Fine Arts - Art History PhD">BL-FINAHPHD</values>
+                        <values title="Folklore &amp; Ethnomusicology PhD">BL-FOLKPHD</values>
+                        <values title="French PhD">BL-FRENPHD</values>
+                        <values title="Italian PhD">BL-ITALPHD</values>
+                        <values title="Geography PhD">BL-GEOGPHD</values>
+                        <values title="Geological Sciences PhD">BL-GEOLPHD</values>
+                        <values title="Germanic Studies PhD">BL-GERPHD</values>
+                        <values title="Gender Studies PHD">BL-GNDRPHD</values>
+                        <values title="Portuguese PhD">BL-PORTPHD</values>
+                        <values title="Spanish PhD">BL-SPANPHD</values>
+                        <values title="History PhD">BL-HISTPHD</values>
+                        <values title="Hist &amp; Philos of Science PhD">BL-HPSCPHD</values>
+                        <values title="Information Science PHD">BL-INFSCPHD1</values>
+                        <values title="Informatics PHD">BL-INFOPHD</values>
+                        <values title="Mass Communications PHD">BL-MCOMJPHD</values>
+                        <values title="Law &amp; Social Science PHD">BL-LAWSSPHD</values>
+                        <values title="Linguistics PhD">BL-LINGPHD</values>
+                        <values title="Linguistics:TESOL&amp;Applied PhD">BL-LINGTESPHD</values>
+                        <values title="Mathemat Physics (Math) PhD">BL-MPHYSMPHD</values>
+                        <values title="Mathematics PhD">BL-MATHPHD</values>
+                        <values title="Anatomy PHD">BL-ANATPHD</values>
+                        <values title="Pathology PHD">BL-PATHOPHD</values>
+                        <values title="Pharmacology PHD">BL-PHARMPHD</values>
+                        <values title="Physiology PHD">BL-PYSOLPHD</values>
+                        <values title="Music Education PHD">BL-MSEDPHD</values>
+                        <values title="Music Theory PHD">BL-MSTHRYPHD</values>
+                        <values title="Musicology PHD">BL-MSCLOGYPHD</values>
+                        <values title="Near Eastern Lang &amp; Cult PhD">BL-NELCPHD</values>
+                        <values title="Neural Sciences PhD">BL-NEUSPHD</values>
+                        <values title="Vision Science PHD">BL-VISSCPHD</values>
+                        <values title="Philosophy PhD">BL-PHILPHD</values>
+                        <values title="Astrophysics (Physics) PhD">BL-ASTPPPHD</values>
+                        <values title="Chemical Physics (Phys) PhD">BL-CPHYPPHD</values>
+                        <values title="Mathemat Physics (Phys) PhD">BL-MPHYSPPHD</values>
+                        <values title="Physics PhD">BL-PHYSPHD</values>
+                        <values title="Political Science PhD">BL-POLSPHD</values>
+                        <values title="Psychology PhD">BL-PSYPHD</values>
+                        <values title="Religious Studies PhD">BL-RELPHD</values>
+                        <values title="Slavic Languages and Lit PhD">BL-SLAVPHD</values>
+                        <values title="Second Language Studies PHD">BL-SLSTPHD</values>
+                        <values title="Sociology PhD">BL-SOCPHD</values>
+                        <values title="Environmental Science PHD">BL-ENSCIPHD2</values>
+                        <values title="Environmental Health PHD">BL-ENVHLPHD</values>
+                        <values title="Epidemiology PHD">BL-EPIDPHD</values>
+                        <values title="Health Behavior PHD">BL-AHHBPHD</values>
+                        <values title="Human Performance PHD">BL-KYHPPHD</values>
+                        <values title="Leisure Behavior PHD">BL-RLEIBEHPHD</values>
+                        <values title="Speech &amp; Hearing Sciences PhD">BL-SPHSPHD</values>
+                        <values title="Public Affairs PHD">BL-PBAFFPHD2</values>
+                        <values title="Public Policy PHD">BL-PPOLPHD2</values>
+                        <values title="Statistical Science PHD">BL-STATSCPHD</values>
+                        <values title="Mass Communications (Tel) PhD">BL-MTELPHD</values>
+                        <values title="Theatre and Drama PhD">BL-THTRPHD</values>
+                        <!-- Begin IN section -->
+                        <values title="Anatomy &amp; Cell Biology Ph.D.">IN-ANTCBPHD</values>
+                        <values title="Biochem &amp; Molecular Bio PHD">IN-BIOCMBPHD</values>
+                        <values title="Bioml Imaging &amp; Biophysics PHD">IN-BIMIPHD</values>
+                        <values title="Biostatistics PHD">IN-BISTPHD</values>
+                        <values title="Health Communication PHD">IN-HLTHCOMPHD</values>
+                        <values title="Dental Science PHD">IN-DNTPHPHD</values>
+                        <values title="Economics PhD">IN-ECONPHD</values>
+                        <values title="Counseling Psychology PHD">IN-COPSYPHDPR</values>
+                        <values title="Curriculum &amp; Instruction PHD">IN-CRINPHDPR</values>
+                        <values title="Educational Psychology PHD">IN-EDPSYPHDPR</values>
+                        <values title="Higher Education PHD">IN-HEIDPHDPR</values>
+                        <values title="Higher Education PHD">IN-HIEDPHDPR</values>
+                        <values title="Hist/Phil/Policy in Ed PHD">IN-HPPEDPHDPR</values>
+                        <values title="Instructional Sys Tech PHD">IN-INSYTPHDPR</values>
+                        <values title="Language Education PHD">IN-LNGEDPHDPR</values>
+                        <values title="Special Education PHD">IN-SPCEDPHDP</values>
+                        <values title="Urban Education Studies PHD">IN-UREDSTPHD</values>
+                        <values title="Applied Earth Sciences PHD">IN-ERTHSCIPHD</values>
+                        <values title="Prep Blmgtn Informatics PHD">IN-INFOPHDP</values>
+                        <values title="Epidemiology PHD">IN-EPIDEMPHD</values>
+                        <values title="Health Policy Management PHD">IN-HLPMPHD</values>
+                        <values title="Med &amp; Molecular Genetics PHD">IN-MMGENTPHD</values>
+                        <values title="Microbiol &amp; Immunology PHD">IN-MIIMPHD</values>
+                        <values title="Medical Neuroscience PHD">IN-MNEURSPHD</values>
+                        <values title="Nursing Science Ph.D">IN-NURSCPHD</values>
+                        <values title="Pathology PHD">IN-PATHOPHD</values>
+                        <values title="Epidemiology PHD">IN-EPIDEMPHD1</values>
+                        <values title="Health Policy &amp; Management PHD">IN-HLPMPHD1</values>
+                        <values title="Pharmacology PHD">IN-PHARMPHD</values>
+                        <values title="Toxicology PHD">IN-TOXIPHD</values>
+                        <values title="Philosophy PHD">IN-PHILPHD</values>
+                        <values title="Cellular&amp; Integ Physiology PHD">IN-CELINPHPHD</values>
+                        <values title="Philanthropic Studies Ph.D">IN-PHSTDPHD</values>
+                        <values title="Health and Rehab Science PHD">IN-HREBSCPHD</values>
+                        <values title="Social Work PHD">IN-SWKPHD</values>
+                    </display>
+                    <fieldEvaluation>
+                        <xpathexpression>//version[@current='true']/field[@name='major2']/value</xpathexpression>
+                    </fieldEvaluation>
+                </fieldDef>
+            </searchingConfig>
+        </ruleAttribute>
+        <!-- MINOR ATTRIBUTES -->
+        <ruleAttribute>
+            <name>UGSPhDMinor1Attribute</name>
+            <className>org.kuali.rice.kew.rule.xmlrouting.StandardGenericXMLRuleAttribute</className>
+            <label>UGS Minor</label>
+            <description>UGS Minor Attribute</description>
+            <type>RuleXmlAttribute</type>
+            <routingConfig>
+                <fieldDef name="minor1" title="First Minor" workflowType="ALL">
+                    <display>
+                        <type>select</type>
+                        <values title=""/>
+                        <values title="Eclectic - enter title to the right">Eclectic</values>
+                        <values title="Individualized - enter title to the right">Individualized</values>
+                        <values title="Interdisciplinary - enter title to the right">Interdisciplinary</values>
+                        <values title="Eclectic - enter title to the right">Eclectic</values>
+                        <values title="Individualized - enter title to the right">Individualized</values>
+                        <values title="Interdisciplinary - enter title to the right">Interdisciplinary</values>
+                        <values title="Accounting (ACCTGGMIN)">BL-ACCTGGMIN</values>
+                        <values title="Addictive Behaviors (ADBEHGMIN)">BL-ADBEHGMIN</values>
+                        <values title="Adult Education (ADEDGMIN)">BL-ADEDGMIN</values>
+                        <values title="Afr Am &amp; Af Diaspora St Gr (AAADGMIN)">BL-AAADGMIN</values>
+                        <values title="African Lang &amp; Ling (AFRLLGMIN)">BL-AFRLLGMIN</values>
+                        <values title="African Studies (AFRIGMIN)">BL-AFRIGMIN</values>
+                        <values title="American Literature (AMLTGMIN)">BL-AMLTGMIN</values>
+                        <values title="American Studies (AMSTGMIN)">BL-AMSTGMIN</values>
+                        <values title="Anatomy (ANATGMIN)">BL-ANATGMIN</values>
+                        <values title="Ancient Studies (ANCSTGMIN)">BL-ANCSTGMIN</values>
+                        <values title="Animal Behavior (ABEHGMIN)">BL-ABEHGMIN</values>
+                        <values title="Anthropology &amp; Health (ANTHLGMIN)">BL-ANTHLGMIN</values>
+                        <values title="Anthropology (ANTHGMIN)">BL-ANTHGMIN</values>
+                        <values title="Apparel Merchandising (APMDGMIN)">BL-APMDGMIN</values>
+                        <values title="Applied Linguistics (APLNGGMIN)">BL-APLNGGMIN</values>
+                        <values title="Applied Statistics (APSTGMIN)">BL-APSTGMIN</values>
+                        <values title="Art History (ARHSGMIN)">BL-ARHSGMIN</values>
+                        <values title="Arts Administration (AADMGMIN)">BL-AADMGMIN</values>
+                        <values title="Astronomy (ASTGMIN)">BL-ASTGMIN</values>
+                        <values title="Astrophysics (Astronomy) (ASTPAGMIN)">BL-ASTPAGMIN</values>
+                        <values title="Astrophysics (Physics) (ASTPPGMIN)">BL-ASTPPGMIN</values>
+                        <values title="Beam Physics &amp; Technology (BPHTCGMIN)">BL-BPHTCGMIN</values>
+                        <values title="Bibl &amp; Literary Crit (BLCRGMIN)">BL-BLCRGMIN</values>
+                        <values title="Biblical Literature (BLLTGMIN)">BL-BLLTGMIN</values>
+                        <values title="Biochemistry (BIOCGMIN)">BL-BIOCGMIN</values>
+                        <values title="Bioinformatics (BIOINGMIN)">BL-BIOINGMIN</values>
+                        <values title="Biology (BIOLGMIN)">BL-BIOLGMIN</values>
+                        <values title="Biomathematics (BIMTGMIN)">BL-BIMTGMIN</values>
+                        <values title="Biotechnology (BIOTCGMIN)">BL-BIOTCGMIN</values>
+                        <values title="Biotechnology (BIOTECGMIN)">BL-BIOTECGMIN</values>
+                        <values title="British Literature (BRITLTGMIN)">BL-BRITLTGMIN</values>
+                        <values title="Bus Econ &amp; Public Policy (BEPPGMIN)">BL-BEPPGMIN</values>
+                        <values title="Business Doctoral Breadth (BUSDBGMIN)">BL-BUSDBGMIN</values>
+                        <values title="Business (BUSGMIN)">BL-BUSGMIN</values>
+                        <values title="Catalan (CATALANMIN)">BL-CATALANMIN</values>
+                        <values title="Cell &amp; Molec Bio-Biomd Sys (CMOLBGMIN)">BL-CMOLBGMIN</values>
+                        <values title="Central Eurasian Studies (CEUSGMIN)">BL-CEUSGMIN</values>
+                        <values title="Chemical Physics (Chem) (CPHYSCGMIN)">BL-CPHYSCGMIN</values>
+                        <values title="Chemical Physics (Phys) (CPHYPGMIN)">BL-CPHYPGMIN</values>
+                        <values title="Chemistry (CHEMGMIN)">BL-CHEMGMIN</values>
+                        <values title="Children's Literature (CHLDLGMIN)">BL-CHLDLGMIN</values>
+                        <values title="Chinese (CHINGMIN)">BL-CHINGMIN</values>
+                        <values title="Classical St:Latin &amp; Greek (CLSTGMIN)">BL-CLSTGMIN</values>
+                        <values title="Classics Related Fields (CLSRFGMIN)">BL-CLSRFGMIN</values>
+                        <values title="Cognition &amp; Instruction (CGNINGMIN)">BL-CGNINGMIN</values>
+                        <values title="Cognitive Science (COGSGMIN)">BL-COGSGMIN</values>
+                        <values title="College Pedagogy (CPEDGMIN)">BL-CPEDGMIN</values>
+                        <values title="Communication &amp; Culture (CMCLGMIN)">BL-CMCLGMIN</values>
+                        <values title="Comp Ethnic &amp; Postcolonl St MN (CMPETHGMIN)">BL-CMPETHGMIN</values>
+                        <values title="Comparative Literature (CMLTGMIN)">BL-CMLTGMIN</values>
+                        <values title="Complex Systems Informatics MN (CMPLXSGMIN)">BL-CMPLXSGMIN</values>
+                        <values title="Composition (Music) (COMPGMIN)">BL-COMPGMIN</values>
+                        <values title="Computational Linguistics (CMPLNGGMIN)">BL-CMPLNGGMIN</values>
+                        <values title="Computer Science (CSCIGMIN)">BL-CSCIGMIN</values>
+                        <values title="Counseling Psychology (CNSPSGMIN)">BL-CNSPSGMIN</values>
+                        <values title="Counseling (CNSLGMIN)">BL-CNSLGMIN</values>
+                        <values title="Creative Writing (CRWRTGMIN)">BL-CRWRTGMIN</values>
+                        <values title="Criminal Justice (CJUSGMIN)">BL-CJUSGMIN</values>
+                        <values title="Cultural Studies (CULSGMIN)">BL-CULSGMIN</values>
+                        <values title="Curriculum and Instruction (CRINGMIN)">BL-CRINGMIN</values>
+                        <values title="Decision Sciences (DECSCIGMIN)">BL-DECSCIGMIN</values>
+                        <values title="Dental Science (DENTSCGMIN)">BL-DENTSCGMIN</values>
+                        <values title="Dutch Studies (DUTCHSGMIN)">BL-DUTCHSGMIN</values>
+                        <values title="Dynamical Sys in Cogn Sci (DYNSCGMIN)">BL-DYNSCGMIN</values>
+                        <values title="Early Music (ERMUSGMIN)">BL-ERMUSGMIN</values>
+                        <values title="East Asian Languages (EALANGMIN)">BL-EALANGMIN</values>
+                        <values title="East Asian Studies (EASTGMIN)">BL-EASTGMIN</values>
+                        <values title="Ecology and Evolu Biology (ECEVBIOGMN)">BL-ECEVBIOGMN</values>
+                        <values title="Economics (ECONGMIN)">BL-ECONGMIN</values>
+                        <values title="Educ Inquiry Methodology (EDINQGMIN)">BL-EDINQGMIN</values>
+                        <values title="Education Law (EDLAWGMIN)">BL-EDLAWGMIN</values>
+                        <values title="Education Policy Studies (EDPOLGMIN)">BL-EDPOLGMIN</values>
+                        <values title="Educational Psychology (EDPSYGMIN)">BL-EDPSYGMIN</values>
+                        <values title="Engl &amp; Germanic Philology (ENGRPGMIN)">BL-ENGRPGMIN</values>
+                        <values title="English Language (ENGLGGMIN)">BL-ENGLGGMIN</values>
+                        <values title="English (ENGGMIN)">BL-ENGGMIN</values>
+                        <values title="Entrepreneurship (ENTRPGMIN)">BL-ENTRPGMIN</values>
+                        <values title="Environmental Science (ENVSCIGMIN)">BL-ENVSCIGMIN</values>
+                        <values title="Environmental Studies (ENSTGMIN)">BL-ENSTGMIN</values>
+                        <values title="Ethnomusicology (ETHNMGMIN)">BL-ETHNMGMIN</values>
+                        <values title="European Studies (EUROGMIN)">BL-EUROGMIN</values>
+                        <values title="Family Psychology (FMLPSYGMIN)">BL-FMLPSYGMIN</values>
+                        <values title="Feminist Critical Studies (FMCRITGMIN)">BL-FMCRITGMIN</values>
+                        <values title="Film Studies (FILMGMIN)">BL-FILMGMIN</values>
+                        <values title="Finance (FINGMIN)">BL-FINGMIN</values>
+                        <values title="Financial Mathematics (FINMTHGMIN)">BL-FINMTHGMIN</values>
+                        <values title="Fine Arts - Art History (FINAHGMIN)">BL-FINAHGMIN</values>
+                        <values title="Folklore (FOLKGMIN)">BL-FOLKGMIN</values>
+                        <values title="Food Studies Anthropology (FDSTAGMIN)">BL-FDSTAGMIN</values>
+                        <values title="French Instruction (FRINSTGMIN)">BL-FRINSTGMIN</values>
+                        <values title="French Linguistics (FRLINGGMIN)">BL-FRLINGGMIN</values>
+                        <values title="French Literature (FRLITGMIN)">BL-FRLITGMIN</values>
+                        <values title="French (FRENGMIN)">BL-FRENGMIN</values>
+                        <values title="Gender Studies (GNDRGMIN)">BL-GNDRGMIN</values>
+                        <values title="Genetics (GENGMIN)">BL-GENGMIN</values>
+                        <values title="Geography (GEOGGMIN)">BL-GEOGGMIN</values>
+                        <values title="Geological Sciences (GEOSCGMIN)">BL-GEOSCGMIN</values>
+                        <values title="Geology (GEOLGMIN)">BL-GEOLGMIN</values>
+                        <values title="German Studies (GRSTGMIN)">BL-GRSTGMIN</values>
+                        <values title="Germanic Studies (GERGMIN)">BL-GERGMIN</values>
+                        <values title="Gerontology (GERNTGMIN)">BL-GERNTGMIN</values>
+                        <values title="Global Studies (GLBLSTGMIN)">BL-GLBLSTGMIN</values>
+                        <values title="Greek (GRKGMIN)">BL-GRKGMIN</values>
+                        <values title="Health Behavior (HLTBEHGMIN)">BL-HLTBEHGMIN</values>
+                        <values title="Health Promotion (HLTPGMIN)">BL-HLTPGMIN</values>
+                        <values title="Higher Education (HIGHEDGMIN)">BL-HIGHEDGMIN</values>
+                        <values title="Hispanic Linguistics (HSPLNGGMIN)">BL-HSPLNGGMIN</values>
+                        <values title="Hist &amp; Philos of Science (HPSCGMIN)">BL-HPSCGMIN</values>
+                        <values title="Hist/Phil/Policy St in Ed (HPPEDGMIN)">BL-HPPEDGMIN</values>
+                        <values title="History of Education (HSTEDGMIN)">BL-HSTEDGMIN</values>
+                        <values title="History (HISTGMIN)">BL-HISTGMIN</values>
+                        <values title="Hum Dimens Glob Envmtl Chg (HDGECGMIN)">BL-HDGECGMIN</values>
+                        <values title="Human Dev &amp; Family Stds (HDFSGMIN)">BL-HDFSGMIN</values>
+                        <values title="Human Evolutionary Studies (HVSTGMIN)">BL-HVSTGMIN</values>
+                        <values title="Human Performance (HMPRFGMIN)">BL-HMPRFGMIN</values>
+                        <values title="Human Rights (HMRTSGMIN)">BL-HMRTSGMIN</values>
+                        <values title="Human Sexuality Education (HSXEDGMIN)">BL-HSXEDGMIN</values>
+                        <values title="Human Sexuality (HMSXLGMIN)">BL-HMSXLGMIN</values>
+                        <values title="Human-Computer Interaction (HUCPTGMIN)">BL-HUCPTGMIN</values>
+                        <values title="Hungarian Studies (HNGRSTGMIN)">BL-HNGRSTGMIN</values>
+                        <values title="India Studies (INSTGMIN)">BL-INSTGMIN</values>
+                        <values title="Individualized Informatics (INDVINFGMN)">BL-INDVINFGMN</values>
+                        <values title="Individualized (INDVGMIN)">BL-INDVGMIN</values>
+                        <values title="Informatics (INFOGMIN)">BL-INFOGMIN</values>
+                        <values title="Information Science (INFSCGMIN)">BL-INFSCGMIN</values>
+                        <values title="Inner Asian &amp; Uralic Studies M (INASURGMIN)">BL-INASURGMIN</values>
+                        <values title="Inquiry Methodology (INQMTHGMIN)">BL-INQMTHGMIN</values>
+                        <values title="Inquiry/Research Methodology M (INQRSGMIN)">BL-INQRSGMIN</values>
+                        <values title="Instructional Systems Tech (ISTGMIN)">BL-ISTGMIN</values>
+                        <values title="Interior Design (INTDSGMIN)">BL-INTDSGMIN</values>
+                        <values title="International &amp; Compar Ed (INTCEDGMIN)">BL-INTCEDGMIN</values>
+                        <values title="Internatnl &amp; Comparative Ed MI (INTCEDMIN)">BL-INTCEDMIN</values>
+                        <values title="Italian (ITALGMIN)">BL-ITALGMIN</values>
+                        <values title="Japanese (JAPAGMIN)">BL-JAPAGMIN</values>
+                        <values title="Jazz Studies (JAZZSTGMIN)">BL-JAZZSTGMIN</values>
+                        <values title="Jewish Studies (JSTUGMIN)">BL-JSTUGMIN</values>
+                        <values title="Journalism (JOURGMIN)">BL-JOURGMIN</values>
+                        <values title="Landscape Studies (LSSTGMIN)">BL-LSSTGMIN</values>
+                        <values title="Language and Speech (LNGSPGMIN)">BL-LNGSPGMIN</values>
+                        <values title="Language Education (LNGEDGMIN)">BL-LNGEDGMIN</values>
+                        <values title="Latin Amer &amp; Caribbean St (LTAMCGMIN)">BL-LTAMCGMIN</values>
+                        <values title="Latin American Studies (LTAMSGMIN)">BL-LTAMSGMIN</values>
+                        <values title="Latin (LATGMIN)">BL-LATGMIN</values>
+                        <values title="Latino Studies (LATSGMIN)">BL-LATSGMIN</values>
+                        <values title="Law and Social Science (LWSSCGMIN)">BL-LWSSCGMIN</values>
+                        <values title="Law (LAWGMIN)">BL-LAWGMIN</values>
+                        <values title="Learning &amp; Development Sci (LRNDVGMIN)">BL-LRNDVGMIN</values>
+                        <values title="Leisure Behavior (LEIBEHGMIN)">BL-LEIBEHGMIN</values>
+                        <values title="Library &amp; Information Sci (LIBINSGMIN)">BL-LIBINSGMIN</values>
+                        <values title="Life Science (LIFSCGMIN)">BL-LIFSCGMIN</values>
+                        <values title="Linguistics (LINGGMIN)">BL-LINGGMIN</values>
+                        <values title="Linguistics: TESOL &amp; Appl (LINGTESGMN)">BL-LINGTESGMN</values>
+                        <values title="Literacy Studies (LITRSGMIN)">BL-LITRSGMIN</values>
+                        <values title="Literary Theory (LTTHRYGMIN)">BL-LTTHRYGMIN</values>
+                        <values title="Literary Translation (LTRANGMIN)">BL-LTRANGMIN</values>
+                        <values title="Literature &amp; Science (LTSCIGMIN)">BL-LTSCIGMIN</values>
+                        <values title="Logic (LOGICGMIN)">BL-LOGICGMIN</values>
+                        <values title="Logic,Language &amp; Computatn (LLCMPTGMIN)">BL-LLCMPTGMIN</values>
+                        <values title="Management Information Sys (MISGMIN)">BL-MISGMIN</values>
+                        <values title="Marketing (MKTGMIN)">BL-MKTGMIN</values>
+                        <values title="Mass Communication (Tel) (MTELGMIN)">BL-MTELGMIN</values>
+                        <values title="Mass Communications (Jour) (MCOMJGMIN)">BL-MCOMJGMIN</values>
+                        <values title="Materials Chemistry (MATCHEGMIN)">BL-MATCHEGMIN</values>
+                        <values title="Math Physics (Math) (MPHYSMGMIN)">BL-MPHYSMGMIN</values>
+                        <values title="Math Physics (Phys) (MPHYSPGMIN)">BL-MPHYSPGMIN</values>
+                        <values title="Mathematics (MATHGMIN)">BL-MATHGMIN</values>
+                        <values title="Medical &amp; Molecular Genetics M (MMGNGMIN)">BL-MMGNGMIN</values>
+                        <values title="Medical Biophysics (MBIPGMIN)">BL-MBIPGMIN</values>
+                        <values title="Medical Neurobiology (MNEURGMIN)">BL-MNEURGMIN</values>
+                        <values title="Medical Sciences (MSCIGMIN)">BL-MSCIGMIN</values>
+                        <values title="Medieval Studies (MESTGMIN)">BL-MESTGMIN</values>
+                        <values title="Microbiology &amp; Immunology (MICRIMGMIN)">BL-MICRIMGMIN</values>
+                        <values title="Microbiology (MICRGMIN)">BL-MICRGMIN</values>
+                        <values title="MIME (Concentration) (MIMEGMIN)">BL-MIMEGMIN</values>
+                        <values title="Modeling in Cognitive Sci (MODCSGMIN)">BL-MODCSGMIN</values>
+                        <values title="Mol Cel &amp; Dev Biol (Biol) (MCDBGMIN)">BL-MCDBGMIN</values>
+                        <values title="Music Education (MSEDGMIN)">BL-MSEDGMIN</values>
+                        <values title="Music History &amp; Literature (MSHLGMIN)">BL-MSHLGMIN</values>
+                        <values title="Music Individualized (MSINDVGMIN)">BL-MSINDVGMIN</values>
+                        <values title="Music Informatics (MUSINFGMIN)">BL-MUSINFGMIN</values>
+                        <values title="Music Information Tech (MSITGMIN)">BL-MSITGMIN</values>
+                        <values title="Music Theory (MSTHRYGMIN)">BL-MSTHRYGMIN</values>
+                        <values title="Musicology (MSCLGYGMIN)">BL-MSCLGYGMIN</values>
+                        <values title="Mythology Studies (MYTHSTGMIN)">BL-MYTHSTGMIN</values>
+                        <values title="Native Amr &amp; Indigenous St (NAISGMIN)">BL-NAISGMIN</values>
+                        <values title="Near Eastern Lang &amp; Cult (NELCGMIN)">BL-NELCGMIN</values>
+                        <values title="Networks &amp; Complex Systems (NCSGMIN)">BL-NCSGMIN</values>
+                        <values title="Neural Sciences (NEUSGMIN)">BL-NEUSGMIN</values>
+                        <values title="Nonprofit Management (NONPRGMIN)">BL-NONPRGMIN</values>
+                        <values title="Nursing Science (NURSCGMIN)">BL-NURSCGMIN</values>
+                        <values title="Nutrition and Dietetics (NTRDIGMIN)">BL-NTRDIGMIN</values>
+                        <values title="Nutrition Science (NTRSCIGMIN)">BL-NTRSCIGMIN</values>
+                        <values title="Operations Management (OPMGTGMIN)">BL-OPMGTGMIN</values>
+                        <values title="Organizational Behavior (ORGBEHGMIN)">BL-ORGBEHGMIN</values>
+                        <values title="Pathology (PATHGMIN)">BL-PATHGMIN</values>
+                        <values title="Performance Studies (PRSTGMIN)">BL-PRSTGMIN</values>
+                        <values title="Pharmacology (PHARGMIN)">BL-PHARGMIN</values>
+                        <values title="Philanthropic Studies (PHLNTGMIN)">BL-PHLNTGMIN</values>
+                        <values title="Philosophy of Education (PHILEDGMIN)">BL-PHILEDGMIN</values>
+                        <values title="Philosophy (PHILGMIN)">BL-PHILGMIN</values>
+                        <values title="Physics (PHYSGMIN)">BL-PHYSGMIN</values>
+                        <values title="Physiological Optics (POPTGMIN)">BL-POPTGMIN</values>
+                        <values title="Physiology (PHYSLGMIN)">BL-PHYSLGMIN</values>
+                        <values title="Plant Science (PLSCGMIN)">BL-PLSCGMIN</values>
+                        <values title="Political Science (POLSGMIN)">BL-POLSGMIN</values>
+                        <values title="Population Studies (POPSTGMIN)">BL-POPSTGMIN</values>
+                        <values title="Portuguese (PORTGMIN)">BL-PORTGMIN</values>
+                        <values title="Psychology (PSYGMIN)">BL-PSYGMIN</values>
+                        <values title="Public Affairs (PUBAFGMIN)">BL-PUBAFGMIN</values>
+                        <values title="Public Health Education (PHLTEDGMIN)">BL-PHLTEDGMIN</values>
+                        <values title="Public Management (PBMGTGMIN)">BL-PBMGTGMIN</values>
+                        <values title="Public Policy (PUBPLGMIN)">BL-PUBPLGMIN</values>
+                        <values title="Pure and Applied Logic (PRAPLGMIN)">BL-PRAPLGMIN</values>
+                        <values title="Quantitative Biology (QBIOLGMIN)">BL-QBIOLGMIN</values>
+                        <values title="Regnl Economic Development (RGECDVGMIN)">BL-RGECDVGMIN</values>
+                        <values title="Religious Studies (RELGMIN)">BL-RELGMIN</values>
+                        <values title="Renaissance Studies (RENSTGMIN)">BL-RENSTGMIN</values>
+                        <values title="Russ &amp; E Eur St w/Lang (REESTLGMIN)">BL-REESTLGMIN</values>
+                        <values title="Russian and East Euro St (REEIGMIN)">BL-REEIGMIN</values>
+                        <values title="Russian Lit &amp; Slavic Ling (RUSLSLGMIN)">BL-RUSLSLGMIN</values>
+                        <values title="Safety Management (SFMGTGMIN)">BL-SFMGTGMIN</values>
+                        <values title="School &amp; College Health Ed (SCHEGMIN)">BL-SCHEGMIN</values>
+                        <values title="School Psychology (SCPSYGMIN)">BL-SCPSYGMIN</values>
+                        <values title="Scientific Computation (SCCOMGMIN)">BL-SCCOMGMIN</values>
+                        <values title="Scientific Computing (SCMPTGMIN)">BL-SCMPTGMIN</values>
+                        <values title="Second Language Studies (SLSTGMIN)">BL-SLSTGMIN</values>
+                        <values title="Security Informatics (SECURGMIN)">BL-SECURGMIN</values>
+                        <values title="Semiotic Studies (SEMSGMIN)">BL-SEMSGMIN</values>
+                        <values title="Slavic Languages and Lit (SLAVGMIN)">BL-SLAVGMIN</values>
+                        <values title="Soc Sci Approaches to Hlth (SSAHLGMIN)">BL-SSAHLGMIN</values>
+                        <values title="Social Foundations of Educ (SFNDEDGMIN)">BL-SFNDEDGMIN</values>
+                        <values title="Social Informatics (SOCINFGMIN)">BL-SOCINFGMIN</values>
+                        <values title="Social Science Rsrch Mthds (SSRMGMIN)">BL-SSRMGMIN</values>
+                        <values title="Social Studies (SSTDGMIN)">BL-SSTDGMIN</values>
+                        <values title="Social Work (SWKGMIN)">BL-SWKGMIN</values>
+                        <values title="Sociology (SOCGMIN)">BL-SOCGMIN</values>
+                        <values title="Spanish Linguistics (SPLGGMIN)">BL-SPLGGMIN</values>
+                        <values title="Spanish Literature (SPLTGMIN)">BL-SPLTGMIN</values>
+                        <values title="Spanish (SPANGMIN)">BL-SPANGMIN</values>
+                        <values title="Special Education (SPEDGMIN)">BL-SPEDGMIN</values>
+                        <values title="Speech &amp; Hearing Sciences (SPHSGMIN)">BL-SPHSGMIN</values>
+                        <values title="Stage Direction for Opera (STDROPGMIN)">BL-STDROPGMIN</values>
+                        <values title="Statistical Sciences (STATSCIMIN)">BL-STATSCIMIN</values>
+                        <values title="Sustainable Energy (SUSTENGMIN)">BL-SUSTENGMIN</values>
+                        <values title="Telecommunications (TELGMIN)">BL-TELGMIN</values>
+                        <values title="TESOL &amp; Appl Linguistics (TAALGMIN)">BL-TAALGMIN</values>
+                        <values title="Text Studies (TEXTSGMIN)">BL-TEXTSGMIN</values>
+                        <values title="Theatre and Drama (THTRGMIN)">BL-THTRGMIN</values>
+                        <values title="Toxicology (TOXIGMIN)">BL-TOXIGMIN</values>
+                        <values title="Urban Affairs (URBAFGMIN)">BL-URBAFGMIN</values>
+                        <values title="Urban Studies (URBNGMIN)">BL-URBNGMIN</values>
+                        <values title="Victorian Studies (VICTGMIN)">BL-VICTGMIN</values>
+                        <values title="Vision Science (VSCIGMIN)">BL-VSCIGMIN</values>
+                        <values title="Visual Sciences (VISSCIGMIN)">BL-VISSCIGMIN</values>
+                        <values title="Voice (VOCEGMIN)">BL-VOCEGMIN</values>
+                        <values title="West European Studies (WEURGMIN)">BL-WEURGMIN</values>
+                        <values title="Yiddish Studies (YDDSHGMIN)">BL-YDDSHGMIN</values>
+                        <values title="Zoology (ZOOLGMIN)">BL-ZOOLGMIN</values>
+                        <values title="**Please Select**">Select</values>
+                        <values title="Eclectic - enter title to the right">Eclectic</values>
+                        <values title="Individualized - enter title to the right">Individualized</values>
+                        <values title="Interdisciplinary - enter title to the right">Interdisciplinary</values>
+                        <values title="Bioethics (BIOETHCMIN)">IN-BIOETHCMIN</values>
+                        <values title="Bioinformatics (BIOINFOMIN)">IN-BIOINFOMIN</values>
+                        <values title="Biomolecular Imaging (BIMLIMGMIN)">IN-BIMLIMGMIN</values>
+                        <values title="Biostatistics (BIOSTATMIN)">IN-BIOSTATMIN</values>
+                        <values title="Cancer Biology (CANBIOLMIN)">IN-CANBIOLMIN</values>
+                        <values title="Cancer Biology (CANBIOMIN)">IN-CANBIOMIN</values>
+                        <values title="Cardiovascular Science (CRDVASCMIN)">IN-CRDVASCMIN</values>
+                        <values title="Cell &amp; Mol Bio of Biom Sys (CELMLBIMIN)">IN-CELMLBIMIN</values>
+                        <values title="Computer Science (COMPSCIMIN)">IN-COMPSCIMIN</values>
+                        <values title="Counselor Education (CSLREDMIN)">IN-CSLREDMIN</values>
+                        <values title="Diabetes &amp; Obesity (DIABOBSMIN)">IN-DIABOBSMIN</values>
+                        <values title="Environmental Health Sci (ENVHLTSMIN)">IN-ENVHLTSMIN</values>
+                        <values title="Epidemiology (EPIDEMMIN)">IN-EPIDEMMIN</values>
+                        <values title="Health Informatics (INFOHLTMIN)">IN-INFOHLTMIN</values>
+                        <values title="Health Policy &amp; Management (HLTPOLMIN)">IN-HLTPOLMIN</values>
+                        <values title="History (HISTGMIN)">IN-HISTGMIN</values>
+                        <values title="Human Computer Interaction (INHCIMIN)">IN-INHCIMIN</values>
+                        <values title="Nonprofit Management (NPRFMGTMIN)">IN-NPRFMGTMIN</values>
+                        <values title="Philanthropic Studies (PHLSTMIN)">IN-PHLSTMIN</values>
+                        <values title="Public Health (PUBHLTHMIN)">IN-PUBHLTHMIN</values>
+                        <values title="Social &amp; Behavioral Sci (SBSMIN)">IN-SBSMIN</values>
+                        <values title="Social Work (SOCWRKMIN)">IN-SOCWRKMIN</values>
+                        <values title="Sociology (SOCIOLMIN)">IN-SOCIOLMIN</values>
+                        <values title="Translational Science (TRANSCMIN)">IN-TRANSCMIN</values>
+                        <values title="Women's Studies (WOSTGMIN)">IN-WOSTGMIN</values>
+                    </display>
+                    <validation required="true"/>
+                    <fieldEvaluation>
+                        <xpathexpression>//minor1 = wf:ruledata('minor1')</xpathexpression>
+                    </fieldEvaluation>
+                </fieldDef>
+                <xmlDocumentContent>
+                    <minor1>%minor1%</minor1>
+                </xmlDocumentContent>
+            </routingConfig>
+        </ruleAttribute>
+        <ruleAttribute>
+            <name>UGSPhDMinor1SearchAttribute</name>
+            <className>org.kuali.rice.kew.docsearch.xml.StandardGenericXMLSearchableAttribute</className>
+            <label>UGS Minor 1</label>
+            <description>UGS Minor Search Attribute</description>
+            <type>SearchableXmlAttribute</type>
+            <searchingConfig>
+                <fieldDef name="minor1" title="Minor" workflowType="ALL">
+                    <display>
+                        <type>select</type>
+                        <values title=""/>
+                        <values title="Eclectic - enter title to the right">Eclectic</values>
+                        <values title="Individualized - enter title to the right">Individualized</values>
+                        <values title="Interdisciplinary - enter title to the right">Interdisciplinary</values>
+                        <values title="Eclectic - enter title to the right">Eclectic</values>
+                        <values title="Individualized - enter title to the right">Individualized</values>
+                        <values title="Interdisciplinary - enter title to the right">Interdisciplinary</values>
+                        <values title="Accounting (ACCTGGMIN)">BL-ACCTGGMIN</values>
+                        <values title="Addictive Behaviors (ADBEHGMIN)">BL-ADBEHGMIN</values>
+                        <values title="Adult Education (ADEDGMIN)">BL-ADEDGMIN</values>
+                        <values title="Afr Am &amp; Af Diaspora St Gr (AAADGMIN)">BL-AAADGMIN</values>
+                        <values title="African Lang &amp; Ling (AFRLLGMIN)">BL-AFRLLGMIN</values>
+                        <values title="African Studies (AFRIGMIN)">BL-AFRIGMIN</values>
+                        <values title="American Literature (AMLTGMIN)">BL-AMLTGMIN</values>
+                        <values title="American Studies (AMSTGMIN)">BL-AMSTGMIN</values>
+                        <values title="Anatomy (ANATGMIN)">BL-ANATGMIN</values>
+                        <values title="Ancient Studies (ANCSTGMIN)">BL-ANCSTGMIN</values>
+                        <values title="Animal Behavior (ABEHGMIN)">BL-ABEHGMIN</values>
+                        <values title="Anthropology &amp; Health (ANTHLGMIN)">BL-ANTHLGMIN</values>
+                        <values title="Anthropology (ANTHGMIN)">BL-ANTHGMIN</values>
+                        <values title="Apparel Merchandising (APMDGMIN)">BL-APMDGMIN</values>
+                        <values title="Applied Linguistics (APLNGGMIN)">BL-APLNGGMIN</values>
+                        <values title="Applied Statistics (APSTGMIN)">BL-APSTGMIN</values>
+                        <values title="Art History (ARHSGMIN)">BL-ARHSGMIN</values>
+                        <values title="Arts Administration (AADMGMIN)">BL-AADMGMIN</values>
+                        <values title="Astronomy (ASTGMIN)">BL-ASTGMIN</values>
+                        <values title="Astrophysics (Astronomy) (ASTPAGMIN)">BL-ASTPAGMIN</values>
+                        <values title="Astrophysics (Physics) (ASTPPGMIN)">BL-ASTPPGMIN</values>
+                        <values title="Beam Physics &amp; Technology (BPHTCGMIN)">BL-BPHTCGMIN</values>
+                        <values title="Bibl &amp; Literary Crit (BLCRGMIN)">BL-BLCRGMIN</values>
+                        <values title="Biblical Literature (BLLTGMIN)">BL-BLLTGMIN</values>
+                        <values title="Biochemistry (BIOCGMIN)">BL-BIOCGMIN</values>
+                        <values title="Bioinformatics (BIOINGMIN)">BL-BIOINGMIN</values>
+                        <values title="Biology (BIOLGMIN)">BL-BIOLGMIN</values>
+                        <values title="Biomathematics (BIMTGMIN)">BL-BIMTGMIN</values>
+                        <values title="Biotechnology (BIOTCGMIN)">BL-BIOTCGMIN</values>
+                        <values title="Biotechnology (BIOTECGMIN)">BL-BIOTECGMIN</values>
+                        <values title="British Literature (BRITLTGMIN)">BL-BRITLTGMIN</values>
+                        <values title="Bus Econ &amp; Public Policy (BEPPGMIN)">BL-BEPPGMIN</values>
+                        <values title="Business Doctoral Breadth (BUSDBGMIN)">BL-BUSDBGMIN</values>
+                        <values title="Business (BUSGMIN)">BL-BUSGMIN</values>
+                        <values title="Catalan (CATALANMIN)">BL-CATALANMIN</values>
+                        <values title="Cell &amp; Molec Bio-Biomd Sys (CMOLBGMIN)">BL-CMOLBGMIN</values>
+                        <values title="Central Eurasian Studies (CEUSGMIN)">BL-CEUSGMIN</values>
+                        <values title="Chemical Physics (Chem) (CPHYSCGMIN)">BL-CPHYSCGMIN</values>
+                        <values title="Chemical Physics (Phys) (CPHYPGMIN)">BL-CPHYPGMIN</values>
+                        <values title="Chemistry (CHEMGMIN)">BL-CHEMGMIN</values>
+                        <values title="Children's Literature (CHLDLGMIN)">BL-CHLDLGMIN</values>
+                        <values title="Chinese (CHINGMIN)">BL-CHINGMIN</values>
+                        <values title="Classical St:Latin &amp; Greek (CLSTGMIN)">BL-CLSTGMIN</values>
+                        <values title="Classics Related Fields (CLSRFGMIN)">BL-CLSRFGMIN</values>
+                        <values title="Cognition &amp; Instruction (CGNINGMIN)">BL-CGNINGMIN</values>
+                        <values title="Cognitive Science (COGSGMIN)">BL-COGSGMIN</values>
+                        <values title="College Pedagogy (CPEDGMIN)">BL-CPEDGMIN</values>
+                        <values title="Communication &amp; Culture (CMCLGMIN)">BL-CMCLGMIN</values>
+                        <values title="Comp Ethnic &amp; Postcolonl St MN (CMPETHGMIN)">BL-CMPETHGMIN</values>
+                        <values title="Comparative Literature (CMLTGMIN)">BL-CMLTGMIN</values>
+                        <values title="Complex Systems Informatics MN (CMPLXSGMIN)">BL-CMPLXSGMIN</values>
+                        <values title="Composition (Music) (COMPGMIN)">BL-COMPGMIN</values>
+                        <values title="Computational Linguistics (CMPLNGGMIN)">BL-CMPLNGGMIN</values>
+                        <values title="Computer Science (CSCIGMIN)">BL-CSCIGMIN</values>
+                        <values title="Counseling Psychology (CNSPSGMIN)">BL-CNSPSGMIN</values>
+                        <values title="Counseling (CNSLGMIN)">BL-CNSLGMIN</values>
+                        <values title="Creative Writing (CRWRTGMIN)">BL-CRWRTGMIN</values>
+                        <values title="Criminal Justice (CJUSGMIN)">BL-CJUSGMIN</values>
+                        <values title="Cultural Studies (CULSGMIN)">BL-CULSGMIN</values>
+                        <values title="Curriculum and Instruction (CRINGMIN)">BL-CRINGMIN</values>
+                        <values title="Decision Sciences (DECSCIGMIN)">BL-DECSCIGMIN</values>
+                        <values title="Dental Science (DENTSCGMIN)">BL-DENTSCGMIN</values>
+                        <values title="Dutch Studies (DUTCHSGMIN)">BL-DUTCHSGMIN</values>
+                        <values title="Dynamical Sys in Cogn Sci (DYNSCGMIN)">BL-DYNSCGMIN</values>
+                        <values title="Early Music (ERMUSGMIN)">BL-ERMUSGMIN</values>
+                        <values title="East Asian Languages (EALANGMIN)">BL-EALANGMIN</values>
+                        <values title="East Asian Studies (EASTGMIN)">BL-EASTGMIN</values>
+                        <values title="Ecology and Evolu Biology (ECEVBIOGMN)">BL-ECEVBIOGMN</values>
+                        <values title="Economics (ECONGMIN)">BL-ECONGMIN</values>
+                        <values title="Educ Inquiry Methodology (EDINQGMIN)">BL-EDINQGMIN</values>
+                        <values title="Education Law (EDLAWGMIN)">BL-EDLAWGMIN</values>
+                        <values title="Education Policy Studies (EDPOLGMIN)">BL-EDPOLGMIN</values>
+                        <values title="Educational Psychology (EDPSYGMIN)">BL-EDPSYGMIN</values>
+                        <values title="Engl &amp; Germanic Philology (ENGRPGMIN)">BL-ENGRPGMIN</values>
+                        <values title="English Language (ENGLGGMIN)">BL-ENGLGGMIN</values>
+                        <values title="English (ENGGMIN)">BL-ENGGMIN</values>
+                        <values title="Entrepreneurship (ENTRPGMIN)">BL-ENTRPGMIN</values>
+                        <values title="Environmental Science (ENVSCIGMIN)">BL-ENVSCIGMIN</values>
+                        <values title="Environmental Studies (ENSTGMIN)">BL-ENSTGMIN</values>
+                        <values title="Ethnomusicology (ETHNMGMIN)">BL-ETHNMGMIN</values>
+                        <values title="European Studies (EUROGMIN)">BL-EUROGMIN</values>
+                        <values title="Family Psychology (FMLPSYGMIN)">BL-FMLPSYGMIN</values>
+                        <values title="Feminist Critical Studies (FMCRITGMIN)">BL-FMCRITGMIN</values>
+                        <values title="Film Studies (FILMGMIN)">BL-FILMGMIN</values>
+                        <values title="Finance (FINGMIN)">BL-FINGMIN</values>
+                        <values title="Financial Mathematics (FINMTHGMIN)">BL-FINMTHGMIN</values>
+                        <values title="Fine Arts - Art History (FINAHGMIN)">BL-FINAHGMIN</values>
+                        <values title="Folklore (FOLKGMIN)">BL-FOLKGMIN</values>
+                        <values title="Food Studies Anthropology (FDSTAGMIN)">BL-FDSTAGMIN</values>
+                        <values title="French Instruction (FRINSTGMIN)">BL-FRINSTGMIN</values>
+                        <values title="French Linguistics (FRLINGGMIN)">BL-FRLINGGMIN</values>
+                        <values title="French Literature (FRLITGMIN)">BL-FRLITGMIN</values>
+                        <values title="French (FRENGMIN)">BL-FRENGMIN</values>
+                        <values title="Gender Studies (GNDRGMIN)">BL-GNDRGMIN</values>
+                        <values title="Genetics (GENGMIN)">BL-GENGMIN</values>
+                        <values title="Geography (GEOGGMIN)">BL-GEOGGMIN</values>
+                        <values title="Geological Sciences (GEOSCGMIN)">BL-GEOSCGMIN</values>
+                        <values title="Geology (GEOLGMIN)">BL-GEOLGMIN</values>
+                        <values title="German Studies (GRSTGMIN)">BL-GRSTGMIN</values>
+                        <values title="Germanic Studies (GERGMIN)">BL-GERGMIN</values>
+                        <values title="Gerontology (GERNTGMIN)">BL-GERNTGMIN</values>
+                        <values title="Global Studies (GLBLSTGMIN)">BL-GLBLSTGMIN</values>
+                        <values title="Greek (GRKGMIN)">BL-GRKGMIN</values>
+                        <values title="Health Behavior (HLTBEHGMIN)">BL-HLTBEHGMIN</values>
+                        <values title="Health Promotion (HLTPGMIN)">BL-HLTPGMIN</values>
+                        <values title="Higher Education (HIGHEDGMIN)">BL-HIGHEDGMIN</values>
+                        <values title="Hispanic Linguistics (HSPLNGGMIN)">BL-HSPLNGGMIN</values>
+                        <values title="Hist &amp; Philos of Science (HPSCGMIN)">BL-HPSCGMIN</values>
+                        <values title="Hist/Phil/Policy St in Ed (HPPEDGMIN)">BL-HPPEDGMIN</values>
+                        <values title="History of Education (HSTEDGMIN)">BL-HSTEDGMIN</values>
+                        <values title="History (HISTGMIN)">BL-HISTGMIN</values>
+                        <values title="Hum Dimens Glob Envmtl Chg (HDGECGMIN)">BL-HDGECGMIN</values>
+                        <values title="Human Dev &amp; Family Stds (HDFSGMIN)">BL-HDFSGMIN</values>
+                        <values title="Human Evolutionary Studies (HVSTGMIN)">BL-HVSTGMIN</values>
+                        <values title="Human Performance (HMPRFGMIN)">BL-HMPRFGMIN</values>
+                        <values title="Human Rights (HMRTSGMIN)">BL-HMRTSGMIN</values>
+                        <values title="Human Sexuality Education (HSXEDGMIN)">BL-HSXEDGMIN</values>
+                        <values title="Human Sexuality (HMSXLGMIN)">BL-HMSXLGMIN</values>
+                        <values title="Human-Computer Interaction (HUCPTGMIN)">BL-HUCPTGMIN</values>
+                        <values title="Hungarian Studies (HNGRSTGMIN)">BL-HNGRSTGMIN</values>
+                        <values title="India Studies (INSTGMIN)">BL-INSTGMIN</values>
+                        <values title="Individualized Informatics (INDVINFGMN)">BL-INDVINFGMN</values>
+                        <values title="Individualized (INDVGMIN)">BL-INDVGMIN</values>
+                        <values title="Informatics (INFOGMIN)">BL-INFOGMIN</values>
+                        <values title="Information Science (INFSCGMIN)">BL-INFSCGMIN</values>
+                        <values title="Inner Asian &amp; Uralic Studies M (INASURGMIN)">BL-INASURGMIN</values>
+                        <values title="Inquiry Methodology (INQMTHGMIN)">BL-INQMTHGMIN</values>
+                        <values title="Inquiry/Research Methodology M (INQRSGMIN)">BL-INQRSGMIN</values>
+                        <values title="Instructional Systems Tech (ISTGMIN)">BL-ISTGMIN</values>
+                        <values title="Interior Design (INTDSGMIN)">BL-INTDSGMIN</values>
+                        <values title="International &amp; Compar Ed (INTCEDGMIN)">BL-INTCEDGMIN</values>
+                        <values title="Internatnl &amp; Comparative Ed MI (INTCEDMIN)">BL-INTCEDMIN</values>
+                        <values title="Italian (ITALGMIN)">BL-ITALGMIN</values>
+                        <values title="Japanese (JAPAGMIN)">BL-JAPAGMIN</values>
+                        <values title="Jazz Studies (JAZZSTGMIN)">BL-JAZZSTGMIN</values>
+                        <values title="Jewish Studies (JSTUGMIN)">BL-JSTUGMIN</values>
+                        <values title="Journalism (JOURGMIN)">BL-JOURGMIN</values>
+                        <values title="Landscape Studies (LSSTGMIN)">BL-LSSTGMIN</values>
+                        <values title="Language and Speech (LNGSPGMIN)">BL-LNGSPGMIN</values>
+                        <values title="Language Education (LNGEDGMIN)">BL-LNGEDGMIN</values>
+                        <values title="Latin Amer &amp; Caribbean St (LTAMCGMIN)">BL-LTAMCGMIN</values>
+                        <values title="Latin American Studies (LTAMSGMIN)">BL-LTAMSGMIN</values>
+                        <values title="Latin (LATGMIN)">BL-LATGMIN</values>
+                        <values title="Latino Studies (LATSGMIN)">BL-LATSGMIN</values>
+                        <values title="Law and Social Science (LWSSCGMIN)">BL-LWSSCGMIN</values>
+                        <values title="Law (LAWGMIN)">BL-LAWGMIN</values>
+                        <values title="Learning &amp; Development Sci (LRNDVGMIN)">BL-LRNDVGMIN</values>
+                        <values title="Leisure Behavior (LEIBEHGMIN)">BL-LEIBEHGMIN</values>
+                        <values title="Library &amp; Information Sci (LIBINSGMIN)">BL-LIBINSGMIN</values>
+                        <values title="Life Science (LIFSCGMIN)">BL-LIFSCGMIN</values>
+                        <values title="Linguistics (LINGGMIN)">BL-LINGGMIN</values>
+                        <values title="Linguistics: TESOL &amp; Appl (LINGTESGMN)">BL-LINGTESGMN</values>
+                        <values title="Literacy Studies (LITRSGMIN)">BL-LITRSGMIN</values>
+                        <values title="Literary Theory (LTTHRYGMIN)">BL-LTTHRYGMIN</values>
+                        <values title="Literary Translation (LTRANGMIN)">BL-LTRANGMIN</values>
+                        <values title="Literature &amp; Science (LTSCIGMIN)">BL-LTSCIGMIN</values>
+                        <values title="Logic (LOGICGMIN)">BL-LOGICGMIN</values>
+                        <values title="Logic,Language &amp; Computatn (LLCMPTGMIN)">BL-LLCMPTGMIN</values>
+                        <values title="Management Information Sys (MISGMIN)">BL-MISGMIN</values>
+                        <values title="Marketing (MKTGMIN)">BL-MKTGMIN</values>
+                        <values title="Mass Communication (Tel) (MTELGMIN)">BL-MTELGMIN</values>
+                        <values title="Mass Communications (Jour) (MCOMJGMIN)">BL-MCOMJGMIN</values>
+                        <values title="Materials Chemistry (MATCHEGMIN)">BL-MATCHEGMIN</values>
+                        <values title="Math Physics (Math) (MPHYSMGMIN)">BL-MPHYSMGMIN</values>
+                        <values title="Math Physics (Phys) (MPHYSPGMIN)">BL-MPHYSPGMIN</values>
+                        <values title="Mathematics (MATHGMIN)">BL-MATHGMIN</values>
+                        <values title="Medical &amp; Molecular Genetics M (MMGNGMIN)">BL-MMGNGMIN</values>
+                        <values title="Medical Biophysics (MBIPGMIN)">BL-MBIPGMIN</values>
+                        <values title="Medical Neurobiology (MNEURGMIN)">BL-MNEURGMIN</values>
+                        <values title="Medical Sciences (MSCIGMIN)">BL-MSCIGMIN</values>
+                        <values title="Medieval Studies (MESTGMIN)">BL-MESTGMIN</values>
+                        <values title="Microbiology &amp; Immunology (MICRIMGMIN)">BL-MICRIMGMIN</values>
+                        <values title="Microbiology (MICRGMIN)">BL-MICRGMIN</values>
+                        <values title="MIME (Concentration) (MIMEGMIN)">BL-MIMEGMIN</values>
+                        <values title="Modeling in Cognitive Sci (MODCSGMIN)">BL-MODCSGMIN</values>
+                        <values title="Mol Cel &amp; Dev Biol (Biol) (MCDBGMIN)">BL-MCDBGMIN</values>
+                        <values title="Music Education (MSEDGMIN)">BL-MSEDGMIN</values>
+                        <values title="Music History &amp; Literature (MSHLGMIN)">BL-MSHLGMIN</values>
+                        <values title="Music Individualized (MSINDVGMIN)">BL-MSINDVGMIN</values>
+                        <values title="Music Informatics (MUSINFGMIN)">BL-MUSINFGMIN</values>
+                        <values title="Music Information Tech (MSITGMIN)">BL-MSITGMIN</values>
+                        <values title="Music Theory (MSTHRYGMIN)">BL-MSTHRYGMIN</values>
+                        <values title="Musicology (MSCLGYGMIN)">BL-MSCLGYGMIN</values>
+                        <values title="Mythology Studies (MYTHSTGMIN)">BL-MYTHSTGMIN</values>
+                        <values title="Native Amr &amp; Indigenous St (NAISGMIN)">BL-NAISGMIN</values>
+                        <values title="Near Eastern Lang &amp; Cult (NELCGMIN)">BL-NELCGMIN</values>
+                        <values title="Networks &amp; Complex Systems (NCSGMIN)">BL-NCSGMIN</values>
+                        <values title="Neural Sciences (NEUSGMIN)">BL-NEUSGMIN</values>
+                        <values title="Nonprofit Management (NONPRGMIN)">BL-NONPRGMIN</values>
+                        <values title="Nursing Science (NURSCGMIN)">BL-NURSCGMIN</values>
+                        <values title="Nutrition and Dietetics (NTRDIGMIN)">BL-NTRDIGMIN</values>
+                        <values title="Nutrition Science (NTRSCIGMIN)">BL-NTRSCIGMIN</values>
+                        <values title="Operations Management (OPMGTGMIN)">BL-OPMGTGMIN</values>
+                        <values title="Organizational Behavior (ORGBEHGMIN)">BL-ORGBEHGMIN</values>
+                        <values title="Pathology (PATHGMIN)">BL-PATHGMIN</values>
+                        <values title="Performance Studies (PRSTGMIN)">BL-PRSTGMIN</values>
+                        <values title="Pharmacology (PHARGMIN)">BL-PHARGMIN</values>
+                        <values title="Philanthropic Studies (PHLNTGMIN)">BL-PHLNTGMIN</values>
+                        <values title="Philosophy of Education (PHILEDGMIN)">BL-PHILEDGMIN</values>
+                        <values title="Philosophy (PHILGMIN)">BL-PHILGMIN</values>
+                        <values title="Physics (PHYSGMIN)">BL-PHYSGMIN</values>
+                        <values title="Physiological Optics (POPTGMIN)">BL-POPTGMIN</values>
+                        <values title="Physiology (PHYSLGMIN)">BL-PHYSLGMIN</values>
+                        <values title="Plant Science (PLSCGMIN)">BL-PLSCGMIN</values>
+                        <values title="Political Science (POLSGMIN)">BL-POLSGMIN</values>
+                        <values title="Population Studies (POPSTGMIN)">BL-POPSTGMIN</values>
+                        <values title="Portuguese (PORTGMIN)">BL-PORTGMIN</values>
+                        <values title="Psychology (PSYGMIN)">BL-PSYGMIN</values>
+                        <values title="Public Affairs (PUBAFGMIN)">BL-PUBAFGMIN</values>
+                        <values title="Public Health Education (PHLTEDGMIN)">BL-PHLTEDGMIN</values>
+                        <values title="Public Management (PBMGTGMIN)">BL-PBMGTGMIN</values>
+                        <values title="Public Policy (PUBPLGMIN)">BL-PUBPLGMIN</values>
+                        <values title="Pure and Applied Logic (PRAPLGMIN)">BL-PRAPLGMIN</values>
+                        <values title="Quantitative Biology (QBIOLGMIN)">BL-QBIOLGMIN</values>
+                        <values title="Regnl Economic Development (RGECDVGMIN)">BL-RGECDVGMIN</values>
+                        <values title="Religious Studies (RELGMIN)">BL-RELGMIN</values>
+                        <values title="Renaissance Studies (RENSTGMIN)">BL-RENSTGMIN</values>
+                        <values title="Russ &amp; E Eur St w/Lang (REESTLGMIN)">BL-REESTLGMIN</values>
+                        <values title="Russian and East Euro St (REEIGMIN)">BL-REEIGMIN</values>
+                        <values title="Russian Lit &amp; Slavic Ling (RUSLSLGMIN)">BL-RUSLSLGMIN</values>
+                        <values title="Safety Management (SFMGTGMIN)">BL-SFMGTGMIN</values>
+                        <values title="School &amp; College Health Ed (SCHEGMIN)">BL-SCHEGMIN</values>
+                        <values title="School Psychology (SCPSYGMIN)">BL-SCPSYGMIN</values>
+                        <values title="Scientific Computation (SCCOMGMIN)">BL-SCCOMGMIN</values>
+                        <values title="Scientific Computing (SCMPTGMIN)">BL-SCMPTGMIN</values>
+                        <values title="Second Language Studies (SLSTGMIN)">BL-SLSTGMIN</values>
+                        <values title="Security Informatics (SECURGMIN)">BL-SECURGMIN</values>
+                        <values title="Semiotic Studies (SEMSGMIN)">BL-SEMSGMIN</values>
+                        <values title="Slavic Languages and Lit (SLAVGMIN)">BL-SLAVGMIN</values>
+                        <values title="Soc Sci Approaches to Hlth (SSAHLGMIN)">BL-SSAHLGMIN</values>
+                        <values title="Social Foundations of Educ (SFNDEDGMIN)">BL-SFNDEDGMIN</values>
+                        <values title="Social Informatics (SOCINFGMIN)">BL-SOCINFGMIN</values>
+                        <values title="Social Science Rsrch Mthds (SSRMGMIN)">BL-SSRMGMIN</values>
+                        <values title="Social Studies (SSTDGMIN)">BL-SSTDGMIN</values>
+                        <values title="Social Work (SWKGMIN)">BL-SWKGMIN</values>
+                        <values title="Sociology (SOCGMIN)">BL-SOCGMIN</values>
+                        <values title="Spanish Linguistics (SPLGGMIN)">BL-SPLGGMIN</values>
+                        <values title="Spanish Literature (SPLTGMIN)">BL-SPLTGMIN</values>
+                        <values title="Spanish (SPANGMIN)">BL-SPANGMIN</values>
+                        <values title="Special Education (SPEDGMIN)">BL-SPEDGMIN</values>
+                        <values title="Speech &amp; Hearing Sciences (SPHSGMIN)">BL-SPHSGMIN</values>
+                        <values title="Stage Direction for Opera (STDROPGMIN)">BL-STDROPGMIN</values>
+                        <values title="Statistical Sciences (STATSCIMIN)">BL-STATSCIMIN</values>
+                        <values title="Sustainable Energy (SUSTENGMIN)">BL-SUSTENGMIN</values>
+                        <values title="Telecommunications (TELGMIN)">BL-TELGMIN</values>
+                        <values title="TESOL &amp; Appl Linguistics (TAALGMIN)">BL-TAALGMIN</values>
+                        <values title="Text Studies (TEXTSGMIN)">BL-TEXTSGMIN</values>
+                        <values title="Theatre and Drama (THTRGMIN)">BL-THTRGMIN</values>
+                        <values title="Toxicology (TOXIGMIN)">BL-TOXIGMIN</values>
+                        <values title="Urban Affairs (URBAFGMIN)">BL-URBAFGMIN</values>
+                        <values title="Urban Studies (URBNGMIN)">BL-URBNGMIN</values>
+                        <values title="Victorian Studies (VICTGMIN)">BL-VICTGMIN</values>
+                        <values title="Vision Science (VSCIGMIN)">BL-VSCIGMIN</values>
+                        <values title="Visual Sciences (VISSCIGMIN)">BL-VISSCIGMIN</values>
+                        <values title="Voice (VOCEGMIN)">BL-VOCEGMIN</values>
+                        <values title="West European Studies (WEURGMIN)">BL-WEURGMIN</values>
+                        <values title="Yiddish Studies (YDDSHGMIN)">BL-YDDSHGMIN</values>
+                        <values title="Zoology (ZOOLGMIN)">BL-ZOOLGMIN</values>
+                        <values title="**Please Select**">Select</values>
+                        <values title="Eclectic - enter title to the right">Eclectic</values>
+                        <values title="Individualized - enter title to the right">Individualized</values>
+                        <values title="Interdisciplinary - enter title to the right">Interdisciplinary</values>
+                        <values title="Bioethics (BIOETHCMIN)">IN-BIOETHCMIN</values>
+                        <values title="Bioinformatics (BIOINFOMIN)">IN-BIOINFOMIN</values>
+                        <values title="Biomolecular Imaging (BIMLIMGMIN)">IN-BIMLIMGMIN</values>
+                        <values title="Biostatistics (BIOSTATMIN)">IN-BIOSTATMIN</values>
+                        <values title="Cancer Biology (CANBIOLMIN)">IN-CANBIOLMIN</values>
+                        <values title="Cancer Biology (CANBIOMIN)">IN-CANBIOMIN</values>
+                        <values title="Cardiovascular Science (CRDVASCMIN)">IN-CRDVASCMIN</values>
+                        <values title="Cell &amp; Mol Bio of Biom Sys (CELMLBIMIN)">IN-CELMLBIMIN</values>
+                        <values title="Computer Science (COMPSCIMIN)">IN-COMPSCIMIN</values>
+                        <values title="Counselor Education (CSLREDMIN)">IN-CSLREDMIN</values>
+                        <values title="Diabetes &amp; Obesity (DIABOBSMIN)">IN-DIABOBSMIN</values>
+                        <values title="Environmental Health Sci (ENVHLTSMIN)">IN-ENVHLTSMIN</values>
+                        <values title="Epidemiology (EPIDEMMIN)">IN-EPIDEMMIN</values>
+                        <values title="Health Informatics (INFOHLTMIN)">IN-INFOHLTMIN</values>
+                        <values title="Health Policy &amp; Management (HLTPOLMIN)">IN-HLTPOLMIN</values>
+                        <values title="History (HISTGMIN)">IN-HISTGMIN</values>
+                        <values title="Human Computer Interaction (INHCIMIN)">IN-INHCIMIN</values>
+                        <values title="Nonprofit Management (NPRFMGTMIN)">IN-NPRFMGTMIN</values>
+                        <values title="Philanthropic Studies (PHLSTMIN)">IN-PHLSTMIN</values>
+                        <values title="Public Health (PUBHLTHMIN)">IN-PUBHLTHMIN</values>
+                        <values title="Social &amp; Behavioral Sci (SBSMIN)">IN-SBSMIN</values>
+                        <values title="Social Work (SOCWRKMIN)">IN-SOCWRKMIN</values>
+                        <values title="Sociology (SOCIOLMIN)">IN-SOCIOLMIN</values>
+                        <values title="Translational Science (TRANSCMIN)">IN-TRANSCMIN</values>
+                        <values title="Women's Studies (WOSTGMIN)">IN-WOSTGMIN</values>
+                    </display>
+                    <fieldEvaluation>
+                        <xpathexpression>//version[@current='true']/field[@name='minor1']/value</xpathexpression>
+                    </fieldEvaluation>
+                </fieldDef>
+            </searchingConfig>
+        </ruleAttribute>
+        <ruleAttribute>
+            <name>UGSPhDMinor2Attribute</name>
+            <className>org.kuali.rice.kew.rule.xmlrouting.StandardGenericXMLRuleAttribute</className>
+            <label>UGS Minor</label>
+            <description>UGS Minor Attribute</description>
+            <type>RuleXmlAttribute</type>
+            <routingConfig>
+                <fieldDef name="minor2" title="Second Minor" workflowType="ALL">
+                    <display>
+                        <type>select</type>
+                        <values title=""/>
+                        <values title="Eclectic - enter title to the right">Eclectic</values>
+                        <values title="Individualized - enter title to the right">Individualized</values>
+                        <values title="Interdisciplinary - enter title to the right">Interdisciplinary</values>
+                        <values title="Eclectic - enter title to the right">Eclectic</values>
+                        <values title="Individualized - enter title to the right">Individualized</values>
+                        <values title="Interdisciplinary - enter title to the right">Interdisciplinary</values>
+                        <values title="Accounting (ACCTGGMIN)">BL-ACCTGGMIN</values>
+                        <values title="Addictive Behaviors (ADBEHGMIN)">BL-ADBEHGMIN</values>
+                        <values title="Adult Education (ADEDGMIN)">BL-ADEDGMIN</values>
+                        <values title="Afr Am &amp; Af Diaspora St Gr (AAADGMIN)">BL-AAADGMIN</values>
+                        <values title="African Lang &amp; Ling (AFRLLGMIN)">BL-AFRLLGMIN</values>
+                        <values title="African Studies (AFRIGMIN)">BL-AFRIGMIN</values>
+                        <values title="American Literature (AMLTGMIN)">BL-AMLTGMIN</values>
+                        <values title="American Studies (AMSTGMIN)">BL-AMSTGMIN</values>
+                        <values title="Anatomy (ANATGMIN)">BL-ANATGMIN</values>
+                        <values title="Ancient Studies (ANCSTGMIN)">BL-ANCSTGMIN</values>
+                        <values title="Animal Behavior (ABEHGMIN)">BL-ABEHGMIN</values>
+                        <values title="Anthropology &amp; Health (ANTHLGMIN)">BL-ANTHLGMIN</values>
+                        <values title="Anthropology (ANTHGMIN)">BL-ANTHGMIN</values>
+                        <values title="Apparel Merchandising (APMDGMIN)">BL-APMDGMIN</values>
+                        <values title="Applied Linguistics (APLNGGMIN)">BL-APLNGGMIN</values>
+                        <values title="Applied Statistics (APSTGMIN)">BL-APSTGMIN</values>
+                        <values title="Art History (ARHSGMIN)">BL-ARHSGMIN</values>
+                        <values title="Arts Administration (AADMGMIN)">BL-AADMGMIN</values>
+                        <values title="Astronomy (ASTGMIN)">BL-ASTGMIN</values>
+                        <values title="Astrophysics (Astronomy) (ASTPAGMIN)">BL-ASTPAGMIN</values>
+                        <values title="Astrophysics (Physics) (ASTPPGMIN)">BL-ASTPPGMIN</values>
+                        <values title="Beam Physics &amp; Technology (BPHTCGMIN)">BL-BPHTCGMIN</values>
+                        <values title="Bibl &amp; Literary Crit (BLCRGMIN)">BL-BLCRGMIN</values>
+                        <values title="Biblical Literature (BLLTGMIN)">BL-BLLTGMIN</values>
+                        <values title="Biochemistry (BIOCGMIN)">BL-BIOCGMIN</values>
+                        <values title="Bioinformatics (BIOINGMIN)">BL-BIOINGMIN</values>
+                        <values title="Biology (BIOLGMIN)">BL-BIOLGMIN</values>
+                        <values title="Biomathematics (BIMTGMIN)">BL-BIMTGMIN</values>
+                        <values title="Biotechnology (BIOTCGMIN)">BL-BIOTCGMIN</values>
+                        <values title="Biotechnology (BIOTECGMIN)">BL-BIOTECGMIN</values>
+                        <values title="British Literature (BRITLTGMIN)">BL-BRITLTGMIN</values>
+                        <values title="Bus Econ &amp; Public Policy (BEPPGMIN)">BL-BEPPGMIN</values>
+                        <values title="Business Doctoral Breadth (BUSDBGMIN)">BL-BUSDBGMIN</values>
+                        <values title="Business (BUSGMIN)">BL-BUSGMIN</values>
+                        <values title="Catalan (CATALANMIN)">BL-CATALANMIN</values>
+                        <values title="Cell &amp; Molec Bio-Biomd Sys (CMOLBGMIN)">BL-CMOLBGMIN</values>
+                        <values title="Central Eurasian Studies (CEUSGMIN)">BL-CEUSGMIN</values>
+                        <values title="Chemical Physics (Chem) (CPHYSCGMIN)">BL-CPHYSCGMIN</values>
+                        <values title="Chemical Physics (Phys) (CPHYPGMIN)">BL-CPHYPGMIN</values>
+                        <values title="Chemistry (CHEMGMIN)">BL-CHEMGMIN</values>
+                        <values title="Children's Literature (CHLDLGMIN)">BL-CHLDLGMIN</values>
+                        <values title="Chinese (CHINGMIN)">BL-CHINGMIN</values>
+                        <values title="Classical St:Latin &amp; Greek (CLSTGMIN)">BL-CLSTGMIN</values>
+                        <values title="Classics Related Fields (CLSRFGMIN)">BL-CLSRFGMIN</values>
+                        <values title="Cognition &amp; Instruction (CGNINGMIN)">BL-CGNINGMIN</values>
+                        <values title="Cognitive Science (COGSGMIN)">BL-COGSGMIN</values>
+                        <values title="College Pedagogy (CPEDGMIN)">BL-CPEDGMIN</values>
+                        <values title="Communication &amp; Culture (CMCLGMIN)">BL-CMCLGMIN</values>
+                        <values title="Comp Ethnic &amp; Postcolonl St MN (CMPETHGMIN)">BL-CMPETHGMIN</values>
+                        <values title="Comparative Literature (CMLTGMIN)">BL-CMLTGMIN</values>
+                        <values title="Complex Systems Informatics MN (CMPLXSGMIN)">BL-CMPLXSGMIN</values>
+                        <values title="Composition (Music) (COMPGMIN)">BL-COMPGMIN</values>
+                        <values title="Computational Linguistics (CMPLNGGMIN)">BL-CMPLNGGMIN</values>
+                        <values title="Computer Science (CSCIGMIN)">BL-CSCIGMIN</values>
+                        <values title="Counseling Psychology (CNSPSGMIN)">BL-CNSPSGMIN</values>
+                        <values title="Counseling (CNSLGMIN)">BL-CNSLGMIN</values>
+                        <values title="Creative Writing (CRWRTGMIN)">BL-CRWRTGMIN</values>
+                        <values title="Criminal Justice (CJUSGMIN)">BL-CJUSGMIN</values>
+                        <values title="Cultural Studies (CULSGMIN)">BL-CULSGMIN</values>
+                        <values title="Curriculum and Instruction (CRINGMIN)">BL-CRINGMIN</values>
+                        <values title="Decision Sciences (DECSCIGMIN)">BL-DECSCIGMIN</values>
+                        <values title="Dental Science (DENTSCGMIN)">BL-DENTSCGMIN</values>
+                        <values title="Dutch Studies (DUTCHSGMIN)">BL-DUTCHSGMIN</values>
+                        <values title="Dynamical Sys in Cogn Sci (DYNSCGMIN)">BL-DYNSCGMIN</values>
+                        <values title="Early Music (ERMUSGMIN)">BL-ERMUSGMIN</values>
+                        <values title="East Asian Languages (EALANGMIN)">BL-EALANGMIN</values>
+                        <values title="East Asian Studies (EASTGMIN)">BL-EASTGMIN</values>
+                        <values title="Ecology and Evolu Biology (ECEVBIOGMN)">BL-ECEVBIOGMN</values>
+                        <values title="Economics (ECONGMIN)">BL-ECONGMIN</values>
+                        <values title="Educ Inquiry Methodology (EDINQGMIN)">BL-EDINQGMIN</values>
+                        <values title="Education Law (EDLAWGMIN)">BL-EDLAWGMIN</values>
+                        <values title="Education Policy Studies (EDPOLGMIN)">BL-EDPOLGMIN</values>
+                        <values title="Educational Psychology (EDPSYGMIN)">BL-EDPSYGMIN</values>
+                        <values title="Engl &amp; Germanic Philology (ENGRPGMIN)">BL-ENGRPGMIN</values>
+                        <values title="English Language (ENGLGGMIN)">BL-ENGLGGMIN</values>
+                        <values title="English (ENGGMIN)">BL-ENGGMIN</values>
+                        <values title="Entrepreneurship (ENTRPGMIN)">BL-ENTRPGMIN</values>
+                        <values title="Environmental Science (ENVSCIGMIN)">BL-ENVSCIGMIN</values>
+                        <values title="Environmental Studies (ENSTGMIN)">BL-ENSTGMIN</values>
+                        <values title="Ethnomusicology (ETHNMGMIN)">BL-ETHNMGMIN</values>
+                        <values title="European Studies (EUROGMIN)">BL-EUROGMIN</values>
+                        <values title="Family Psychology (FMLPSYGMIN)">BL-FMLPSYGMIN</values>
+                        <values title="Feminist Critical Studies (FMCRITGMIN)">BL-FMCRITGMIN</values>
+                        <values title="Film Studies (FILMGMIN)">BL-FILMGMIN</values>
+                        <values title="Finance (FINGMIN)">BL-FINGMIN</values>
+                        <values title="Financial Mathematics (FINMTHGMIN)">BL-FINMTHGMIN</values>
+                        <values title="Fine Arts - Art History (FINAHGMIN)">BL-FINAHGMIN</values>
+                        <values title="Folklore (FOLKGMIN)">BL-FOLKGMIN</values>
+                        <values title="Food Studies Anthropology (FDSTAGMIN)">BL-FDSTAGMIN</values>
+                        <values title="French Instruction (FRINSTGMIN)">BL-FRINSTGMIN</values>
+                        <values title="French Linguistics (FRLINGGMIN)">BL-FRLINGGMIN</values>
+                        <values title="French Literature (FRLITGMIN)">BL-FRLITGMIN</values>
+                        <values title="French (FRENGMIN)">BL-FRENGMIN</values>
+                        <values title="Gender Studies (GNDRGMIN)">BL-GNDRGMIN</values>
+                        <values title="Genetics (GENGMIN)">BL-GENGMIN</values>
+                        <values title="Geography (GEOGGMIN)">BL-GEOGGMIN</values>
+                        <values title="Geological Sciences (GEOSCGMIN)">BL-GEOSCGMIN</values>
+                        <values title="Geology (GEOLGMIN)">BL-GEOLGMIN</values>
+                        <values title="German Studies (GRSTGMIN)">BL-GRSTGMIN</values>
+                        <values title="Germanic Studies (GERGMIN)">BL-GERGMIN</values>
+                        <values title="Gerontology (GERNTGMIN)">BL-GERNTGMIN</values>
+                        <values title="Global Studies (GLBLSTGMIN)">BL-GLBLSTGMIN</values>
+                        <values title="Greek (GRKGMIN)">BL-GRKGMIN</values>
+                        <values title="Health Behavior (HLTBEHGMIN)">BL-HLTBEHGMIN</values>
+                        <values title="Health Promotion (HLTPGMIN)">BL-HLTPGMIN</values>
+                        <values title="Higher Education (HIGHEDGMIN)">BL-HIGHEDGMIN</values>
+                        <values title="Hispanic Linguistics (HSPLNGGMIN)">BL-HSPLNGGMIN</values>
+                        <values title="Hist &amp; Philos of Science (HPSCGMIN)">BL-HPSCGMIN</values>
+                        <values title="Hist/Phil/Policy St in Ed (HPPEDGMIN)">BL-HPPEDGMIN</values>
+                        <values title="History of Education (HSTEDGMIN)">BL-HSTEDGMIN</values>
+                        <values title="History (HISTGMIN)">BL-HISTGMIN</values>
+                        <values title="Hum Dimens Glob Envmtl Chg (HDGECGMIN)">BL-HDGECGMIN</values>
+                        <values title="Human Dev &amp; Family Stds (HDFSGMIN)">BL-HDFSGMIN</values>
+                        <values title="Human Evolutionary Studies (HVSTGMIN)">BL-HVSTGMIN</values>
+                        <values title="Human Performance (HMPRFGMIN)">BL-HMPRFGMIN</values>
+                        <values title="Human Rights (HMRTSGMIN)">BL-HMRTSGMIN</values>
+                        <values title="Human Sexuality Education (HSXEDGMIN)">BL-HSXEDGMIN</values>
+                        <values title="Human Sexuality (HMSXLGMIN)">BL-HMSXLGMIN</values>
+                        <values title="Human-Computer Interaction (HUCPTGMIN)">BL-HUCPTGMIN</values>
+                        <values title="Hungarian Studies (HNGRSTGMIN)">BL-HNGRSTGMIN</values>
+                        <values title="India Studies (INSTGMIN)">BL-INSTGMIN</values>
+                        <values title="Individualized Informatics (INDVINFGMN)">BL-INDVINFGMN</values>
+                        <values title="Individualized (INDVGMIN)">BL-INDVGMIN</values>
+                        <values title="Informatics (INFOGMIN)">BL-INFOGMIN</values>
+                        <values title="Information Science (INFSCGMIN)">BL-INFSCGMIN</values>
+                        <values title="Inner Asian &amp; Uralic Studies M (INASURGMIN)">BL-INASURGMIN</values>
+                        <values title="Inquiry Methodology (INQMTHGMIN)">BL-INQMTHGMIN</values>
+                        <values title="Inquiry/Research Methodology M (INQRSGMIN)">BL-INQRSGMIN</values>
+                        <values title="Instructional Systems Tech (ISTGMIN)">BL-ISTGMIN</values>
+                        <values title="Interior Design (INTDSGMIN)">BL-INTDSGMIN</values>
+                        <values title="International &amp; Compar Ed (INTCEDGMIN)">BL-INTCEDGMIN</values>
+                        <values title="Internatnl &amp; Comparative Ed MI (INTCEDMIN)">BL-INTCEDMIN</values>
+                        <values title="Italian (ITALGMIN)">BL-ITALGMIN</values>
+                        <values title="Japanese (JAPAGMIN)">BL-JAPAGMIN</values>
+                        <values title="Jazz Studies (JAZZSTGMIN)">BL-JAZZSTGMIN</values>
+                        <values title="Jewish Studies (JSTUGMIN)">BL-JSTUGMIN</values>
+                        <values title="Journalism (JOURGMIN)">BL-JOURGMIN</values>
+                        <values title="Landscape Studies (LSSTGMIN)">BL-LSSTGMIN</values>
+                        <values title="Language and Speech (LNGSPGMIN)">BL-LNGSPGMIN</values>
+                        <values title="Language Education (LNGEDGMIN)">BL-LNGEDGMIN</values>
+                        <values title="Latin Amer &amp; Caribbean St (LTAMCGMIN)">BL-LTAMCGMIN</values>
+                        <values title="Latin American Studies (LTAMSGMIN)">BL-LTAMSGMIN</values>
+                        <values title="Latin (LATGMIN)">BL-LATGMIN</values>
+                        <values title="Latino Studies (LATSGMIN)">BL-LATSGMIN</values>
+                        <values title="Law and Social Science (LWSSCGMIN)">BL-LWSSCGMIN</values>
+                        <values title="Law (LAWGMIN)">BL-LAWGMIN</values>
+                        <values title="Learning &amp; Development Sci (LRNDVGMIN)">BL-LRNDVGMIN</values>
+                        <values title="Leisure Behavior (LEIBEHGMIN)">BL-LEIBEHGMIN</values>
+                        <values title="Library &amp; Information Sci (LIBINSGMIN)">BL-LIBINSGMIN</values>
+                        <values title="Life Science (LIFSCGMIN)">BL-LIFSCGMIN</values>
+                        <values title="Linguistics (LINGGMIN)">BL-LINGGMIN</values>
+                        <values title="Linguistics: TESOL &amp; Appl (LINGTESGMN)">BL-LINGTESGMN</values>
+                        <values title="Literacy Studies (LITRSGMIN)">BL-LITRSGMIN</values>
+                        <values title="Literary Theory (LTTHRYGMIN)">BL-LTTHRYGMIN</values>
+                        <values title="Literary Translation (LTRANGMIN)">BL-LTRANGMIN</values>
+                        <values title="Literature &amp; Science (LTSCIGMIN)">BL-LTSCIGMIN</values>
+                        <values title="Logic (LOGICGMIN)">BL-LOGICGMIN</values>
+                        <values title="Logic,Language &amp; Computatn (LLCMPTGMIN)">BL-LLCMPTGMIN</values>
+                        <values title="Management Information Sys (MISGMIN)">BL-MISGMIN</values>
+                        <values title="Marketing (MKTGMIN)">BL-MKTGMIN</values>
+                        <values title="Mass Communication (Tel) (MTELGMIN)">BL-MTELGMIN</values>
+                        <values title="Mass Communications (Jour) (MCOMJGMIN)">BL-MCOMJGMIN</values>
+                        <values title="Materials Chemistry (MATCHEGMIN)">BL-MATCHEGMIN</values>
+                        <values title="Math Physics (Math) (MPHYSMGMIN)">BL-MPHYSMGMIN</values>
+                        <values title="Math Physics (Phys) (MPHYSPGMIN)">BL-MPHYSPGMIN</values>
+                        <values title="Mathematics (MATHGMIN)">BL-MATHGMIN</values>
+                        <values title="Medical &amp; Molecular Genetics M (MMGNGMIN)">BL-MMGNGMIN</values>
+                        <values title="Medical Biophysics (MBIPGMIN)">BL-MBIPGMIN</values>
+                        <values title="Medical Neurobiology (MNEURGMIN)">BL-MNEURGMIN</values>
+                        <values title="Medical Sciences (MSCIGMIN)">BL-MSCIGMIN</values>
+                        <values title="Medieval Studies (MESTGMIN)">BL-MESTGMIN</values>
+                        <values title="Microbiology &amp; Immunology (MICRIMGMIN)">BL-MICRIMGMIN</values>
+                        <values title="Microbiology (MICRGMIN)">BL-MICRGMIN</values>
+                        <values title="MIME (Concentration) (MIMEGMIN)">BL-MIMEGMIN</values>
+                        <values title="Modeling in Cognitive Sci (MODCSGMIN)">BL-MODCSGMIN</values>
+                        <values title="Mol Cel &amp; Dev Biol (Biol) (MCDBGMIN)">BL-MCDBGMIN</values>
+                        <values title="Music Education (MSEDGMIN)">BL-MSEDGMIN</values>
+                        <values title="Music History &amp; Literature (MSHLGMIN)">BL-MSHLGMIN</values>
+                        <values title="Music Individualized (MSINDVGMIN)">BL-MSINDVGMIN</values>
+                        <values title="Music Informatics (MUSINFGMIN)">BL-MUSINFGMIN</values>
+                        <values title="Music Information Tech (MSITGMIN)">BL-MSITGMIN</values>
+                        <values title="Music Theory (MSTHRYGMIN)">BL-MSTHRYGMIN</values>
+                        <values title="Musicology (MSCLGYGMIN)">BL-MSCLGYGMIN</values>
+                        <values title="Mythology Studies (MYTHSTGMIN)">BL-MYTHSTGMIN</values>
+                        <values title="Native Amr &amp; Indigenous St (NAISGMIN)">BL-NAISGMIN</values>
+                        <values title="Near Eastern Lang &amp; Cult (NELCGMIN)">BL-NELCGMIN</values>
+                        <values title="Networks &amp; Complex Systems (NCSGMIN)">BL-NCSGMIN</values>
+                        <values title="Neural Sciences (NEUSGMIN)">BL-NEUSGMIN</values>
+                        <values title="Nonprofit Management (NONPRGMIN)">BL-NONPRGMIN</values>
+                        <values title="Nursing Science (NURSCGMIN)">BL-NURSCGMIN</values>
+                        <values title="Nutrition and Dietetics (NTRDIGMIN)">BL-NTRDIGMIN</values>
+                        <values title="Nutrition Science (NTRSCIGMIN)">BL-NTRSCIGMIN</values>
+                        <values title="Operations Management (OPMGTGMIN)">BL-OPMGTGMIN</values>
+                        <values title="Organizational Behavior (ORGBEHGMIN)">BL-ORGBEHGMIN</values>
+                        <values title="Pathology (PATHGMIN)">BL-PATHGMIN</values>
+                        <values title="Performance Studies (PRSTGMIN)">BL-PRSTGMIN</values>
+                        <values title="Pharmacology (PHARGMIN)">BL-PHARGMIN</values>
+                        <values title="Philanthropic Studies (PHLNTGMIN)">BL-PHLNTGMIN</values>
+                        <values title="Philosophy of Education (PHILEDGMIN)">BL-PHILEDGMIN</values>
+                        <values title="Philosophy (PHILGMIN)">BL-PHILGMIN</values>
+                        <values title="Physics (PHYSGMIN)">BL-PHYSGMIN</values>
+                        <values title="Physiological Optics (POPTGMIN)">BL-POPTGMIN</values>
+                        <values title="Physiology (PHYSLGMIN)">BL-PHYSLGMIN</values>
+                        <values title="Plant Science (PLSCGMIN)">BL-PLSCGMIN</values>
+                        <values title="Political Science (POLSGMIN)">BL-POLSGMIN</values>
+                        <values title="Population Studies (POPSTGMIN)">BL-POPSTGMIN</values>
+                        <values title="Portuguese (PORTGMIN)">BL-PORTGMIN</values>
+                        <values title="Psychology (PSYGMIN)">BL-PSYGMIN</values>
+                        <values title="Public Affairs (PUBAFGMIN)">BL-PUBAFGMIN</values>
+                        <values title="Public Health Education (PHLTEDGMIN)">BL-PHLTEDGMIN</values>
+                        <values title="Public Management (PBMGTGMIN)">BL-PBMGTGMIN</values>
+                        <values title="Public Policy (PUBPLGMIN)">BL-PUBPLGMIN</values>
+                        <values title="Pure and Applied Logic (PRAPLGMIN)">BL-PRAPLGMIN</values>
+                        <values title="Quantitative Biology (QBIOLGMIN)">BL-QBIOLGMIN</values>
+                        <values title="Regnl Economic Development (RGECDVGMIN)">BL-RGECDVGMIN</values>
+                        <values title="Religious Studies (RELGMIN)">BL-RELGMIN</values>
+                        <values title="Renaissance Studies (RENSTGMIN)">BL-RENSTGMIN</values>
+                        <values title="Russ &amp; E Eur St w/Lang (REESTLGMIN)">BL-REESTLGMIN</values>
+                        <values title="Russian and East Euro St (REEIGMIN)">BL-REEIGMIN</values>
+                        <values title="Russian Lit &amp; Slavic Ling (RUSLSLGMIN)">BL-RUSLSLGMIN</values>
+                        <values title="Safety Management (SFMGTGMIN)">BL-SFMGTGMIN</values>
+                        <values title="School &amp; College Health Ed (SCHEGMIN)">BL-SCHEGMIN</values>
+                        <values title="School Psychology (SCPSYGMIN)">BL-SCPSYGMIN</values>
+                        <values title="Scientific Computation (SCCOMGMIN)">BL-SCCOMGMIN</values>
+                        <values title="Scientific Computing (SCMPTGMIN)">BL-SCMPTGMIN</values>
+                        <values title="Second Language Studies (SLSTGMIN)">BL-SLSTGMIN</values>
+                        <values title="Security Informatics (SECURGMIN)">BL-SECURGMIN</values>
+                        <values title="Semiotic Studies (SEMSGMIN)">BL-SEMSGMIN</values>
+                        <values title="Slavic Languages and Lit (SLAVGMIN)">BL-SLAVGMIN</values>
+                        <values title="Soc Sci Approaches to Hlth (SSAHLGMIN)">BL-SSAHLGMIN</values>
+                        <values title="Social Foundations of Educ (SFNDEDGMIN)">BL-SFNDEDGMIN</values>
+                        <values title="Social Informatics (SOCINFGMIN)">BL-SOCINFGMIN</values>
+                        <values title="Social Science Rsrch Mthds (SSRMGMIN)">BL-SSRMGMIN</values>
+                        <values title="Social Studies (SSTDGMIN)">BL-SSTDGMIN</values>
+                        <values title="Social Work (SWKGMIN)">BL-SWKGMIN</values>
+                        <values title="Sociology (SOCGMIN)">BL-SOCGMIN</values>
+                        <values title="Spanish Linguistics (SPLGGMIN)">BL-SPLGGMIN</values>
+                        <values title="Spanish Literature (SPLTGMIN)">BL-SPLTGMIN</values>
+                        <values title="Spanish (SPANGMIN)">BL-SPANGMIN</values>
+                        <values title="Special Education (SPEDGMIN)">BL-SPEDGMIN</values>
+                        <values title="Speech &amp; Hearing Sciences (SPHSGMIN)">BL-SPHSGMIN</values>
+                        <values title="Stage Direction for Opera (STDROPGMIN)">BL-STDROPGMIN</values>
+                        <values title="Statistical Sciences (STATSCIMIN)">BL-STATSCIMIN</values>
+                        <values title="Sustainable Energy (SUSTENGMIN)">BL-SUSTENGMIN</values>
+                        <values title="Telecommunications (TELGMIN)">BL-TELGMIN</values>
+                        <values title="TESOL &amp; Appl Linguistics (TAALGMIN)">BL-TAALGMIN</values>
+                        <values title="Text Studies (TEXTSGMIN)">BL-TEXTSGMIN</values>
+                        <values title="Theatre and Drama (THTRGMIN)">BL-THTRGMIN</values>
+                        <values title="Toxicology (TOXIGMIN)">BL-TOXIGMIN</values>
+                        <values title="Urban Affairs (URBAFGMIN)">BL-URBAFGMIN</values>
+                        <values title="Urban Studies (URBNGMIN)">BL-URBNGMIN</values>
+                        <values title="Victorian Studies (VICTGMIN)">BL-VICTGMIN</values>
+                        <values title="Vision Science (VSCIGMIN)">BL-VSCIGMIN</values>
+                        <values title="Visual Sciences (VISSCIGMIN)">BL-VISSCIGMIN</values>
+                        <values title="Voice (VOCEGMIN)">BL-VOCEGMIN</values>
+                        <values title="West European Studies (WEURGMIN)">BL-WEURGMIN</values>
+                        <values title="Yiddish Studies (YDDSHGMIN)">BL-YDDSHGMIN</values>
+                        <values title="Zoology (ZOOLGMIN)">BL-ZOOLGMIN</values>
+                        <values title="**Please Select**">Select</values>
+                        <values title="Eclectic - enter title to the right">Eclectic</values>
+                        <values title="Individualized - enter title to the right">Individualized</values>
+                        <values title="Interdisciplinary - enter title to the right">Interdisciplinary</values>
+                        <values title="Bioethics (BIOETHCMIN)">IN-BIOETHCMIN</values>
+                        <values title="Bioinformatics (BIOINFOMIN)">IN-BIOINFOMIN</values>
+                        <values title="Biomolecular Imaging (BIMLIMGMIN)">IN-BIMLIMGMIN</values>
+                        <values title="Biostatistics (BIOSTATMIN)">IN-BIOSTATMIN</values>
+                        <values title="Cancer Biology (CANBIOLMIN)">IN-CANBIOLMIN</values>
+                        <values title="Cancer Biology (CANBIOMIN)">IN-CANBIOMIN</values>
+                        <values title="Cardiovascular Science (CRDVASCMIN)">IN-CRDVASCMIN</values>
+                        <values title="Cell &amp; Mol Bio of Biom Sys (CELMLBIMIN)">IN-CELMLBIMIN</values>
+                        <values title="Computer Science (COMPSCIMIN)">IN-COMPSCIMIN</values>
+                        <values title="Counselor Education (CSLREDMIN)">IN-CSLREDMIN</values>
+                        <values title="Diabetes &amp; Obesity (DIABOBSMIN)">IN-DIABOBSMIN</values>
+                        <values title="Environmental Health Sci (ENVHLTSMIN)">IN-ENVHLTSMIN</values>
+                        <values title="Epidemiology (EPIDEMMIN)">IN-EPIDEMMIN</values>
+                        <values title="Health Informatics (INFOHLTMIN)">IN-INFOHLTMIN</values>
+                        <values title="Health Policy &amp; Management (HLTPOLMIN)">IN-HLTPOLMIN</values>
+                        <values title="History (HISTGMIN)">IN-HISTGMIN</values>
+                        <values title="Human Computer Interaction (INHCIMIN)">IN-INHCIMIN</values>
+                        <values title="Nonprofit Management (NPRFMGTMIN)">IN-NPRFMGTMIN</values>
+                        <values title="Philanthropic Studies (PHLSTMIN)">IN-PHLSTMIN</values>
+                        <values title="Public Health (PUBHLTHMIN)">IN-PUBHLTHMIN</values>
+                        <values title="Social &amp; Behavioral Sci (SBSMIN)">IN-SBSMIN</values>
+                        <values title="Social Work (SOCWRKMIN)">IN-SOCWRKMIN</values>
+                        <values title="Sociology (SOCIOLMIN)">IN-SOCIOLMIN</values>
+                        <values title="Translational Science (TRANSCMIN)">IN-TRANSCMIN</values>
+                        <values title="Women's Studies (WOSTGMIN)">IN-WOSTGMIN</values>
+                    </display>
+                    <validation required="true"/>
+                    <fieldEvaluation>
+                        <xpathexpression>//minor2 = wf:ruledata('minor2')</xpathexpression>
+                    </fieldEvaluation>
+                </fieldDef>
+                <xmlDocumentContent>
+                    <minor2>%minor2%</minor2>
+                </xmlDocumentContent>
+            </routingConfig>
+        </ruleAttribute>
+        <ruleAttribute>
+            <name>UGSPhDMinor2SearchAttribute</name>
+            <className>org.kuali.rice.kew.docsearch.xml.StandardGenericXMLSearchableAttribute</className>
+            <label>UGS Minor 2</label>
+            <description>UGS Minor Search Attribute</description>
+            <type>SearchableXmlAttribute</type>
+            <searchingConfig>
+                <fieldDef name="minor2" title="Minor" workflowType="ALL">
+                    <display>
+                        <type>select</type>
+                        <values title=""/>
+                        <values title="Eclectic - enter title to the right">Eclectic</values>
+                        <values title="Individualized - enter title to the right">Individualized</values>
+                        <values title="Interdisciplinary - enter title to the right">Interdisciplinary</values>
+                        <values title="Eclectic - enter title to the right">Eclectic</values>
+                        <values title="Individualized - enter title to the right">Individualized</values>
+                        <values title="Interdisciplinary - enter title to the right">Interdisciplinary</values>
+                        <values title="Accounting (ACCTGGMIN)">BL-ACCTGGMIN</values>
+                        <values title="Addictive Behaviors (ADBEHGMIN)">BL-ADBEHGMIN</values>
+                        <values title="Adult Education (ADEDGMIN)">BL-ADEDGMIN</values>
+                        <values title="Afr Am &amp; Af Diaspora St Gr (AAADGMIN)">BL-AAADGMIN</values>
+                        <values title="African Lang &amp; Ling (AFRLLGMIN)">BL-AFRLLGMIN</values>
+                        <values title="African Studies (AFRIGMIN)">BL-AFRIGMIN</values>
+                        <values title="American Literature (AMLTGMIN)">BL-AMLTGMIN</values>
+                        <values title="American Studies (AMSTGMIN)">BL-AMSTGMIN</values>
+                        <values title="Anatomy (ANATGMIN)">BL-ANATGMIN</values>
+                        <values title="Ancient Studies (ANCSTGMIN)">BL-ANCSTGMIN</values>
+                        <values title="Animal Behavior (ABEHGMIN)">BL-ABEHGMIN</values>
+                        <values title="Anthropology &amp; Health (ANTHLGMIN)">BL-ANTHLGMIN</values>
+                        <values title="Anthropology (ANTHGMIN)">BL-ANTHGMIN</values>
+                        <values title="Apparel Merchandising (APMDGMIN)">BL-APMDGMIN</values>
+                        <values title="Applied Linguistics (APLNGGMIN)">BL-APLNGGMIN</values>
+                        <values title="Applied Statistics (APSTGMIN)">BL-APSTGMIN</values>
+                        <values title="Art History (ARHSGMIN)">BL-ARHSGMIN</values>
+                        <values title="Arts Administration (AADMGMIN)">BL-AADMGMIN</values>
+                        <values title="Astronomy (ASTGMIN)">BL-ASTGMIN</values>
+                        <values title="Astrophysics (Astronomy) (ASTPAGMIN)">BL-ASTPAGMIN</values>
+                        <values title="Astrophysics (Physics) (ASTPPGMIN)">BL-ASTPPGMIN</values>
+                        <values title="Beam Physics &amp; Technology (BPHTCGMIN)">BL-BPHTCGMIN</values>
+                        <values title="Bibl &amp; Literary Crit (BLCRGMIN)">BL-BLCRGMIN</values>
+                        <values title="Biblical Literature (BLLTGMIN)">BL-BLLTGMIN</values>
+                        <values title="Biochemistry (BIOCGMIN)">BL-BIOCGMIN</values>
+                        <values title="Bioinformatics (BIOINGMIN)">BL-BIOINGMIN</values>
+                        <values title="Biology (BIOLGMIN)">BL-BIOLGMIN</values>
+                        <values title="Biomathematics (BIMTGMIN)">BL-BIMTGMIN</values>
+                        <values title="Biotechnology (BIOTCGMIN)">BL-BIOTCGMIN</values>
+                        <values title="Biotechnology (BIOTECGMIN)">BL-BIOTECGMIN</values>
+                        <values title="British Literature (BRITLTGMIN)">BL-BRITLTGMIN</values>
+                        <values title="Bus Econ &amp; Public Policy (BEPPGMIN)">BL-BEPPGMIN</values>
+                        <values title="Business Doctoral Breadth (BUSDBGMIN)">BL-BUSDBGMIN</values>
+                        <values title="Business (BUSGMIN)">BL-BUSGMIN</values>
+                        <values title="Catalan (CATALANMIN)">BL-CATALANMIN</values>
+                        <values title="Cell &amp; Molec Bio-Biomd Sys (CMOLBGMIN)">BL-CMOLBGMIN</values>
+                        <values title="Central Eurasian Studies (CEUSGMIN)">BL-CEUSGMIN</values>
+                        <values title="Chemical Physics (Chem) (CPHYSCGMIN)">BL-CPHYSCGMIN</values>
+                        <values title="Chemical Physics (Phys) (CPHYPGMIN)">BL-CPHYPGMIN</values>
+                        <values title="Chemistry (CHEMGMIN)">BL-CHEMGMIN</values>
+                        <values title="Children's Literature (CHLDLGMIN)">BL-CHLDLGMIN</values>
+                        <values title="Chinese (CHINGMIN)">BL-CHINGMIN</values>
+                        <values title="Classical St:Latin &amp; Greek (CLSTGMIN)">BL-CLSTGMIN</values>
+                        <values title="Classics Related Fields (CLSRFGMIN)">BL-CLSRFGMIN</values>
+                        <values title="Cognition &amp; Instruction (CGNINGMIN)">BL-CGNINGMIN</values>
+                        <values title="Cognitive Science (COGSGMIN)">BL-COGSGMIN</values>
+                        <values title="College Pedagogy (CPEDGMIN)">BL-CPEDGMIN</values>
+                        <values title="Communication &amp; Culture (CMCLGMIN)">BL-CMCLGMIN</values>
+                        <values title="Comp Ethnic &amp; Postcolonl St MN (CMPETHGMIN)">BL-CMPETHGMIN</values>
+                        <values title="Comparative Literature (CMLTGMIN)">BL-CMLTGMIN</values>
+                        <values title="Complex Systems Informatics MN (CMPLXSGMIN)">BL-CMPLXSGMIN</values>
+                        <values title="Composition (Music) (COMPGMIN)">BL-COMPGMIN</values>
+                        <values title="Computational Linguistics (CMPLNGGMIN)">BL-CMPLNGGMIN</values>
+                        <values title="Computer Science (CSCIGMIN)">BL-CSCIGMIN</values>
+                        <values title="Counseling Psychology (CNSPSGMIN)">BL-CNSPSGMIN</values>
+                        <values title="Counseling (CNSLGMIN)">BL-CNSLGMIN</values>
+                        <values title="Creative Writing (CRWRTGMIN)">BL-CRWRTGMIN</values>
+                        <values title="Criminal Justice (CJUSGMIN)">BL-CJUSGMIN</values>
+                        <values title="Cultural Studies (CULSGMIN)">BL-CULSGMIN</values>
+                        <values title="Curriculum and Instruction (CRINGMIN)">BL-CRINGMIN</values>
+                        <values title="Decision Sciences (DECSCIGMIN)">BL-DECSCIGMIN</values>
+                        <values title="Dental Science (DENTSCGMIN)">BL-DENTSCGMIN</values>
+                        <values title="Dutch Studies (DUTCHSGMIN)">BL-DUTCHSGMIN</values>
+                        <values title="Dynamical Sys in Cogn Sci (DYNSCGMIN)">BL-DYNSCGMIN</values>
+                        <values title="Early Music (ERMUSGMIN)">BL-ERMUSGMIN</values>
+                        <values title="East Asian Languages (EALANGMIN)">BL-EALANGMIN</values>
+                        <values title="East Asian Studies (EASTGMIN)">BL-EASTGMIN</values>
+                        <values title="Ecology and Evolu Biology (ECEVBIOGMN)">BL-ECEVBIOGMN</values>
+                        <values title="Economics (ECONGMIN)">BL-ECONGMIN</values>
+                        <values title="Educ Inquiry Methodology (EDINQGMIN)">BL-EDINQGMIN</values>
+                        <values title="Education Law (EDLAWGMIN)">BL-EDLAWGMIN</values>
+                        <values title="Education Policy Studies (EDPOLGMIN)">BL-EDPOLGMIN</values>
+                        <values title="Educational Psychology (EDPSYGMIN)">BL-EDPSYGMIN</values>
+                        <values title="Engl &amp; Germanic Philology (ENGRPGMIN)">BL-ENGRPGMIN</values>
+                        <values title="English Language (ENGLGGMIN)">BL-ENGLGGMIN</values>
+                        <values title="English (ENGGMIN)">BL-ENGGMIN</values>
+                        <values title="Entrepreneurship (ENTRPGMIN)">BL-ENTRPGMIN</values>
+                        <values title="Environmental Science (ENVSCIGMIN)">BL-ENVSCIGMIN</values>
+                        <values title="Environmental Studies (ENSTGMIN)">BL-ENSTGMIN</values>
+                        <values title="Ethnomusicology (ETHNMGMIN)">BL-ETHNMGMIN</values>
+                        <values title="European Studies (EUROGMIN)">BL-EUROGMIN</values>
+                        <values title="Family Psychology (FMLPSYGMIN)">BL-FMLPSYGMIN</values>
+                        <values title="Feminist Critical Studies (FMCRITGMIN)">BL-FMCRITGMIN</values>
+                        <values title="Film Studies (FILMGMIN)">BL-FILMGMIN</values>
+                        <values title="Finance (FINGMIN)">BL-FINGMIN</values>
+                        <values title="Financial Mathematics (FINMTHGMIN)">BL-FINMTHGMIN</values>
+                        <values title="Fine Arts - Art History (FINAHGMIN)">BL-FINAHGMIN</values>
+                        <values title="Folklore (FOLKGMIN)">BL-FOLKGMIN</values>
+                        <values title="Food Studies Anthropology (FDSTAGMIN)">BL-FDSTAGMIN</values>
+                        <values title="French Instruction (FRINSTGMIN)">BL-FRINSTGMIN</values>
+                        <values title="French Linguistics (FRLINGGMIN)">BL-FRLINGGMIN</values>
+                        <values title="French Literature (FRLITGMIN)">BL-FRLITGMIN</values>
+                        <values title="French (FRENGMIN)">BL-FRENGMIN</values>
+                        <values title="Gender Studies (GNDRGMIN)">BL-GNDRGMIN</values>
+                        <values title="Genetics (GENGMIN)">BL-GENGMIN</values>
+                        <values title="Geography (GEOGGMIN)">BL-GEOGGMIN</values>
+                        <values title="Geological Sciences (GEOSCGMIN)">BL-GEOSCGMIN</values>
+                        <values title="Geology (GEOLGMIN)">BL-GEOLGMIN</values>
+                        <values title="German Studies (GRSTGMIN)">BL-GRSTGMIN</values>
+                        <values title="Germanic Studies (GERGMIN)">BL-GERGMIN</values>
+                        <values title="Gerontology (GERNTGMIN)">BL-GERNTGMIN</values>
+                        <values title="Global Studies (GLBLSTGMIN)">BL-GLBLSTGMIN</values>
+                        <values title="Greek (GRKGMIN)">BL-GRKGMIN</values>
+                        <values title="Health Behavior (HLTBEHGMIN)">BL-HLTBEHGMIN</values>
+                        <values title="Health Promotion (HLTPGMIN)">BL-HLTPGMIN</values>
+                        <values title="Higher Education (HIGHEDGMIN)">BL-HIGHEDGMIN</values>
+                        <values title="Hispanic Linguistics (HSPLNGGMIN)">BL-HSPLNGGMIN</values>
+                        <values title="Hist &amp; Philos of Science (HPSCGMIN)">BL-HPSCGMIN</values>
+                        <values title="Hist/Phil/Policy St in Ed (HPPEDGMIN)">BL-HPPEDGMIN</values>
+                        <values title="History of Education (HSTEDGMIN)">BL-HSTEDGMIN</values>
+                        <values title="History (HISTGMIN)">BL-HISTGMIN</values>
+                        <values title="Hum Dimens Glob Envmtl Chg (HDGECGMIN)">BL-HDGECGMIN</values>
+                        <values title="Human Dev &amp; Family Stds (HDFSGMIN)">BL-HDFSGMIN</values>
+                        <values title="Human Evolutionary Studies (HVSTGMIN)">BL-HVSTGMIN</values>
+                        <values title="Human Performance (HMPRFGMIN)">BL-HMPRFGMIN</values>
+                        <values title="Human Rights (HMRTSGMIN)">BL-HMRTSGMIN</values>
+                        <values title="Human Sexuality Education (HSXEDGMIN)">BL-HSXEDGMIN</values>
+                        <values title="Human Sexuality (HMSXLGMIN)">BL-HMSXLGMIN</values>
+                        <values title="Human-Computer Interaction (HUCPTGMIN)">BL-HUCPTGMIN</values>
+                        <values title="Hungarian Studies (HNGRSTGMIN)">BL-HNGRSTGMIN</values>
+                        <values title="India Studies (INSTGMIN)">BL-INSTGMIN</values>
+                        <values title="Individualized Informatics (INDVINFGMN)">BL-INDVINFGMN</values>
+                        <values title="Individualized (INDVGMIN)">BL-INDVGMIN</values>
+                        <values title="Informatics (INFOGMIN)">BL-INFOGMIN</values>
+                        <values title="Information Science (INFSCGMIN)">BL-INFSCGMIN</values>
+                        <values title="Inner Asian &amp; Uralic Studies M (INASURGMIN)">BL-INASURGMIN</values>
+                        <values title="Inquiry Methodology (INQMTHGMIN)">BL-INQMTHGMIN</values>
+                        <values title="Inquiry/Research Methodology M (INQRSGMIN)">BL-INQRSGMIN</values>
+                        <values title="Instructional Systems Tech (ISTGMIN)">BL-ISTGMIN</values>
+                        <values title="Interior Design (INTDSGMIN)">BL-INTDSGMIN</values>
+                        <values title="International &amp; Compar Ed (INTCEDGMIN)">BL-INTCEDGMIN</values>
+                        <values title="Internatnl &amp; Comparative Ed MI (INTCEDMIN)">BL-INTCEDMIN</values>
+                        <values title="Italian (ITALGMIN)">BL-ITALGMIN</values>
+                        <values title="Japanese (JAPAGMIN)">BL-JAPAGMIN</values>
+                        <values title="Jazz Studies (JAZZSTGMIN)">BL-JAZZSTGMIN</values>
+                        <values title="Jewish Studies (JSTUGMIN)">BL-JSTUGMIN</values>
+                        <values title="Journalism (JOURGMIN)">BL-JOURGMIN</values>
+                        <values title="Landscape Studies (LSSTGMIN)">BL-LSSTGMIN</values>
+                        <values title="Language and Speech (LNGSPGMIN)">BL-LNGSPGMIN</values>
+                        <values title="Language Education (LNGEDGMIN)">BL-LNGEDGMIN</values>
+                        <values title="Latin Amer &amp; Caribbean St (LTAMCGMIN)">BL-LTAMCGMIN</values>
+                        <values title="Latin American Studies (LTAMSGMIN)">BL-LTAMSGMIN</values>
+                        <values title="Latin (LATGMIN)">BL-LATGMIN</values>
+                        <values title="Latino Studies (LATSGMIN)">BL-LATSGMIN</values>
+                        <values title="Law and Social Science (LWSSCGMIN)">BL-LWSSCGMIN</values>
+                        <values title="Law (LAWGMIN)">BL-LAWGMIN</values>
+                        <values title="Learning &amp; Development Sci (LRNDVGMIN)">BL-LRNDVGMIN</values>
+                        <values title="Leisure Behavior (LEIBEHGMIN)">BL-LEIBEHGMIN</values>
+                        <values title="Library &amp; Information Sci (LIBINSGMIN)">BL-LIBINSGMIN</values>
+                        <values title="Life Science (LIFSCGMIN)">BL-LIFSCGMIN</values>
+                        <values title="Linguistics (LINGGMIN)">BL-LINGGMIN</values>
+                        <values title="Linguistics: TESOL &amp; Appl (LINGTESGMN)">BL-LINGTESGMN</values>
+                        <values title="Literacy Studies (LITRSGMIN)">BL-LITRSGMIN</values>
+                        <values title="Literary Theory (LTTHRYGMIN)">BL-LTTHRYGMIN</values>
+                        <values title="Literary Translation (LTRANGMIN)">BL-LTRANGMIN</values>
+                        <values title="Literature &amp; Science (LTSCIGMIN)">BL-LTSCIGMIN</values>
+                        <values title="Logic (LOGICGMIN)">BL-LOGICGMIN</values>
+                        <values title="Logic,Language &amp; Computatn (LLCMPTGMIN)">BL-LLCMPTGMIN</values>
+                        <values title="Management Information Sys (MISGMIN)">BL-MISGMIN</values>
+                        <values title="Marketing (MKTGMIN)">BL-MKTGMIN</values>
+                        <values title="Mass Communication (Tel) (MTELGMIN)">BL-MTELGMIN</values>
+                        <values title="Mass Communications (Jour) (MCOMJGMIN)">BL-MCOMJGMIN</values>
+                        <values title="Materials Chemistry (MATCHEGMIN)">BL-MATCHEGMIN</values>
+                        <values title="Math Physics (Math) (MPHYSMGMIN)">BL-MPHYSMGMIN</values>
+                        <values title="Math Physics (Phys) (MPHYSPGMIN)">BL-MPHYSPGMIN</values>
+                        <values title="Mathematics (MATHGMIN)">BL-MATHGMIN</values>
+                        <values title="Medical &amp; Molecular Genetics M (MMGNGMIN)">BL-MMGNGMIN</values>
+                        <values title="Medical Biophysics (MBIPGMIN)">BL-MBIPGMIN</values>
+                        <values title="Medical Neurobiology (MNEURGMIN)">BL-MNEURGMIN</values>
+                        <values title="Medical Sciences (MSCIGMIN)">BL-MSCIGMIN</values>
+                        <values title="Medieval Studies (MESTGMIN)">BL-MESTGMIN</values>
+                        <values title="Microbiology &amp; Immunology (MICRIMGMIN)">BL-MICRIMGMIN</values>
+                        <values title="Microbiology (MICRGMIN)">BL-MICRGMIN</values>
+                        <values title="MIME (Concentration) (MIMEGMIN)">BL-MIMEGMIN</values>
+                        <values title="Modeling in Cognitive Sci (MODCSGMIN)">BL-MODCSGMIN</values>
+                        <values title="Mol Cel &amp; Dev Biol (Biol) (MCDBGMIN)">BL-MCDBGMIN</values>
+                        <values title="Music Education (MSEDGMIN)">BL-MSEDGMIN</values>
+                        <values title="Music History &amp; Literature (MSHLGMIN)">BL-MSHLGMIN</values>
+                        <values title="Music Individualized (MSINDVGMIN)">BL-MSINDVGMIN</values>
+                        <values title="Music Informatics (MUSINFGMIN)">BL-MUSINFGMIN</values>
+                        <values title="Music Information Tech (MSITGMIN)">BL-MSITGMIN</values>
+                        <values title="Music Theory (MSTHRYGMIN)">BL-MSTHRYGMIN</values>
+                        <values title="Musicology (MSCLGYGMIN)">BL-MSCLGYGMIN</values>
+                        <values title="Mythology Studies (MYTHSTGMIN)">BL-MYTHSTGMIN</values>
+                        <values title="Native Amr &amp; Indigenous St (NAISGMIN)">BL-NAISGMIN</values>
+                        <values title="Near Eastern Lang &amp; Cult (NELCGMIN)">BL-NELCGMIN</values>
+                        <values title="Networks &amp; Complex Systems (NCSGMIN)">BL-NCSGMIN</values>
+                        <values title="Neural Sciences (NEUSGMIN)">BL-NEUSGMIN</values>
+                        <values title="Nonprofit Management (NONPRGMIN)">BL-NONPRGMIN</values>
+                        <values title="Nursing Science (NURSCGMIN)">BL-NURSCGMIN</values>
+                        <values title="Nutrition and Dietetics (NTRDIGMIN)">BL-NTRDIGMIN</values>
+                        <values title="Nutrition Science (NTRSCIGMIN)">BL-NTRSCIGMIN</values>
+                        <values title="Operations Management (OPMGTGMIN)">BL-OPMGTGMIN</values>
+                        <values title="Organizational Behavior (ORGBEHGMIN)">BL-ORGBEHGMIN</values>
+                        <values title="Pathology (PATHGMIN)">BL-PATHGMIN</values>
+                        <values title="Performance Studies (PRSTGMIN)">BL-PRSTGMIN</values>
+                        <values title="Pharmacology (PHARGMIN)">BL-PHARGMIN</values>
+                        <values title="Philanthropic Studies (PHLNTGMIN)">BL-PHLNTGMIN</values>
+                        <values title="Philosophy of Education (PHILEDGMIN)">BL-PHILEDGMIN</values>
+                        <values title="Philosophy (PHILGMIN)">BL-PHILGMIN</values>
+                        <values title="Physics (PHYSGMIN)">BL-PHYSGMIN</values>
+                        <values title="Physiological Optics (POPTGMIN)">BL-POPTGMIN</values>
+                        <values title="Physiology (PHYSLGMIN)">BL-PHYSLGMIN</values>
+                        <values title="Plant Science (PLSCGMIN)">BL-PLSCGMIN</values>
+                        <values title="Political Science (POLSGMIN)">BL-POLSGMIN</values>
+                        <values title="Population Studies (POPSTGMIN)">BL-POPSTGMIN</values>
+                        <values title="Portuguese (PORTGMIN)">BL-PORTGMIN</values>
+                        <values title="Psychology (PSYGMIN)">BL-PSYGMIN</values>
+                        <values title="Public Affairs (PUBAFGMIN)">BL-PUBAFGMIN</values>
+                        <values title="Public Health Education (PHLTEDGMIN)">BL-PHLTEDGMIN</values>
+                        <values title="Public Management (PBMGTGMIN)">BL-PBMGTGMIN</values>
+                        <values title="Public Policy (PUBPLGMIN)">BL-PUBPLGMIN</values>
+                        <values title="Pure and Applied Logic (PRAPLGMIN)">BL-PRAPLGMIN</values>
+                        <values title="Quantitative Biology (QBIOLGMIN)">BL-QBIOLGMIN</values>
+                        <values title="Regnl Economic Development (RGECDVGMIN)">BL-RGECDVGMIN</values>
+                        <values title="Religious Studies (RELGMIN)">BL-RELGMIN</values>
+                        <values title="Renaissance Studies (RENSTGMIN)">BL-RENSTGMIN</values>
+                        <values title="Russ &amp; E Eur St w/Lang (REESTLGMIN)">BL-REESTLGMIN</values>
+                        <values title="Russian and East Euro St (REEIGMIN)">BL-REEIGMIN</values>
+                        <values title="Russian Lit &amp; Slavic Ling (RUSLSLGMIN)">BL-RUSLSLGMIN</values>
+                        <values title="Safety Management (SFMGTGMIN)">BL-SFMGTGMIN</values>
+                        <values title="School &amp; College Health Ed (SCHEGMIN)">BL-SCHEGMIN</values>
+                        <values title="School Psychology (SCPSYGMIN)">BL-SCPSYGMIN</values>
+                        <values title="Scientific Computation (SCCOMGMIN)">BL-SCCOMGMIN</values>
+                        <values title="Scientific Computing (SCMPTGMIN)">BL-SCMPTGMIN</values>
+                        <values title="Second Language Studies (SLSTGMIN)">BL-SLSTGMIN</values>
+                        <values title="Security Informatics (SECURGMIN)">BL-SECURGMIN</values>
+                        <values title="Semiotic Studies (SEMSGMIN)">BL-SEMSGMIN</values>
+                        <values title="Slavic Languages and Lit (SLAVGMIN)">BL-SLAVGMIN</values>
+                        <values title="Soc Sci Approaches to Hlth (SSAHLGMIN)">BL-SSAHLGMIN</values>
+                        <values title="Social Foundations of Educ (SFNDEDGMIN)">BL-SFNDEDGMIN</values>
+                        <values title="Social Informatics (SOCINFGMIN)">BL-SOCINFGMIN</values>
+                        <values title="Social Science Rsrch Mthds (SSRMGMIN)">BL-SSRMGMIN</values>
+                        <values title="Social Studies (SSTDGMIN)">BL-SSTDGMIN</values>
+                        <values title="Social Work (SWKGMIN)">BL-SWKGMIN</values>
+                        <values title="Sociology (SOCGMIN)">BL-SOCGMIN</values>
+                        <values title="Spanish Linguistics (SPLGGMIN)">BL-SPLGGMIN</values>
+                        <values title="Spanish Literature (SPLTGMIN)">BL-SPLTGMIN</values>
+                        <values title="Spanish (SPANGMIN)">BL-SPANGMIN</values>
+                        <values title="Special Education (SPEDGMIN)">BL-SPEDGMIN</values>
+                        <values title="Speech &amp; Hearing Sciences (SPHSGMIN)">BL-SPHSGMIN</values>
+                        <values title="Stage Direction for Opera (STDROPGMIN)">BL-STDROPGMIN</values>
+                        <values title="Statistical Sciences (STATSCIMIN)">BL-STATSCIMIN</values>
+                        <values title="Sustainable Energy (SUSTENGMIN)">BL-SUSTENGMIN</values>
+                        <values title="Telecommunications (TELGMIN)">BL-TELGMIN</values>
+                        <values title="TESOL &amp; Appl Linguistics (TAALGMIN)">BL-TAALGMIN</values>
+                        <values title="Text Studies (TEXTSGMIN)">BL-TEXTSGMIN</values>
+                        <values title="Theatre and Drama (THTRGMIN)">BL-THTRGMIN</values>
+                        <values title="Toxicology (TOXIGMIN)">BL-TOXIGMIN</values>
+                        <values title="Urban Affairs (URBAFGMIN)">BL-URBAFGMIN</values>
+                        <values title="Urban Studies (URBNGMIN)">BL-URBNGMIN</values>
+                        <values title="Victorian Studies (VICTGMIN)">BL-VICTGMIN</values>
+                        <values title="Vision Science (VSCIGMIN)">BL-VSCIGMIN</values>
+                        <values title="Visual Sciences (VISSCIGMIN)">BL-VISSCIGMIN</values>
+                        <values title="Voice (VOCEGMIN)">BL-VOCEGMIN</values>
+                        <values title="West European Studies (WEURGMIN)">BL-WEURGMIN</values>
+                        <values title="Yiddish Studies (YDDSHGMIN)">BL-YDDSHGMIN</values>
+                        <values title="Zoology (ZOOLGMIN)">BL-ZOOLGMIN</values>
+                        <values title="**Please Select**">Select</values>
+                        <values title="Eclectic - enter title to the right">Eclectic</values>
+                        <values title="Individualized - enter title to the right">Individualized</values>
+                        <values title="Interdisciplinary - enter title to the right">Interdisciplinary</values>
+                        <values title="Bioethics (BIOETHCMIN)">IN-BIOETHCMIN</values>
+                        <values title="Bioinformatics (BIOINFOMIN)">IN-BIOINFOMIN</values>
+                        <values title="Biomolecular Imaging (BIMLIMGMIN)">IN-BIMLIMGMIN</values>
+                        <values title="Biostatistics (BIOSTATMIN)">IN-BIOSTATMIN</values>
+                        <values title="Cancer Biology (CANBIOLMIN)">IN-CANBIOLMIN</values>
+                        <values title="Cancer Biology (CANBIOMIN)">IN-CANBIOMIN</values>
+                        <values title="Cardiovascular Science (CRDVASCMIN)">IN-CRDVASCMIN</values>
+                        <values title="Cell &amp; Mol Bio of Biom Sys (CELMLBIMIN)">IN-CELMLBIMIN</values>
+                        <values title="Computer Science (COMPSCIMIN)">IN-COMPSCIMIN</values>
+                        <values title="Counselor Education (CSLREDMIN)">IN-CSLREDMIN</values>
+                        <values title="Diabetes &amp; Obesity (DIABOBSMIN)">IN-DIABOBSMIN</values>
+                        <values title="Environmental Health Sci (ENVHLTSMIN)">IN-ENVHLTSMIN</values>
+                        <values title="Epidemiology (EPIDEMMIN)">IN-EPIDEMMIN</values>
+                        <values title="Health Informatics (INFOHLTMIN)">IN-INFOHLTMIN</values>
+                        <values title="Health Policy &amp; Management (HLTPOLMIN)">IN-HLTPOLMIN</values>
+                        <values title="History (HISTGMIN)">IN-HISTGMIN</values>
+                        <values title="Human Computer Interaction (INHCIMIN)">IN-INHCIMIN</values>
+                        <values title="Nonprofit Management (NPRFMGTMIN)">IN-NPRFMGTMIN</values>
+                        <values title="Philanthropic Studies (PHLSTMIN)">IN-PHLSTMIN</values>
+                        <values title="Public Health (PUBHLTHMIN)">IN-PUBHLTHMIN</values>
+                        <values title="Social &amp; Behavioral Sci (SBSMIN)">IN-SBSMIN</values>
+                        <values title="Social Work (SOCWRKMIN)">IN-SOCWRKMIN</values>
+                        <values title="Sociology (SOCIOLMIN)">IN-SOCIOLMIN</values>
+                        <values title="Translational Science (TRANSCMIN)">IN-TRANSCMIN</values>
+                        <values title="Women's Studies (WOSTGMIN)">IN-WOSTGMIN</values>
+                    </display>
+                    <fieldEvaluation>
+                        <xpathexpression>//version[@current='true']/field[@name='minor2']/value</xpathexpression>
+                    </fieldEvaluation>
+                </fieldDef>
+            </searchingConfig>
+        </ruleAttribute>
+
+        <!--  CAMPUS Added by EJN  -->
+        <ruleAttribute>
+            <name>UGSPhDCampusAttribute</name>
+            <className>org.kuali.rice.kew.rule.xmlrouting.StandardGenericXMLRuleAttribute</className>
+            <label>Which Campus?</label>
+            <description>UGS PhD Campus Attribute</description>
+            <type>RuleXmlAttribute</type>
+            <routingConfig>
+                <fieldDef name="campus" title="PhD Campus" workflowType="ALL">
+                    <display>
+                        <type>select refresh</type>
+                        <values title="**Select your campus**">select</values>
+                        <values title="IU Bloomington">BL</values>
+                        <values title="IUPUI Indianapolis">IN</values>
+                    </display>
+                    <validation required="true"/>
+                    <fieldEvaluation>
+                        <xpathexpression>//campus = wf:ruledata('campus')</xpathexpression>
+                    </fieldEvaluation>
+                </fieldDef>
+                <xmlDocumentContent>
+                    <campus>%campus%</campus>
+                </xmlDocumentContent>
+            </routingConfig>
+        </ruleAttribute>
+
+
+        <!-- Candidacy Dept Attributes  -->
+        <ruleAttribute>
+            <name>UGSPhDCandidDept1Attribute</name>
+            <className>org.kuali.rice.kew.rule.xmlrouting.StandardGenericXMLRuleAttribute</className>
+            <label>UGS Department</label>
+            <description>UGS Department/Academic Subject Area Attribute</description>
+            <type>RuleXmlAttribute</type>
+            <routingConfig>
+                <fieldDef name="department1" title="Department/Program" workflowType="ALL">
+                    <display>
+                        <type>select</type>
+                        <values title=""/>
+                        <values title="BL-AAAD - AfriAmer &amp; Dias Studies">BL-AAAD</values>
+                        <values title="BL-AMST - American Studies">BL-AMST</values>
+                        <values title="BL-ANTH - Anthropology">BL-ANTH</values>
+                        <values title="BL-AST - Astronomy">BL-AST</values>
+                        <values title="BL-BIOC - Biochemistry">BL-BIOC</values>
+                        <values title="BL-BIOL - Biology">BL-BIOL</values>
+                        <values title="BL-BUS - Business Doctoral">BL-BUS</values>
+                        <values title="BL-CEUS - Central Eurasian Studies">BL-CEUS</values>
+                        <values title="BL-CHEM - Chemistry">BL-CHEM</values>
+                        <values title="BL-CJUS - Criminal Justice">BL-CJUS</values>
+                        <values title="BL-CLAS - Classical Studies">BL-CLAS</values>
+                        <values title="BL-CMCL - Communication &amp; Culture">BL-CMCL</values>
+                        <values title="BL-CMLT - Comparative Literature">BL-CMLT</values>
+                        <values title="BL-COGS - Cognitive Science">BL-COGS</values>
+                        <values title="BL-CSCI - Computer Science">BL-CSCI</values>
+                        <values title="BL-EALC - East Asian Lang &amp; Cult">BL-EALC</values>
+                        <values title="BL-ECON - Economics">BL-ECON</values>
+                        <values title="BL-EDUCCO - EDUC Counseling and Educational Psychology">BL-EDUCCO</values>
+                        <values title="BL-EDUCCU - EDUC Curriculum and Instruction">BL-EDUCCU</values>
+                        <values title="BL-EDUCIS - EDUC Instructional Systems Technology">BL-EDUCIS</values>
+                        <values title="BL-EDUCLC - EDUC Literacy, Culture and Language Eduction">BL-EDUCLC</values>
+                        <values title="BL-EDUCLP - EDUC Leadership and Policy Studies">BL-EDUCLP</values>
+                        <values title="BL-ENG - English">BL-ENG</values>
+                        <values title="BL-FINA - Fine Arts">BL-FINA</values>
+                        <values title="BL-FOLK - Folklore">BL-FOLK</values>
+                        <values title="BL-FRIT - French and Italian">BL-FRIT</values>
+                        <values title="BL-GEOG - Geography">BL-GEOG</values>
+                        <values title="BL-GEOL - Geological Sciences">BL-GEOL</values>
+                        <values title="BL-GER - Germanic Studies">BL-GER</values>
+                        <values title="BL-GNDR - Gender Studies">BL-GNDR</values>
+                        <values title="BL-HISP - Spanish &amp; Portuguese">BL-HISP</values>
+                        <values title="BL-HIST - History">BL-HIST</values>
+                        <values title="BL-HPSC - Hist &amp; Phil of Science">BL-HPSC</values>
+                        <values title="BL-ILS - Info &amp; Library Sci">BL-ILS</values>
+                        <values title="BL-INFO - Informatics">BL-INFO</values>
+                        <values title="BL-JOUR - Journalism">BL-JOUR</values>
+                        <values title="BL-LAW - Law Grad">BL-LAW</values>
+                        <values title="BL-LING - Linguistics">BL-LING</values>
+                        <values title="BL-MATH - Mathematics">BL-MATH</values>
+                        <values title="BL-MED - Medicine Grad">BL-MED</values>
+                        <values title="BL-MUS - Music Grad">BL-MUS</values>
+                        <values title="BL-NELC - Near Eastern Lang &amp; Cult">BL-NELC</values>
+                        <values title="BL-NEUS - Neural Science">BL-NEUS</values>
+                        <values title="BL-OPT - Optometry Grad">BL-OPT</values>
+                        <values title="BL-PHIL - Philosophy">BL-PHIL</values>
+                        <values title="BL-PHYS - Physics">BL-PHYS</values>
+                        <values title="BL-POLS - Political Science">BL-POLS</values>
+                        <values title="BL-PSY - Psychology">BL-PSY</values>
+                        <values title="BL-REL - Religious Studies">BL-REL</values>
+                        <values title="BL-SLAV - Slavic Languages &amp; Lit">BL-SLAV</values>
+                        <values title="BL-SLST - Second Language Studies">BL-SLST</values>
+                        <values title="BL-SOC - Sociology">BL-SOC</values>
+                        <values title="BL-SPES - Environmental Science">BL-SPES</values>
+                        <values title="BL-SPH - Public Health">BL-SPH</values>
+                        <values title="BL-SPHS - Speech&amp;Hearing Sciences">BL-SPHS</values>
+                        <values title="BL-SPPA - Public Affairs">BL-SPPA</values>
+                        <values title="BL-SPPP - Public Policy">BL-SPPP</values>
+                        <values title="BL-STAT - Statistics">BL-STAT</values>
+                        <values title="BL-TEL - Telecommunications">BL-TEL</values>
+                        <values title="BL-THTR - Theatre &amp; Drama">BL-THTR</values>
+                        <values title="IN-ANAT - Medicine Anatomy">IN-ANAT</values>
+                        <values title="IN-BIOC - Med Biochemistry">IN-BIOC</values>
+                        <values title="IN-BIOP - Med Med Biophysics">IN-BIOP</values>
+                        <values title="IN-BIST - Biostatistics">IN-BIST</values>
+                        <values title="IN-COMM - Liberal Arts Com Studies">IN-COMM</values>
+                        <values title="IN-DENT - Dentistry">IN-DENT</values>
+                        <values title="IN-ECON - Lib Arts Economics">IN-ECON</values>
+                        <values title="IN-EDUC - Education">IN-EDUC</values>
+                        <values title="IN-GEOL - Sch of Sci Geology">IN-GEOL</values>
+                        <values title="IN-INFO - Informatics">IN-INFO</values>
+                        <values title="IN-MEDP - Public Health-Med">IN-MEDP</values>
+                        <values title="IN-MGEN - Med Medical Genetics">IN-MGEN</values>
+                        <values title="IN-MICR - Med Microbiology">IN-MICR</values>
+                        <values title="IN-MNEU - Med Med Neurology">IN-MNEU</values>
+                        <values title="IN-NURS - Nursing">IN-NURS</values>
+                        <values title="IN-PATH - Medicine Pathology">IN-PATH</values>
+                        <values title="IN-PBHL - Public Health">IN-PBHL</values>
+                        <values title="IN-PHAR - Med Pharmacology">IN-PHAR</values>
+                        <values title="IN-PHIL - Philosophy">IN-PHIL</values>
+                        <values title="IN-PHSL - Med Physiology">IN-PHSL</values>
+                        <values title="IN-PHST - Philanthropy">IN-PHST</values>
+                        <values title="IN-SHRS - Hlth &amp; Rehb Sc">IN-SHRS</values>
+                        <values title="IN-SWK - Social Work">IN-SWK</values>
+                    </display>
+                    <validation required="true"/>
+                    <fieldEvaluation>
+                        <xpathexpression>//department1 = wf:ruledata('department1')</xpathexpression>
+                    </fieldEvaluation>
+                </fieldDef>
+                <xmlDocumentContent>
+                    <department1>%department1%</department1>
+                </xmlDocumentContent>
+            </routingConfig>
+        </ruleAttribute>
+
+        <ruleAttribute>
+            <name>UGSPhDCandidDept2Attribute</name>
+            <className>org.kuali.rice.kew.rule.xmlrouting.StandardGenericXMLRuleAttribute</className>
+            <label>UGS Department</label>
+            <description>UGS Department/Academic Subject Area Attribute</description>
+            <type>RuleXmlAttribute</type>
+            <routingConfig>
+                <fieldDef name="department2" title="Department/Program" workflowType="ALL">
+                    <display>
+                        <type>select</type>
+                        <values title=""/>
+                        <values title="BL-AAAD - AfriAmer &amp; Dias Studies">BL-AAAD</values>
+                        <values title="BL-AMST - American Studies">BL-AMST</values>
+                        <values title="BL-ANTH - Anthropology">BL-ANTH</values>
+                        <values title="BL-AST - Astronomy">BL-AST</values>
+                        <values title="BL-BIOC - Biochemistry">BL-BIOC</values>
+                        <values title="BL-BIOL - Biology">BL-BIOL</values>
+                        <values title="BL-BUS - Business Doctoral">BL-BUS</values>
+                        <values title="BL-CEUS - Central Eurasian Studies">BL-CEUS</values>
+                        <values title="BL-CHEM - Chemistry">BL-CHEM</values>
+                        <values title="BL-CJUS - Criminal Justice">BL-CJUS</values>
+                        <values title="BL-CLAS - Classical Studies">BL-CLAS</values>
+                        <values title="BL-CMCL - Communication &amp; Culture">BL-CMCL</values>
+                        <values title="BL-CMLT - Comparative Literature">BL-CMLT</values>
+                        <values title="BL-COGS - Cognitive Science">BL-COGS</values>
+                        <values title="BL-CSCI - Computer Science">BL-CSCI</values>
+                        <values title="BL-EALC - East Asian Lang &amp; Cult">BL-EALC</values>
+                        <values title="BL-ECON - Economics">BL-ECON</values>
+                        <values title="BL-EDUCCO - EDUC Counseling and Educational Psychology">BL-EDUCCO</values>
+                        <values title="BL-EDUCCU - EDUC Curriculum and Instruction">BL-EDUCCU</values>
+                        <values title="BL-EDUCIS - EDUC Instructional Systems Technology">BL-EDUCIS</values>
+                        <values title="BL-EDUCLC - EDUC Literacy, Culture and Language Eduction">BL-EDUCLC</values>
+                        <values title="BL-EDUCLP - EDUC Leadership and Policy Studies">BL-EDUCLP</values>
+                        <values title="BL-ENG - English">BL-ENG</values>
+                        <values title="BL-FINA - Fine Arts">BL-FINA</values>
+                        <values title="BL-FOLK - Folklore">BL-FOLK</values>
+                        <values title="BL-FRIT - French and Italian">BL-FRIT</values>
+                        <values title="BL-GEOG - Geography">BL-GEOG</values>
+                        <values title="BL-GEOL - Geological Sciences">BL-GEOL</values>
+                        <values title="BL-GER - Germanic Studies">BL-GER</values>
+                        <values title="BL-GNDR - Gender Studies">BL-GNDR</values>
+                        <values title="BL-HISP - Spanish &amp; Portuguese">BL-HISP</values>
+                        <values title="BL-HIST - History">BL-HIST</values>
+                        <values title="BL-HPSC - Hist &amp; Phil of Science">BL-HPSC</values>
+                        <values title="BL-ILS - Info &amp; Library Sci">BL-ILS</values>
+                        <values title="BL-INFO - Informatics">BL-INFO</values>
+                        <values title="BL-JOUR - Journalism">BL-JOUR</values>
+                        <values title="BL-LAW - Law Grad">BL-LAW</values>
+                        <values title="BL-LING - Linguistics">BL-LING</values>
+                        <values title="BL-MATH - Mathematics">BL-MATH</values>
+                        <values title="BL-MED - Medicine Grad">BL-MED</values>
+                        <values title="BL-MUS - Music Grad">BL-MUS</values>
+                        <values title="BL-NELC - Near Eastern Lang &amp; Cult">BL-NELC</values>
+                        <values title="BL-NEUS - Neural Science">BL-NEUS</values>
+                        <values title="BL-OPT - Optometry Grad">BL-OPT</values>
+                        <values title="BL-PHIL - Philosophy">BL-PHIL</values>
+                        <values title="BL-PHYS - Physics">BL-PHYS</values>
+                        <values title="BL-POLS - Political Science">BL-POLS</values>
+                        <values title="BL-PSY - Psychology">BL-PSY</values>
+                        <values title="BL-REL - Religious Studies">BL-REL</values>
+                        <values title="BL-SLAV - Slavic Languages &amp; Lit">BL-SLAV</values>
+                        <values title="BL-SLST - Second Language Studies">BL-SLST</values>
+                        <values title="BL-SOC - Sociology">BL-SOC</values>
+                        <values title="BL-SPES - Environmental Science">BL-SPES</values>
+                        <values title="BL-SPH - Public Health">BL-SPH</values>
+                        <values title="BL-SPHS - Speech&amp;Hearing Sciences">BL-SPHS</values>
+                        <values title="BL-SPPA - Public Affairs">BL-SPPA</values>
+                        <values title="BL-SPPP - Public Policy">BL-SPPP</values>
+                        <values title="BL-STAT - Statistics">BL-STAT</values>
+                        <values title="BL-TEL - Telecommunications">BL-TEL</values>
+                        <values title="BL-THTR - Theatre &amp; Drama">BL-THTR</values>
+                        <values title="IN-ANAT - Medicine Anatomy">IN-ANAT</values>
+                        <values title="IN-BIOC - Med Biochemistry">IN-BIOC</values>
+                        <values title="IN-BIOP - Med Med Biophysics">IN-BIOP</values>
+                        <values title="IN-BIST - Biostatistics">IN-BIST</values>
+                        <values title="IN-COMM - Liberal Arts Com Studies">IN-COMM</values>
+                        <values title="IN-DENT - Dentistry">IN-DENT</values>
+                        <values title="IN-ECON - Lib Arts Economics">IN-ECON</values>
+                        <values title="IN-EDUC - Education">IN-EDUC</values>
+                        <values title="IN-GEOL - Sch of Sci Geology">IN-GEOL</values>
+                        <values title="IN-INFO - Informatics">IN-INFO</values>
+                        <values title="IN-MEDP - Public Health-Med">IN-MEDP</values>
+                        <values title="IN-MGEN - Med Medical Genetics">IN-MGEN</values>
+                        <values title="IN-MICR - Med Microbiology">IN-MICR</values>
+                        <values title="IN-MNEU - Med Med Neurology">IN-MNEU</values>
+                        <values title="IN-NURS - Nursing">IN-NURS</values>
+                        <values title="IN-PATH - Medicine Pathology">IN-PATH</values>
+                        <values title="IN-PBHL - Public Health">IN-PBHL</values>
+                        <values title="IN-PHAR - Med Pharmacology">IN-PHAR</values>
+                        <values title="IN-PHIL - Philosophy">IN-PHIL</values>
+                        <values title="IN-PHSL - Med Physiology">IN-PHSL</values>
+                        <values title="IN-PHST - Philanthropy">IN-PHST</values>
+                        <values title="IN-SHRS - Hlth &amp; Rehb Sc">IN-SHRS</values>
+                        <values title="IN-SWK - Social Work">IN-SWK</values>
+                    </display>
+                    <validation required="true"/>
+                    <fieldEvaluation>
+                        <xpathexpression>//department2 = wf:ruledata('department2')</xpathexpression>
+                    </fieldEvaluation>
+                </fieldDef>
+                <xmlDocumentContent>
+                    <department2>%department2%</department2>
+                </xmlDocumentContent>
+            </routingConfig>
+        </ruleAttribute>
+        <ruleAttribute>
+            <name>UGSPhDCandidDept1SearchAttribute</name>
+            <className>org.kuali.rice.kew.docsearch.xml.StandardGenericXMLSearchableAttribute</className>
+            <label>UGS Department 1</label>
+            <description>UGS Department/Academic Subject Area Search Attribute</description>
+            <type>SearchableXmlAttribute</type>
+            <searchingConfig>
+                <fieldDef name="department1" title="Department/Program 1" workflowType="ALL">
+                    <display>
+                        <type>select</type>
+                        <values title=""/>
+                        <values title="BL-AAAD - AfriAmer &amp; Dias Studies">BL-AAAD</values>
+                        <values title="BL-AMST - American Studies">BL-AMST</values>
+                        <values title="BL-ANTH - Anthropology">BL-ANTH</values>
+                        <values title="BL-AST - Astronomy">BL-AST</values>
+                        <values title="BL-BIOC - Biochemistry">BL-BIOC</values>
+                        <values title="BL-BIOL - Biology">BL-BIOL</values>
+                        <values title="BL-BUS - Business Doctoral">BL-BUS</values>
+                        <values title="BL-CEUS - Central Eurasian Studies">BL-CEUS</values>
+                        <values title="BL-CHEM - Chemistry">BL-CHEM</values>
+                        <values title="BL-CJUS - Criminal Justice">BL-CJUS</values>
+                        <values title="BL-CLAS - Classical Studies">BL-CLAS</values>
+                        <values title="BL-CMCL - Communication &amp; Culture">BL-CMCL</values>
+                        <values title="BL-CMLT - Comparative Literature">BL-CMLT</values>
+                        <values title="BL-COGS - Cognitive Science">BL-COGS</values>
+                        <values title="BL-CSCI - Computer Science">BL-CSCI</values>
+                        <values title="BL-EALC - East Asian Lang &amp; Cult">BL-EALC</values>
+                        <values title="BL-ECON - Economics">BL-ECON</values>
+                        <values title="BL-EDUCCO - EDUC Counseling and Educational Psychology">BL-EDUCCO</values>
+                        <values title="BL-EDUCCU - EDUC Curriculum and Instruction">BL-EDUCCU</values>
+                        <values title="BL-EDUCIS - EDUC Instructional Systems Technology">BL-EDUCIS</values>
+                        <values title="BL-EDUCLC - EDUC Literacy, Culture and Language Eduction">BL-EDUCLC</values>
+                        <values title="BL-EDUCLP - EDUC Leadership and Policy Studies">BL-EDUCLP</values>
+                        <values title="BL-ENG - English">BL-ENG</values>
+                        <values title="BL-FINA - Fine Arts">BL-FINA</values>
+                        <values title="BL-FOLK - Folklore">BL-FOLK</values>
+                        <values title="BL-FRIT - French and Italian">BL-FRIT</values>
+                        <values title="BL-GEOG - Geography">BL-GEOG</values>
+                        <values title="BL-GEOL - Geological Sciences">BL-GEOL</values>
+                        <values title="BL-GER - Germanic Studies">BL-GER</values>
+                        <values title="BL-GNDR - Gender Studies">BL-GNDR</values>
+                        <values title="BL-HISP - Spanish &amp; Portuguese">BL-HISP</values>
+                        <values title="BL-HIST - History">BL-HIST</values>
+                        <values title="BL-HPSC - Hist &amp; Phil of Science">BL-HPSC</values>
+                        <values title="BL-ILS - Info &amp; Library Sci">BL-ILS</values>
+                        <values title="BL-INFO - Informatics">BL-INFO</values>
+                        <values title="BL-JOUR - Journalism">BL-JOUR</values>
+                        <values title="BL-LAW - Law Grad">BL-LAW</values>
+                        <values title="BL-LING - Linguistics">BL-LING</values>
+                        <values title="BL-MATH - Mathematics">BL-MATH</values>
+                        <values title="BL-MED - Medicine Grad">BL-MED</values>
+                        <values title="BL-MUS - Music Grad">BL-MUS</values>
+                        <values title="BL-NELC - Near Eastern Lang &amp; Cult">BL-NELC</values>
+                        <values title="BL-NEUS - Neural Science">BL-NEUS</values>
+                        <values title="BL-OPT - Optometry Grad">BL-OPT</values>
+                        <values title="BL-PHIL - Philosophy">BL-PHIL</values>
+                        <values title="BL-PHYS - Physics">BL-PHYS</values>
+                        <values title="BL-POLS - Political Science">BL-POLS</values>
+                        <values title="BL-PSY - Psychology">BL-PSY</values>
+                        <values title="BL-REL - Religious Studies">BL-REL</values>
+                        <values title="BL-SLAV - Slavic Languages &amp; Lit">BL-SLAV</values>
+                        <values title="BL-SLST - Second Language Studies">BL-SLST</values>
+                        <values title="BL-SOC - Sociology">BL-SOC</values>
+                        <values title="BL-SPES - Environmental Science">BL-SPES</values>
+                        <values title="BL-SPH - Public Health">BL-SPH</values>
+                        <values title="BL-SPHS - Speech&amp;Hearing Sciences">BL-SPHS</values>
+                        <values title="BL-SPPA - Public Affairs">BL-SPPA</values>
+                        <values title="BL-SPPP - Public Policy">BL-SPPP</values>
+                        <values title="BL-STAT - Statistics">BL-STAT</values>
+                        <values title="BL-TEL - Telecommunications">BL-TEL</values>
+                        <values title="BL-THTR - Theatre &amp; Drama">BL-THTR</values>
+                        <values title="IN-ANAT - Medicine Anatomy">IN-ANAT</values>
+                        <values title="IN-BIOC - Med Biochemistry">IN-BIOC</values>
+                        <values title="IN-BIOP - Med Med Biophysics">IN-BIOP</values>
+                        <values title="IN-BIST - Biostatistics">IN-BIST</values>
+                        <values title="IN-COMM - Liberal Arts Com Studies">IN-COMM</values>
+                        <values title="IN-DENT - Dentistry">IN-DENT</values>
+                        <values title="IN-ECON - Lib Arts Economics">IN-ECON</values>
+                        <values title="IN-EDUC - Education">IN-EDUC</values>
+                        <values title="IN-GEOL - Sch of Sci Geology">IN-GEOL</values>
+                        <values title="IN-INFO - Informatics">IN-INFO</values>
+                        <values title="IN-MEDP - Public Health-Med">IN-MEDP</values>
+                        <values title="IN-MGEN - Med Medical Genetics">IN-MGEN</values>
+                        <values title="IN-MICR - Med Microbiology">IN-MICR</values>
+                        <values title="IN-MNEU - Med Med Neurology">IN-MNEU</values>
+                        <values title="IN-NURS - Nursing">IN-NURS</values>
+                        <values title="IN-PATH - Medicine Pathology">IN-PATH</values>
+                        <values title="IN-PBHL - Public Health">IN-PBHL</values>
+                        <values title="IN-PHAR - Med Pharmacology">IN-PHAR</values>
+                        <values title="IN-PHIL - Philosophy">IN-PHIL</values>
+                        <values title="IN-PHSL - Med Physiology">IN-PHSL</values>
+                        <values title="IN-PHST - Philanthropy">IN-PHST</values>
+                        <values title="IN-SHRS - Hlth &amp; Rehb Sc">IN-SHRS</values>
+                        <values title="IN-SWK - Social Work">IN-SWK</values>
+                    </display>
+                    <fieldEvaluation>
+                        <xpathexpression>//version[@current='true']/field[@name='department1']/value</xpathexpression>
+                    </fieldEvaluation>
+                </fieldDef>
+            </searchingConfig>
+        </ruleAttribute>
+        <ruleAttribute>
+            <name>UGSPhDCandidDept2SearchAttribute</name>
+            <className>org.kuali.rice.kew.docsearch.xml.StandardGenericXMLSearchableAttribute</className>
+            <label>UGS Department 2</label>
+            <description>UGS Department/Academic Subject Area Search Attribute</description>
+            <type>SearchableXmlAttribute</type>
+            <searchingConfig>
+                <fieldDef name="department2" title="Department/Program 2" workflowType="ALL">
+                    <display>
+                        <type>select</type>
+                        <values title=""/>
+                        <values title="BL-AAAD - AfriAmer &amp; Dias Studies">BL-AAAD</values>
+                        <values title="BL-AMST - American Studies">BL-AMST</values>
+                        <values title="BL-ANTH - Anthropology">BL-ANTH</values>
+                        <values title="BL-AST - Astronomy">BL-AST</values>
+                        <values title="BL-BIOC - Biochemistry">BL-BIOC</values>
+                        <values title="BL-BIOL - Biology">BL-BIOL</values>
+                        <values title="BL-BUS - Business Doctoral">BL-BUS</values>
+                        <values title="BL-CEUS - Central Eurasian Studies">BL-CEUS</values>
+                        <values title="BL-CHEM - Chemistry">BL-CHEM</values>
+                        <values title="BL-CJUS - Criminal Justice">BL-CJUS</values>
+                        <values title="BL-CLAS - Classical Studies">BL-CLAS</values>
+                        <values title="BL-CMCL - Communication &amp; Culture">BL-CMCL</values>
+                        <values title="BL-CMLT - Comparative Literature">BL-CMLT</values>
+                        <values title="BL-COGS - Cognitive Science">BL-COGS</values>
+                        <values title="BL-CSCI - Computer Science">BL-CSCI</values>
+                        <values title="BL-EALC - East Asian Lang &amp; Cult">BL-EALC</values>
+                        <values title="BL-ECON - Economics">BL-ECON</values>
+                        <values title="BL-EDUCCO - EDUC Counseling and Educational Psychology">BL-EDUCCO</values>
+                        <values title="BL-EDUCCU - EDUC Curriculum and Instruction">BL-EDUCCU</values>
+                        <values title="BL-EDUCIS - EDUC Instructional Systems Technology">BL-EDUCIS</values>
+                        <values title="BL-EDUCLC - EDUC Literacy, Culture and Language Eduction">BL-EDUCLC</values>
+                        <values title="BL-EDUCLP - EDUC Leadership and Policy Studies">BL-EDUCLP</values>
+                        <values title="BL-ENG - English">BL-ENG</values>
+                        <values title="BL-FINA - Fine Arts">BL-FINA</values>
+                        <values title="BL-FOLK - Folklore">BL-FOLK</values>
+                        <values title="BL-FRIT - French and Italian">BL-FRIT</values>
+                        <values title="BL-GEOG - Geography">BL-GEOG</values>
+                        <values title="BL-GEOL - Geological Sciences">BL-GEOL</values>
+                        <values title="BL-GER - Germanic Studies">BL-GER</values>
+                        <values title="BL-GNDR - Gender Studies">BL-GNDR</values>
+                        <values title="BL-HISP - Spanish &amp; Portuguese">BL-HISP</values>
+                        <values title="BL-HIST - History">BL-HIST</values>
+                        <values title="BL-HPSC - Hist &amp; Phil of Science">BL-HPSC</values>
+                        <values title="BL-ILS - Info &amp; Library Sci">BL-ILS</values>
+                        <values title="BL-INFO - Informatics">BL-INFO</values>
+                        <values title="BL-JOUR - Journalism">BL-JOUR</values>
+                        <values title="BL-LAW - Law Grad">BL-LAW</values>
+                        <values title="BL-LING - Linguistics">BL-LING</values>
+                        <values title="BL-MATH - Mathematics">BL-MATH</values>
+                        <values title="BL-MED - Medicine Grad">BL-MED</values>
+                        <values title="BL-MUS - Music Grad">BL-MUS</values>
+                        <values title="BL-NELC - Near Eastern Lang &amp; Cult">BL-NELC</values>
+                        <values title="BL-NEUS - Neural Science">BL-NEUS</values>
+                        <values title="BL-OPT - Optometry Grad">BL-OPT</values>
+                        <values title="BL-PHIL - Philosophy">BL-PHIL</values>
+                        <values title="BL-PHYS - Physics">BL-PHYS</values>
+                        <values title="BL-POLS - Political Science">BL-POLS</values>
+                        <values title="BL-PSY - Psychology">BL-PSY</values>
+                        <values title="BL-REL - Religious Studies">BL-REL</values>
+                        <values title="BL-SLAV - Slavic Languages &amp; Lit">BL-SLAV</values>
+                        <values title="BL-SLST - Second Language Studies">BL-SLST</values>
+                        <values title="BL-SOC - Sociology">BL-SOC</values>
+                        <values title="BL-SPES - Environmental Science">BL-SPES</values>
+                        <values title="BL-SPH - Public Health">BL-SPH</values>
+                        <values title="BL-SPHS - Speech&amp;Hearing Sciences">BL-SPHS</values>
+                        <values title="BL-SPPA - Public Affairs">BL-SPPA</values>
+                        <values title="BL-SPPP - Public Policy">BL-SPPP</values>
+                        <values title="BL-STAT - Statistics">BL-STAT</values>
+                        <values title="BL-TEL - Telecommunications">BL-TEL</values>
+                        <values title="BL-THTR - Theatre &amp; Drama">BL-THTR</values>
+                        <values title="IN-ANAT - Medicine Anatomy">IN-ANAT</values>
+                        <values title="IN-BIOC - Med Biochemistry">IN-BIOC</values>
+                        <values title="IN-BIOP - Med Med Biophysics">IN-BIOP</values>
+                        <values title="IN-BIST - Biostatistics">IN-BIST</values>
+                        <values title="IN-COMM - Liberal Arts Com Studies">IN-COMM</values>
+                        <values title="IN-DENT - Dentistry">IN-DENT</values>
+                        <values title="IN-ECON - Lib Arts Economics">IN-ECON</values>
+                        <values title="IN-EDUC - Education">IN-EDUC</values>
+                        <values title="IN-GEOL - Sch of Sci Geology">IN-GEOL</values>
+                        <values title="IN-INFO - Informatics">IN-INFO</values>
+                        <values title="IN-MEDP - Public Health-Med">IN-MEDP</values>
+                        <values title="IN-MGEN - Med Medical Genetics">IN-MGEN</values>
+                        <values title="IN-MICR - Med Microbiology">IN-MICR</values>
+                        <values title="IN-MNEU - Med Med Neurology">IN-MNEU</values>
+                        <values title="IN-NURS - Nursing">IN-NURS</values>
+                        <values title="IN-PATH - Medicine Pathology">IN-PATH</values>
+                        <values title="IN-PBHL - Public Health">IN-PBHL</values>
+                        <values title="IN-PHAR - Med Pharmacology">IN-PHAR</values>
+                        <values title="IN-PHIL - Philosophy">IN-PHIL</values>
+                        <values title="IN-PHSL - Med Physiology">IN-PHSL</values>
+                        <values title="IN-PHST - Philanthropy">IN-PHST</values>
+                        <values title="IN-SHRS - Hlth &amp; Rehb Sc">IN-SHRS</values>
+                        <values title="IN-SWK - Social Work">IN-SWK</values>
+                    </display>
+                    <fieldEvaluation>
+                        <xpathexpression>//version[@current='true']/field[@name='department2']/value</xpathexpression>
+                    </fieldEvaluation>
+                </fieldDef>
+            </searchingConfig>
+        </ruleAttribute>
+    </ruleAttributes>
+
+
+
+</data>

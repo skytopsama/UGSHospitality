@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="ns:workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="ns:workflow resource:WorkflowData">
+    <groups xmlns="ns:workflow/Group" xsi:schemaLocation="ns:workflow/Group resource:Group">
+	
+	<group>
+		<name>UGS.BL.DGS.BIOL</name>
+		<namespace>UGS.EXCEPTION</namespace>
+		<description>Exception BL-BIOL DGS</description>
+		<active>true</active>
+		<type>
+			<namespace>KUALI</namespace>
+			<name>Default</name>
+		</type>
+		<members>
+			<principalName>drdamico</principalName>
+		</members>
+	</group>
+	<group>
+		<name>UGS.BL.SECREC.BIOL</name>
+		<namespace>UGS.EXCEPTION</namespace>
+		<description>Exception BL-BIOL SECREC</description>
+		<active>true</active>
+		<type>
+			<namespace>KUALI</namespace>
+			<name>Default</name>
+		</type>
+		<members>
+			<principalName>drdamico</principalName>
+		</members>
+	</group>
+<group>
+    <name>UGS.Exception.UGS2.BL</name>
+    <namespace>UGS.EXCEPTION</namespace>
+    <description>Exception final approval node for BL</description>
+    <active>true</active>
+    <type>
+        <namespace>KUALI</namespace>
+        <name>Default</name>
+    </type>
+    <members>
+        <principalName>gerbers</principalName>
+    </members>
+</group>
+        <group>
+            <name>UGS.Exception.UGS2.IN</name>
+            <namespace>UGS.EXCEPTION</namespace>
+            <description>Exception final approval node for IN</description>
+            <active>true</active>
+            <type>
+                <namespace>KUALI</namespace>
+                <name>Default</name>
+            </type>
+            <members>
+                <principalName>dbark</principalName>
+            </members>
+        </group>
+        <group>
+            <name>UGS.Exception.UGS1.BL</name>
+            <namespace>UGS.EXCEPTION</namespace>
+            <description>Exception first UGS approval node for BL</description>
+            <active>true</active>
+            <type>
+                <namespace>KUALI</namespace>
+                <name>Default</name>
+            </type>
+            <members>
+                <principalName>gerbers</principalName>
+            </members>
+        </group>
+        <group>
+            <name>UGS.Exception.UGS1.IN</name>
+            <namespace>UGS.EXCEPTION</namespace>
+            <description>Exception first UGS approval node for IN</description>
+            <active>true</active>
+            <type>
+                <namespace>KUALI</namespace>
+                <name>Default</name>
+            </type>
+            <members>
+                <principalName>dbark</principalName>
+            </members>
+        </group>
+        <group>
+            <name>UGS.Exception.AssociateDean</name>
+            <namespace>UGS.EXCEPTION</namespace>
+            <description>Exception approval node for Associate Dean (David)</description>
+            <active>true</active>
+            <type>
+                <namespace>KUALI</namespace>
+                <name>Default</name>
+            </type>
+            <members>
+                <principalName>daleked</principalName>
+            </members>
+        </group>
+        <group>
+            <name>UGS.Exception.AssistantDean</name>
+            <namespace>UGS.EXCEPTION</namespace>
+            <description>Exception approval node for Assistant Dean (Jeff)</description>
+            <active>true</active>
+            <type>
+                <namespace>KUALI</namespace>
+                <name>Default</name>
+            </type>
+            <members>
+                <principalName>jruther</principalName>
+            </members>
+        </group>
+        
+    </groups>
+</data>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="ns:workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="ns:workflow resource:WorkflowData">
+  <documentTypes xmlns="ns:workflow/DocumentType" xsi:schemaLocation="ns:workflow/DocumentType resource:DocumentType">
+    <documentType>
+      <name>UGS.ExceptionMinor.Doctype</name>
+	  <parent>UGS.Exception.Doctype</parent>
+      <description>UGS Exception for Individualized Minor</description>
+      <label>UGS.ExceptionMinor.Doctype</label>
+      <postProcessorName>org.kuali.rice.edl.framework.workflow.EDocLiteDatabasePostProcessor</postProcessorName>
+      <superUserGroupName namespace="UGS.GENERAL">UGS.SuperUsers</superUserGroupName>
+      <blanketApproveGroupName namespace="KUALI">WorkflowAdmin</blanketApproveGroupName>
+      <reportingGroupName namespace="UGS.GENERAL">UGS.SuperUsers</reportingGroupName>
+      <defaultExceptionGroupName namespace="UGS.GENERAL">UGS.SuperUsers</defaultExceptionGroupName>
+      <docHandler>${workflow.url}/EDocLite</docHandler>
+    </documentType>
+  </documentTypes>
+</data>

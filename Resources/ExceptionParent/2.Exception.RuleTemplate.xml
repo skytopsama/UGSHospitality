@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="ns:workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="ns:workflow resource:WorkflowData">
+  <ruleTemplates xmlns="ns:workflow/RuleTemplate"
+    xsi:schemaLocation="ns:workflow/RuleTemplate resource:RuleTemplate">
+    <!--Department 1-->
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Exception.Department1.SECREC</name>
+      <description>Exception - Department 1 Routing</description>
+      <attributes>
+        <attribute>
+          <name>UGSExceptionDept1Attribute</name>
+          <required>true</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+
+    <!--Department 2-->
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Exception.Department2.SECREC</name>
+      <description>Exception - Department 2 Routing</description>
+      <attributes>
+        <attribute>
+          <name>UGSExceptionDept2Attribute</name>
+          <required>false</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+
+	<!-- Minor Rep 1 -->
+	<ruleTemplate allowOverwrite="true">
+      <name>UGS.Exception.Minor1Rep</name>
+      <description>UGS Exception optional minor1 routing</description>
+      <attributes>
+        <attribute>
+          <name>UGSExceptionMinorRep1NetworkIDRoleAttribute</name>
+          <required>false</required>
+        </attribute>
+		<!-- 
+        <attribute>
+          <name>UGSExceptionMinorRep1NetID</name>
+          <required>false</required>
+		  </attribute>
+			-->
+      </attributes>
+    </ruleTemplate>
+
+	<!-- Minor Rep 2 -->
+	<ruleTemplate allowOverwrite="true">
+      <name>UGS.Exception.Minor2Rep</name>
+      <description>UGS Exception optional minor2 routing</description>
+      <attributes>
+        <attribute>
+          <name>UGSExceptionMinorRep2NetworkIDRoleAttribute</name>
+          <required>false</required>
+        </attribute>
+		<!-- 
+        <attribute>
+          <name>UGSExceptionMinorRep2NetID</name>
+          <required>false</required>
+        </attribute>
+		-->
+      </attributes>
+    </ruleTemplate>
+	
+    <!-- Grad Advisor-->
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Exception.GradAdvisor</name>
+      <description>Exception - Grad Advisor Routing</description>
+      <attributes>
+        <attribute>
+          <name>UGSExceptionGradAdvisorNetworkIdRoleAttribute</name>
+          <required>false</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    
+    <!-- Department 1 DGS-->
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Exception.Department1.DGS</name>
+      <description>Exception - Department 1 DGS FYI Routing</description>
+      <attributes>
+        <attribute>
+          <name>UGSExceptionDept1Attribute</name>
+          <required>false</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+
+    <!-- Department 2 DGS-->
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Exception.Department2.DGS</name>
+      <description>Exception - Department 2 DGS Routing</description>
+      <attributes>
+        <attribute>
+          <name>UGSExceptionDept2Attribute</name>
+          <required>false</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+	
+	<!-- UGS Review before dean-->
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Exception.UGS1</name>
+      <description>UGS Recorder Review and Approval</description>
+      <attributes>
+        <attribute>
+          <name>UGSCampusAttribute</name>
+          <required>true</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+
+    <!-- Assistant Dean-->
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Exception.AssistantDean</name>
+      <description>Exception - Assistant Dean Routing (Jeff)</description>
+      <attributes>
+        <attribute>
+          <name>UGSExceptionAssistantDeanAttribute</name>
+          <required>false</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+
+    <!-- Associate Dean -->    
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Exception.AssociateDean</name>
+      <description>Exception - Associate Dean Routing (David)</description>
+      <attributes>
+        <attribute>
+          <name>UGSExceptionAssociateDeanAttribute</name>
+          <required>false</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    
+<!-- ____________________________________________________________________________________ -->
+
+    <!-- UGS Review and Approval-->
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Exception.UGS2</name>
+      <description>UGS Recorder Review and Approval</description>
+      <attributes>
+        <attribute>
+          <name>UGSCampusAttribute</name>
+          <required>true</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+
+    <!-- Initiator FYI -->
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Exception.InitiatorFYI</name>
+      <description>UGS Nomination to Candidacy - Initiator notification of processed</description>
+      <attributes>
+        <attribute>
+          <name>UGSExceptionInitiatorAttribute</name>
+          <required>true</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    
+    <!--Department 1 SECREC FYI-->
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Exception.Department1.SECREC.FYI</name>
+      <description>Exception - Department 1 FYI Routing</description>
+      <attributes>
+        <attribute>
+          <name>UGSExceptionDept1Attribute</name>
+          <required>true</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    
+    <!--Department 2 SECREC FYI-->
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Exception.Department2.SECREC.FYI</name>
+      <description>Exception - Department 2 FYI Routing</description>
+      <attributes>
+        <attribute>
+          <name>UGSExceptionDept2Attribute</name>
+          <required>false</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+
+  </ruleTemplates>
+</data>

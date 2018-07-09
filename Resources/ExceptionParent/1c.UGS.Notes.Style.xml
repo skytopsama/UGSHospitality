@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="ns:workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="ns:workflow resource:WorkflowData">
+    <styles xmlns="ns:workflow/Style" xsi:schemaLocation="ns:workflow/Style resource:Style">
+        <style name="UGS-bootstrap-notes">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:edl-func="xalan://org.kuali.rice.edl.framework.util.EDLFunctions"
+                xmlns:xalan="http://xml.apache.org/xalan" version="1.0">
+                <xsl:output encoding="UTF-8" method="html"/>
+                
+                <xsl:template name="notes">
+                    <xsl:param name="commentFieldDef" select="'addText'"/>
+                    <h3>Documentation <small> How to Attach a Document</small></h3>
+                    <p>
+                        You can attach a file below by clicking the 'attach file' button, and then selecting the file you want to attach. This will be stored and presented as part of your 'comment'. 
+                        <br/><em>You MUST click the 'save note/attachment' button in order to save this note and/or attachment.</em> Your comment will appear toward the bottom of this form under the 'View Notes' label.
+                    </p>
+                    
+                    <div class="form-group col-lg-7 col-lg-offset-1" id="Notes_Section">
+                        <label class="control-label" for="{$commentFieldDef}">Comments:</label>
+                        <textarea class="form-control rows=7" id="{$commentFieldDef}" name="{$commentFieldDef}">
+                        </textarea>
+                        
+                        <div>
+                            <input name="file" type="file" style="display: inline-block; position: relative; left: 84px;">
+                                <xsl:if test="$noteReadOnly = 'true'">
+                                    <xsl:attribute name="disabled">disabled</xsl:attribute>
+                                </xsl:if>
+                            </input>
+                            <button type="button" class="btn btn-default btn-md" style="display: inline-block; position: relative; left: 60px;" onclick="document.forms[0].methodToCall.value='save'; document.forms[0].submit();">save note/attachment</button>
+                        </div>
+                    </div>
+                   
+                    <xsl:if test="//NoteForm">
+                        <xsl:variable name="showEdit" select="//NoteForm/showEdit"/>
+                        <xsl:variable name="showAdd" select="//NoteForm/showAdd"/>
+                        <input xmlns="" name="showEdit" type="hidden">
+                            <xsl:attribute name="value">
+                                <xsl:value-of select="//NoteForm/showEdit"/>
+                            </xsl:attribute>
+                        </input>
+                        <input xmlns="" name="showAdd" type="hidden">
+                            <xsl:attribute name="value">
+                                <xsl:value-of select="//NoteForm/showAdd"/>
+                            </xsl:attribute>
+                        </input>
+                        <input xmlns="" name="methodToCall" type="hidden"/>
+                        <input xmlns="" name="sortNotes" type="hidden">
+                            <xsl:attribute name="value">
+                                <xsl:value-of select="//NoteForm/sortNotes"/>
+                            </xsl:attribute>
+                        </input>
+                        <input xmlns="" name="noteIdNumber" type="hidden">
+                            <xsl:attribute name="value">
+                                <xsl:value-of select="//NoteForm/noteIdNumber"/>
+                            </xsl:attribute>
+                        </input>
+                                <xsl:if test="$showAdd = 'true'">
+                                   
+                                    <!-- <div class="form-group" id="Notes_Section">
+                                    <xsl:call-template name="widget">
+                                        <xsl:with-param name="fieldName" select="'addText'" />
+                                      </xsl:call-template>
+                                    <div>
+                                        <input name="file" type="file" style="display: inline-block; position: relative; left: 84px;">
+                                            <xsl:if test="$noteReadOnly = 'true'">
+                                                <xsl:attribute name="disabled">disabled</xsl:attribute>
+                                            </xsl:if>
+                                        </input>
+                                        <button type="button" class="btn btn-default btn-md" style="display: inline-block; position: relative; left: 60px;" onclick="document.forms[0].methodToCall.value='save'; document.forms[0].submit();">save note/attachment</button>
+                                    </div>
+                                   </div> -->
+                                    
+                                </xsl:if>
+                        <br/>
+                        <table class="table table-striped text-center">
+                                <xsl:choose>
+                                    <xsl:when test="//NoteForm/numberOfNotes &gt;0">
+                                        <tr class="info">
+                                            <th class="info" colspan="4" style="text-align:center; background-color:#FFFFF5;" id="notesTable_Title">
+                                                <b>View Notes </b>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <div align="center">Author</div>
+                                            </th>
+                                            <th>
+                                                <div align="center">
+                                                  <xsl:choose>
+                                                  <xsl:when test="$noteReadOnly = 'true'"> Date </xsl:when>
+                                                  <xsl:otherwise>
+                                                  <a
+                                                  href="javascript: document.forms[0].elements['methodToCall'].value = 'sort'; document.forms[0].elements['sortNotes'].value = 'true'; document.forms[0].submit();">Date</a>
+                                                  <img height="5" src="images/arrow-expcol-down.gif" width="9"/>
+                                                  </xsl:otherwise>
+                                                  </xsl:choose>
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div align="center">Note</div>
+                                            </th>
+                                            <th>
+                                                <div align="center">Action</div>
+                                            </th>
+                                        </tr>
+                                        <xsl:for-each select="//NoteForm/Notes/Note">
+                                            <tr>
+                                                <td data-authorName="test">
+                                                  <xsl:value-of select="noteAuthorFullName"/>
+                                                </td>
+                                                <td>
+                                                  <xsl:comment>[transient start]</xsl:comment>
+                                                  <xsl:value-of select="formattedCreateDate"/>
+                                                  <xsl:comment>[transient end]</xsl:comment>
+                                                  <br/>
+                                                  <xsl:comment>[transient start]</xsl:comment>
+                                                  <xsl:value-of select="formattedCreateTime"/>
+                                                  <xsl:comment>[transient end]</xsl:comment>
+                                                </td>
+                                                <td>
+                                                 <xsl:choose>
+                                                  <xsl:when test="editingNote = 'true' and authorizedToEdit = 'true'">
+                                                  <textarea name="noteText" cols="80">
+                                                  <xsl:if test="$noteReadOnly = 'true'">
+                                                  <xsl:attribute name="disabled">disabled</xsl:attribute>
+                                                  </xsl:if>
+                                                  <xsl:value-of select="noteText"/>
+                                                  </textarea>
+                                                  <br/>
+                                                      <xsl:if test="$showAttachments = 'true'">
+                                                  <xsl:choose>
+                                                  <xsl:when test="attachments/attachment">
+                                                  <xsl:for-each select="attachments/attachment">
+                                                      <span style="color:#00B200">Attached file:&#160; "<xsl:value-of select="fileName"/>" </span>
+                                                  <input name="idInEdit" type="hidden">
+                                                  <xsl:attribute name="value">
+                                                  <xsl:value-of select="../../noteId"/>
+                                                  </xsl:attribute>
+                                                  </input>
+                                                  <xsl:choose>
+                                                  <xsl:when test="$noteReadOnly = 'true'"> </xsl:when>
+                                                  <xsl:otherwise>
+                                                  <a href="javascript: document.forms[0].elements['methodToCall'].value = 'deleteAttachment'; document.forms[0].submit();">delete</a>
+                                                  <xsl:variable name="hrefStr">attachment?attachmentId=<xsl:value-of select="attachmentId"/>
+                                                  </xsl:variable> <a href="{$hrefStr}">&#160;download</a>
+                                                  </xsl:otherwise>
+                                                  </xsl:choose>
+                                                  </xsl:for-each>
+                                                  </xsl:when>
+                                                  <xsl:otherwise>
+                                                  <!-- <br/><input name="file" type="file">
+                                                  <xsl:if test="$noteReadOnly = 'true'">
+                                                  <xsl:attribute name="disabled">disabled</xsl:attribute>
+                                                  </xsl:if>
+                                                  </input> -->
+                                                  </xsl:otherwise>
+                                                  </xsl:choose>
+                                                  </xsl:if>
+                                                  </xsl:when>
+                                                  <xsl:otherwise><span><xsl:value-of select="noteText"/></span>
+                                                  <br/>
+                                                  <xsl:if test="$showAttachments = 'true'">
+                                                  <xsl:for-each select="attachments/attachment">
+                                                      <span style="color:#00B200">Attached file:&#160; "<xsl:value-of select="fileName"/>" </span>
+                                                  <xsl:variable name="hrefStr">attachment?attachmentId=<xsl:value-of select="attachmentId"/>
+                                                  </xsl:variable> <a href="{$hrefStr}">&#160;download</a>
+                                                  </xsl:for-each>
+                                                  </xsl:if>
+                                                  </xsl:otherwise>
+                                                  </xsl:choose>
+                                                </td>
+                                                <td>
+                                                  <xsl:choose>
+                                                  <xsl:when test="editingNote = 'true' and authorizedToEdit = 'true' and $noteReadOnly != 'true'">
+                                                      <div align="center">                                     <!-- editied onclick below -->
+                                                          <button type="button" class="btn btn-default btn-xs" onclick="document.forms[0].methodToCall.value='save'; document.forms[0].submit();">save</button>&#160;
+                                                          <button type="button" class="btn btn-default btn-xs" onclick="document.forms[0].elements['methodToCall'].value = 'cancel'; document.forms[0].submit();">cancel</button>
+                                                  </div>
+                                                  </xsl:when>
+                                                  <xsl:otherwise>
+                                                  <xsl:choose>
+                                                  <xsl:when test="../../showEdit != 'yes' and authorizedToEdit = 'true' and $noteReadOnly !='true'">
+                                                  <div align="center">
+                                                      <buttton type="button" class="btn btn-default btn-xs" onclick="document.forms[0].elements['methodToCall'].value = 'edit'; document.forms[0].elements['noteIdNumber'].value = {noteId}; document.forms[0].submit();">edit
+                                                      </buttton>&#160;
+                                                    <button type="button" class="btn btn-default btn-xs" onclick="document.forms[0].elements['methodToCall'].value = 'delete'; document.forms[0].elements['noteIdNumber'].value = {noteId}; document.forms[0].submit();">delete
+                                                    </button>
+                                                  </div>
+                                                  </xsl:when>
+                                                  <xsl:otherwise>
+                                                  <div align="center">
+                                                      <button type="button" class="btn btn-default btn-xs disabled">edit</button>
+                                                      <button type="button" class="btn btn-default btn-xs disabled">delete</button>
+                                                  </div>
+                                                  </xsl:otherwise>
+                                                  </xsl:choose>
+                                                  </xsl:otherwise>
+                                                  </xsl:choose>
+                                                </td>
+                                            </tr>
+                                        </xsl:for-each>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:if test="//NoteForm/showAdd != 'true'">
+                                            <tr>
+                                                <td>
+                                                  <table class="table table-striped">
+                                                  <tbody>
+                                                  <tr>
+                                                  <td>
+                                                  <div align="center">
+                                                  <br/>
+                                                  <br/>
+                                                  <br/>
+                                                  <p>No notes available </p>
+                                                  <xsl:if test="//NoteForm/authorizedToAdd = 'true'">
+                                                  <p>
+                                                      <button type="button" class="btn btn-default btn-xs" onclick="document.forms[0].elements['methodToCall'].value = 'add'; document.forms[0].submit();">add note</button>
+                                                  </p>
+                                                  </xsl:if>
+                                                  </div>
+                                                  </td>
+                                                  </tr>
+                                                  </tbody>
+                                                  </table>
+                                                </td>
+                                            </tr>
+                                        </xsl:if>
+                                    </xsl:otherwise>
+                                    
+                                </xsl:choose>
+                        </table>
+                    </xsl:if>
+                </xsl:template>
+            </xsl:stylesheet>
+        </style>
+    </styles>
+</data>

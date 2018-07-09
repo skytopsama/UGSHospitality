@@ -1,0 +1,7 @@
+Kuali Rice PRD - https://apps.iu.edu/kr-prd/portal.do?&selectedTab=administration&casticket=ST-62408-kdFtjcP3lm3kXcctWkS5casprd05
+
+Kuali Rice REG - https://apps-test.iu.edu/kr-reg/portal.do?casticket=ST-1255-FoVFK7iNARBqCHEOA6Zycasstg02
+
+Jira Dash - https://uisapp2.iu.edu/jira-prd/secure/Dashboard.jspa?selectPageId=24322&casticket=ST-90550-5nGBfscSPmMOIvlwz0FMcasprd05
+
+

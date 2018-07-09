@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="ns:workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="ns:workflow resource:WorkflowData">
+  <documentTypes xmlns="ns:workflow/DocumentType" xsi:schemaLocation="ns:workflow/DocumentType resource:DocumentType">
+    <documentType>
+      <name>UGS.Candidacy.Doctype</name>
+      <description>UGS Nomination to Candidacy</description>
+      <label>UGS.Candidacy.Doctype</label>
+      <postProcessorName>org.kuali.rice.edl.framework.workflow.EDocLiteDatabasePostProcessor</postProcessorName>
+      <superUserGroupName namespace="UGS.GENERAL">UGS.SuperUsers</superUserGroupName>
+      <blanketApproveGroupName namespace="KUALI">WorkflowAdmin</blanketApproveGroupName>
+      <reportingGroupName namespace="UGS.GENERAL">UGS.SuperUsers</reportingGroupName>
+      <defaultExceptionGroupName namespace="UGS.GENERAL">UGS.SuperUsers</defaultExceptionGroupName>
+      <docHandler>${workflow.url}/EDocLite</docHandler>
+      <notificationFromAddress>ugsedocs@indiana.edu</notificationFromAddress>
+      <active>true</active>
+      <policies>
+        <policy>
+          <name>DEFAULT_APPROVE</name>
+          <value>false</value>
+        </policy>
+      </policies>
+      <attributes>
+        <attribute>
+          <name>UGSUnivIDSearchAttribute</name>
+        </attribute>
+        <attribute>
+          <name>UGSlastNameSearchAttribute</name>
+        </attribute>
+        <attribute>
+          <name>UGSfirstNameSearchAttribute</name>
+        </attribute>
+        <attribute>
+          <name>UGSPhDCandidDept1SearchAttribute</name>
+        </attribute>
+        <attribute>
+          <name>UGSPhDCandidDept2SearchAttribute</name>
+        </attribute>
+        <attribute>
+          <name>UGSPhDMinor1SearchAttribute</name>
+        </attribute>
+        <attribute>
+          <name>UGSPhDMinor2SearchAttribute</name>
+        </attribute>
+        <attribute>
+          <name>UGSPhDCandidMajor1SearchAttribute</name>
+        </attribute>
+        <attribute>
+          <name>UGSPhDCandidMajor2SearchAttribute</name>
+        </attribute>
+      </attributes>
+      <routingVersion>2</routingVersion>
+      <routePaths>
+        <routePath>
+          <start name="Initiated" nextNode="UGS.CandidacyEmail"/>
+          <simple name="UGS.CandidacyEmail" nextNode="UGS.Candidacy.Department1a"/>
+          <requests name="UGS.Candidacy.Department1a" nextNode="UGS.Candidacy.Department2a"/>
+          <requests name="UGS.Candidacy.Department2a" nextNode="SimpleSplit"/>
+          
+          <split name="SimpleSplit" nextNode="UGS.Candidacy.MinorRep1">
+            <branch name="Branch1">
+              <requests name="UGS.Candidacy.Member1" nextNode="SimpleJoin"/>
+            </branch>
+            <branch name="Branch2">
+              <requests name="UGS.Candidacy.Member2" nextNode="SimpleJoin"/>
+            </branch>
+            <branch name="Branch3">
+              <requests name="UGS.Candidacy.Member3" nextNode="SimpleJoin"/>
+            </branch>
+            <branch name="Branch4">
+              <requests name="UGS.Candidacy.Member4" nextNode="SimpleJoin"/>
+            </branch>
+            <branch name="Branch5">
+              <requests name="UGS.Candidacy.Member5" nextNode="SimpleJoin"/>
+            </branch>
+            <!--<branch name="Branch6">
+              <requests name="UGS.Candidacy.MinorRep1" nextNode="SimpleJoin"/>
+            </branch> 
+            <branch name="Branch7">
+              <requests name="UGS.Candidacy.MinorRep2" nextNode="SimpleJoin"/>
+            </branch>-->
+            <join name="SimpleJoin"/>
+          </split>
+          
+          <requests name="UGS.Candidacy.MinorRep1" nextNode="UGS.Candidacy.MinorRep2"/>
+          <requests name="UGS.Candidacy.MinorRep2" nextNode="UGS.Candidacy.Major1"/>
+          
+          <requests name="UGS.Candidacy.Major1" nextNode="UGS.Candidacy.Major2"/>
+           <requests name="UGS.Candidacy.Major2" nextNode="UGS.Candidacy.UGS"/>
+          <requests name="UGS.Candidacy.UGS" nextNode="UGS.Candidacy.InitatorFYI"/>
+          <requests name="UGS.Candidacy.InitatorFYI" nextNode="UGS.Candidacy.Department1FYI"/>
+          <requests name="UGS.Candidacy.Department1FYI" nextNode="UGS.Candidacy.Department2FYI"/>
+          <requests name="UGS.Candidacy.Department2FYI"/>
+        </routePath>
+      </routePaths>
+      <routeNodes>
+        <start name="Initiated">
+          <activationType>P</activationType>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </start>
+        <simple name="UGS.CandidacyEmail">
+          <from>ugsedocs@indiana.edu</from>
+          <to>initiator</to>
+          <testAddress>ejnic@indiana.edu</testAddress>
+          <style>UGS.Cand.Email.Initiator</style>
+          <type>org.kuali.rice.kew.mail.EmailNode</type>
+        </simple>
+        <requests name="UGS.Candidacy.Department1a">
+          <activationType>S</activationType>
+          <ruleTemplate>UGS.Candidacy.Department1a</ruleTemplate>
+          <mandatoryRoute>true</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <requests name="UGS.Candidacy.Department2a">
+          <activationType>S</activationType>
+          <ruleTemplate>UGS.Candidacy.Department2a</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <!-- <requests name="UGS.Candidacy.Minor1">
+          <activationType>S</activationType>
+          <ruleTemplate>UGS.Candidacy.Minor1</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <requests name="UGS.Candidacy.Minor2">
+          <activationType>S</activationType>
+          <ruleTemplate>UGS.Candidacy.Minor2</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests> -->
+        <split name="SimpleSplit">
+          <activationType>P</activationType>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </split>
+        <requests name="UGS.Candidacy.Member1">
+          <activationType>P</activationType>
+          <ruleTemplate>UGS.Candidacy.Member1</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <join name="SimpleJoin">
+          <activationType>P</activationType>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </join>
+        <requests name="UGS.Candidacy.Member2">
+          <activationType>P</activationType>
+          <ruleTemplate>UGS.Candidacy.Member2</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <requests name="UGS.Candidacy.Member3">
+          <activationType>P</activationType>
+          <ruleTemplate>UGS.Candidacy.Member3</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <requests name="UGS.Candidacy.Member4">
+          <activationType>P</activationType>
+          <ruleTemplate>UGS.Candidacy.Member4</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <requests name="UGS.Candidacy.Member5">
+          <activationType>P</activationType>
+          <ruleTemplate>UGS.Candidacy.Member5</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <requests name="UGS.Candidacy.MinorRep1">
+          <activationType>P</activationType>
+          <ruleTemplate>UGS.Candidacy.MinorRep1</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <requests name="UGS.Candidacy.MinorRep2">
+          <activationType>P</activationType>
+          <ruleTemplate>UGS.Candidacy.MinorRep2</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <!-- Added by DRD
+        <requests name="UGS.Candidacy.Major1b">
+          <activationType>S</activationType>
+          <ruleTemplate>UGS.Candidacy.Major1b</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>-->
+        <requests name="UGS.Candidacy.Major1">
+          <activationType>S</activationType>
+          <ruleTemplate>UGS.Candidacy.Major1</ruleTemplate>
+          <mandatoryRoute>true</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <!-- Added by DRD
+        <requests name="UGS.Candidacy.Major2b">
+          <activationType>S</activationType>
+          <ruleTemplate>UGS.Candidacy.Major2b</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>-->
+        <requests name="UGS.Candidacy.Major2">
+          <activationType>S</activationType>
+          <ruleTemplate>UGS.Candidacy.Major2</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <requests name="UGS.Candidacy.UGS">
+          <activationType>S</activationType>
+          <ruleTemplate>UGS.Candidacy.UGS</ruleTemplate>
+          <mandatoryRoute>true</mandatoryRoute>
+          <finalApproval>true</finalApproval>
+        </requests>
+        <requests name="UGS.Candidacy.InitatorFYI">
+          <activationType>S</activationType>
+          <ruleTemplate>UGS.Candidacy.InitatorFYI</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <requests name="UGS.Candidacy.Department1FYI">
+          <activationType>S</activationType>
+          <ruleTemplate>UGS.Candidacy.Department1FYI</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <requests name="UGS.Candidacy.Department2FYI">
+          <activationType>S</activationType>
+          <ruleTemplate>UGS.Candidacy.Department2FYI</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+      </routeNodes>
+    </documentType>
+  </documentTypes>
+</data>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="ns:workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="ns:workflow resource:WorkflowData">
+  <documentTypes xmlns="ns:workflow/DocumentType" xsi:schemaLocation="ns:workflow/DocumentType resource:DocumentType">
+    <documentType>
+      <name>UGS.Candidacy.WorkgroupTypeDoctype</name>
+      <parent>UGS.Candidacy.Doctype</parent>
+      <description>UGS Workgroup Type Document Type</description>
+      <label>UGS Workgroup Type Document Type</label>
+      <postProcessorName>org.kuali.rice.kew.workgroup.WorkgroupPostProcessor</postProcessorName>
+      <superUserGroupName namespace="UGS.CANDIDACY">UGS.Candidacy.SuperUsers</superUserGroupName>
+      <blanketApproveGroupName namespace="UGS.CANDIDACY">UGS.Candidacy.SuperUsers</blanketApproveGroupName>
+      <defaultExceptionGroupName namespace="UGS.CANDIDACY">UGS.Candidacy.SuperUsers</defaultExceptionGroupName>
+      <docHandler>${workflow.url}/Workgroup.do?methodToCall=docHandler</docHandler>
+      <active>true</active>
+      <routingVersion>1</routingVersion>
+      <routePaths>
+        <routePath>
+          <start name="Adhoc Routing" nextNode="UGS Workgroup Approval" />
+          <requests name="UGS Workgroup Approval" />
+        </routePath>
+      </routePaths>
+      <routeNodes>
+        <start name="Adhoc Routing">
+          <activationType>P</activationType>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </start>
+        <requests name="UGS Workgroup Approval">
+          <activationType>P</activationType>
+          <ruleTemplate>WorkflowDocumentTemplate</ruleTemplate>
+          <mandatoryRoute>true</mandatoryRoute>
+          <finalApproval>true</finalApproval>
+        </requests>
+      </routeNodes>
+    </documentType>
+  </documentTypes>
+</data>

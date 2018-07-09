@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="ns:workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="ns:workflow resource:WorkflowData">
+  <groups xmlns="ns:workflow/Group" xsi:schemaLocation="ns:workflow/Group resource:Group">
+    <group>
+      <name>UGS.BL.SECREC.MSCH</name>
+      <namespace>UGS.EXCEPTION</namespace>
+      <description>BL-MSCH SECREC Approval</description>
+      <active>true</active>
+      <type>
+        <namespace>KUALI</namespace>
+        <name>Default</name>
+      </type>
+      <members>
+        <principalName>kteige</principalName>
+        <principalName>lhansel</principalName>
+      </members>
+    </group>
+    <group>
+      <name>UGS.BL.DGS.MSCH</name>
+      <namespace>UGS.EXCEPTION</namespace>
+      <description>BL-MSCH DGS Approval</description>
+      <active>true</active>
+      <type>
+        <namespace>KUALI</namespace>
+        <name>Default</name>
+      </type>
+      <members>
+        <principalName>hsawhney</principalName>
+      </members>
+    </group>
+    <group>
+      <name>UGS.BL.DGS.MUS</name>
+      <namespace>UGS.EXCEPTION</namespace>
+      <description>BL-MUS DGS Approval</description>
+      <active>true</active>
+      <type>
+        <namespace>KUALI</namespace>
+        <name>Default</name>
+      </type>
+      <members>
+        <principalName>isaacso</principalName>
+      </members>
+    </group>
+
+    <group>
+      <name>UGS.BL.SECREC.MUS</name>
+      <namespace>UGS.EXCEPTION</namespace>
+      <description>BL-MUS SECREC Approval</description>
+      <active>true</active>
+      <type>
+        <namespace>KUALI</namespace>
+        <name>Default</name>
+      </type>
+      <members>
+        <principalName>anmiller</principalName>
+        <principalName>vwheel</principalName>
+      </members>
+    </group>
+    <group>
+      <name>UGS.BL.DGS.CHEM</name>
+      <namespace>UGS.EXCEPTION</namespace>
+      <description>BL-CHEM DGS Approval</description>
+      <active>true</active>
+      <type>
+        <namespace>KUALI</namespace>
+        <name>Default</name>
+      </type>
+      <members>
+        <principalName>aflood</principalName>
+      </members>
+    </group>
+    <group>
+      <name>UGS.BL.SECREC.CHEM</name>
+      <namespace>UGS.EXCEPTION</namespace>
+      <description>BL-CHEM SECREC Approval</description>
+      <active>true</active>
+      <type>
+        <namespace>KUALI</namespace>
+        <name>Default</name>
+      </type>
+      <members>
+        <principalName>dga</principalName>
+        <principalName>tlady</principalName>
+      </members>
+    </group>
+  </groups>
+</data>

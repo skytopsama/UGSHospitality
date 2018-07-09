@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="ns:workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="ns:workflow resource:WorkflowData">
+  <rules xmlns="ns:workflow/Rule" xsi:schemaLocation="ns:workflow/Rule resource:Rule">
+    <rule>
+      <name>UGS_Exception_Group_Management</name>
+      <documentType>IdentityManagementGroupDocument</documentType>
+      <ruleTemplate>GroupNamespaceTemplate</ruleTemplate>
+      <description>Group routing for namespace UGS.EXCEPTION</description>
+      <forceAction>false</forceAction>
+      <ruleExtensions>
+        <ruleExtension>
+          <attribute>GroupNamespaceAttribute</attribute>
+          <ruleTemplate>GroupNamespaceTemplate</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>groupNamespace</key>
+              <value>UGS.EXCEPTION</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS">UGS.ChangeApproval</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+	<rule>
+      <name>UGS_Exception_Rule_Management</name>
+      <documentType>RuleParentDocument</documentType>
+      <ruleTemplate>RuleRoutingTemplate</ruleTemplate>
+      <description>UGS Study Abroad Rule changes</description>
+      <forceAction>false</forceAction>
+      <ruleExtensions>
+        <ruleExtension>
+          <attribute>RuleRoutingAttribute</attribute>
+          <ruleTemplate>RuleRoutingTemplate</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>docTypeFullName</key>
+              <value>UGS.StudyAbroad.Doctype</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS">UGS.ChangeApproval</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+  </rules>
+</data>
+

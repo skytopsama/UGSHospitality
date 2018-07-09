@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="ns:workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="ns:workflow resource:WorkflowData">
+  <documentTypes xmlns="ns:workflow/DocumentType" xsi:schemaLocation="ns:workflow/DocumentType resource:DocumentType">
+    <documentType>
+      <name>UGS.Exception.Doctype</name>
+      <description>UGS Exception doctype</description>
+      <label>UGS.Exception.Doctype</label>
+      <postProcessorName>org.kuali.rice.edl.framework.workflow.EDocLiteDatabasePostProcessor</postProcessorName>
+      <superUserGroupName namespace="UGS.GENERAL">UGS.SuperUsers</superUserGroupName>
+      <blanketApproveGroupName namespace="KUALI">WorkflowAdmin</blanketApproveGroupName>
+      <reportingGroupName namespace="UGS.GENERAL">UGS.SuperUsers</reportingGroupName>
+      <defaultExceptionGroupName namespace="UGS.GENERAL">UGS.SuperUsers</defaultExceptionGroupName>
+      <docHandler>${workflow.url}/EDocLite</docHandler>
+      <notificationFromAddress>ugsedocs@indiana.edu</notificationFromAddress>
+      <active>true</active>
+      <policies>
+        <policy>
+          <name>DEFAULT_APPROVE</name>
+          <value>false</value>
+        </policy>
+      </policies>
+      
+      <attributes>
+        <!-- <attribute>
+          <name>UGSUnivIDSearchAttribute</name>
+        </attribute>
+        <attribute>
+          <name>UGSlastNameSearchAttribute</name>
+        </attribute>
+        <attribute>
+          <name>UGSfirstNameSearchAttribute</name>
+        </attribute>
+		-->
+        <attribute>
+          <name>UGSExceptionDept1SearchAttribute</name>
+        </attribute>
+        <attribute>
+          <name>UGSExceptionDept2SearchAttribute</name>
+        </attribute>
+      </attributes>
+      
+      <routingVersion>1</routingVersion>
+      <routePaths>
+        <routePath>
+          <start name="Initiated" nextNode="UGS.ExceptionEmail"/>
+          <simple name="UGS.ExceptionEmail" nextNode="UGS.Exception.Department1.SECREC"/>
+          <requests name="UGS.Exception.Department1.SECREC" nextNode="UGS.Exception.Department2.SECREC"/>
+          <requests name="UGS.Exception.Department2.SECREC" nextNode="UGS.Exception.Minor1Rep"/>
+		  <requests name="UGS.Exception.Minor1Rep" nextNode="UGS.Exception.Minor2Rep"/>
+		  <requests name="UGS.Exception.Minor2Rep" nextNode="UGS.Exception.GradAdvisor"/>
+          <requests name="UGS.Exception.GradAdvisor" nextNode="UGS.Exception.Department1.DGS"/>
+          <requests name="UGS.Exception.Department1.DGS" nextNode="UGS.Exception.Department2.DGS"/>
+          <requests name="UGS.Exception.Department2.DGS" nextNode="UGS.Exception.UGS1"/>
+	      <requests name="UGS.Exception.UGS1" nextNode="UGS.Exception.AssistantDean"/>
+          <requests name="UGS.Exception.AssistantDean" nextNode="UGS.Exception.AssociateDean"/>
+          <requests name="UGS.Exception.AssociateDean" nextNode="UGS.Exception.UGS2"/>
+          <requests name="UGS.Exception.UGS2" nextNode="UGS.Exception.InitiatorFYI"/>
+          <requests name="UGS.Exception.InitiatorFYI" nextNode="UGS.Exception.Department1.SECREC.FYI"/>
+     	  <requests name="UGS.Exception.Department1.SECREC.FYI" nextNode="UGS.Exception.Department2.SECREC.FYI"/>
+	      <requests name="UGS.Exception.Department2.SECREC.FYI" />
+        </routePath>
+      </routePaths>
+      <routeNodes>
+        <start name="Initiated">
+          <activationType>P</activationType>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </start>
+        <simple name="UGS.ExceptionEmail">
+          <from>ugsedocs@indiana.edu</from>
+          <to>initiator</to>
+          <testAddress>drdamico@indiana.edu</testAddress>
+          <style>UGS.Exception.Email.Initiator</style>
+          <type>org.kuali.rice.kew.mail.EmailNode</type>
+        </simple>
+        <requests name="UGS.Exception.Department1.SECREC">
+          <activationType>P</activationType>
+          <ruleTemplate>UGS.Exception.Department1.SECREC</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <requests name="UGS.Exception.Department2.SECREC">
+          <activationType>P</activationType>
+          <ruleTemplate>UGS.Exception.Department2.SECREC</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+		 <requests name="UGS.Exception.Minor1Rep">
+          <activationType>P</activationType>
+          <ruleTemplate>UGS.Exception.Minor1Rep</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+		 <requests name="UGS.Exception.Minor2Rep">
+          <activationType>P</activationType>
+          <ruleTemplate>UGS.Exception.Minor2Rep</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <requests name="UGS.Exception.GradAdvisor">
+          <activationType>P</activationType>
+          <ruleTemplate>UGS.Exception.GradAdvisor</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <requests name="UGS.Exception.Department1.DGS">
+          <activationType>P</activationType>
+          <ruleTemplate>UGS.Exception.Department1.DGS</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <requests name="UGS.Exception.Department2.DGS">
+          <activationType>P</activationType>
+          <ruleTemplate>UGS.Exception.Department2.DGS</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests> 
+		<requests name="UGS.Exception.UGS1">
+          <activationType>P</activationType>
+          <ruleTemplate>UGS.Exception.UGS1</ruleTemplate>
+          <mandatoryRoute>true</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <requests name="UGS.Exception.AssistantDean">
+          <activationType>P</activationType>
+          <ruleTemplate>UGS.Exception.AssistantDean</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <requests name="UGS.Exception.AssociateDean">
+          <activationType>P</activationType>
+          <ruleTemplate>UGS.Exception.AssociateDean</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <requests name="UGS.Exception.UGS2">
+          <activationType>P</activationType>
+          <ruleTemplate>UGS.Exception.UGS2</ruleTemplate>
+          <mandatoryRoute>true</mandatoryRoute>
+          <finalApproval>true</finalApproval>
+        </requests>
+        <requests name="UGS.Exception.InitiatorFYI">
+          <activationType>P</activationType>
+          <ruleTemplate>UGS.Exception.InitiatorFYI</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+        <requests name="UGS.Exception.Department1.SECREC.FYI" >
+		  <activationType>P</activationType>
+          <ruleTemplate>UGS.Exception.Department1.SECREC.FYI</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+		<requests name="UGS.Exception.Department2.SECREC.FYI" >
+		  <activationType>P</activationType>
+          <ruleTemplate>UGS.Exception.Department2.SECREC.FYI</ruleTemplate>
+          <mandatoryRoute>false</mandatoryRoute>
+          <finalApproval>false</finalApproval>
+        </requests>
+      </routeNodes>
+    </documentType>
+  </documentTypes>
+</data>

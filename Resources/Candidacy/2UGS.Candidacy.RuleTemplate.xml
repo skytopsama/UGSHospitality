@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="ns:workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="ns:workflow resource:WorkflowData">
+  <ruleTemplates xmlns="ns:workflow/RuleTemplate" xsi:schemaLocation="ns:workflow/RuleTemplate resource:RuleTemplate">
+    <!-- INTIATOR -->
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.InitatorFYI</name>
+      <description>UGS Nomination to Candidacy - Initiator notification of processed</description>
+      <attributes>
+        <attribute>
+          <name>UGSCandidacyInitiatorAttribute</name>
+          <required>true</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    <!-- NETWORK ID MEMBERS  -->
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.Member1</name>
+      <description>UGS Candidacy Committee Member 1</description>
+      <attributes>
+        <attribute>
+          <name>UGS.CandidacyMember1NetworkIdRoleAttribute</name>
+          <required>true</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.Member2</name>
+      <description>UGS Candidacy CommitteeMember 2</description>
+      <attributes>
+        <attribute>
+          <name>UGS.CandidacyMember2NetworkIdRoleAttribute</name>
+          <required>true</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.Member3</name>
+      <description>UGS Candidacy Committee Member 3</description>
+      <attributes>
+        <attribute>
+          <name>UGS.CandidacyMember3NetworkIdRoleAttribute</name>
+          <required>true</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.Member4</name>
+      <description>UGS Candidacy Committee Member 4</description>
+      <attributes>
+        <attribute>
+          <name>UGS.CandidacyMember4NetworkIdRoleAttribute</name>
+          <required>true</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.Member5</name>
+      <description>UGS Candidacy CommitteeMember 5</description>
+      <attributes>
+        <attribute>
+          <name>UGS.CandidacyMember5NetworkIdRoleAttribute</name>
+          <required>true</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.MinorMember1</name>
+      <description>UGS Minor Member 1</description>
+      <attributes>
+        <attribute>
+          <name>UGS.CandidacyMinor1NetworkIdRoleAttribute</name>
+          <required>true</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.MinorMember2</name>
+      <description>UGS Minor Member 2</description>
+      <attributes>
+        <attribute>
+          <name>UGS.CandidacyMinor2NetworkIdRoleAttribute</name>
+          <required>true</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.MinorRep1</name>
+      <description>UGS Minor Representative 1</description>
+      <attributes>
+        <attribute>
+          <name>UGS.CandidacyMinor1NetworkIdRoleAttribute</name>
+          <required>true</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.MinorRep2</name>
+      <description>UGS Minor Representative 2</description>
+      <attributes>
+        <attribute>
+          <name>UGS.CandidacyMinor2NetworkIdRoleAttribute</name>
+          <required>true</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    <!-- DEPARTMENTS -->
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.Department1a</name>
+      <description>Nomination to Candidacy - Department Routing</description>
+      <attributes>
+        <attribute>
+          <name>UGSPhDCandidDept1Attribute</name>
+          <required>true</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.Department2a</name>
+      <description>Nomination to Candidacy - Department (second major) Routing</description>
+      <attributes>
+        <attribute>
+          <name>UGSPhDCandidDept2Attribute</name>
+          <required>true</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.Department1FYI</name>
+      <description>Nomination to Candidacy - Departmental notification of processed (Major 1)</description>
+      <attributes>
+        <attribute>
+          <name>UGSPhDCandidDept1Attribute</name>
+          <required>false</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.Department2FYI</name>
+      <description>Nomination to Candidacy - Departmental notification of processed (Major 2)</description>
+      <attributes>
+        <attribute>
+          <name>UGSPhDCandidDept2Attribute</name>
+          <required>false</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    <!-- department 1b taken out EJN 21-Jul-14 
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.Department1b</name>
+      <description>Nomination to Candidacy - Department Routing</description>
+      <attributes>
+        <attribute>
+          <name>UGSPhDCandidDept1Attribute</name>
+          <required>false</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    -->
+    <!-- department 1b taken out EJN 21-Jul-14 
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.Department2b</name>
+      <description>Nomination to Candidacy - Department (second major) Routing</description>
+      <attributes>
+        <attribute>
+          <name>UGSPhDCandidDept2Attribute</name>
+          <required>false</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    -->
+    <!-- MAJORS  -->
+
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.Major1</name>
+      <description>UGS Major 1</description>
+      <attributes>
+        <attribute>
+          <name>UGSPhDCandidMajor1Attribute</name>
+          <required>true</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    <!-- major 1b not needed 
+    <ruleTemplate allowOverwrite="true">
+        <name>UGS.Candidacy.Major1b</name>
+        <description>UGS Major 1</description>
+        <attributes>
+          <attribute>
+            <name>UGSPhDCandidMajor1Attribute</name>
+            <required>true</required>
+          </attribute>
+        </attributes>
+      </ruleTemplate>
+      -->
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.Major2</name>
+      <description>UGS Major 2</description>
+      <attributes>
+        <attribute>
+          <name>UGSPhDCandidMajor2Attribute</name>
+          <required>false</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    <!-- Major 2b not needed
+      <ruleTemplate allowOverwrite="true">
+        <name>UGS.Candidacy.Major2b</name>
+        <description>UGS Major 2</description>
+        <attributes>
+          <attribute>
+            <name>UGSPhDCandidMajor2Attribute</name>
+            <required>false</required>
+          </attribute>
+        </attributes>
+      </ruleTemplate>
+      -->
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.Major1FYI</name>
+      <description>Nomination to Candidacy - Departmental notification of processed (Major 1)</description>
+      <attributes>
+        <attribute>
+          <name>UGSPhDCandidMajor1Attribute</name>
+          <required>false</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.Major2FYI</name>
+      <description>Nomination to Candidacy - Departmental notification of processed (Major 1)</description>
+      <attributes>
+        <attribute>
+          <name>UGSPhDCandidMajor2Attribute</name>
+          <required>false</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    <!-- MINORS -->
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.Minor1</name>
+      <description>Nomination to Candidacy - Minor Routing</description>
+      <attributes>
+        <attribute>
+          <name>UGSPhDMinor1Attribute</name>
+          <required>true</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.Minor2</name>
+      <description>Nomination to Candidacy - Minor Routing</description>
+      <attributes>
+        <attribute>
+          <name>UGSPhDMinor2Attribute</name>
+          <required>true</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    <!-- Added by DRD -->
+    <ruleTemplate allowOverwrite="true">
+      <name>UGS.Candidacy.UGS</name>
+      <description>PhD Recorder Review and Approval</description>
+      <attributes>
+        <attribute>
+          <name>UGSPhDCampusAttribute</name>
+          <required>true</required>
+        </attribute>
+      </attributes>
+    </ruleTemplate>
+    <!-- ____________________________________________________________-->
+  </ruleTemplates>
+</data>

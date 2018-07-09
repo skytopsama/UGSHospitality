@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="ns:workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="ns:workflow resource:WorkflowData">
+  <rules xmlns="ns:workflow/Rule" xsi:schemaLocation="ns:workflow/Rule resource:Rule">
+	
+	<!--Test rule-->
+	<rule>
+      <name>UGS.Exception.Department1.BL-BIOL</name>
+      <documentType>UGS.ExceptionMinor.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.Department1</ruleTemplate>
+      <description>Rule to route to department1 - BIOL</description>
+      <forceAction>true</forceAction>
+	   <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionDept1Attribute</attribute>
+          <ruleTemplate>UGS.Exception.Department1</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>department1</key>
+              <value>BL-BIOL</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.BL.SECREC.BIOL</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>	
+	
+	<rule>
+      <name>UGS.Exception.Department1.DGS.BL-BIOL</name>
+      <documentType>UGS.ExceptionMinor.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.Department1.DGS</ruleTemplate>
+      <description>Rule to route to department 1 DGS - BIOL</description>
+      <forceAction>true</forceAction>
+	   <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionDept1Attribute</attribute>
+          <ruleTemplate>UGS.Exception.Department1.DGS</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>department1</key>
+              <value>BL-BIOL</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.BL.DGS.BIOL</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>	
+	<!--Grad Advisor Net ID rule-->
+	<rule>
+      <name>UGS.Exception.GradAdvisor</name>
+      <documentType>UGS.ExceptionMinor.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.GradAdvisor</ruleTemplate>
+      <description>Graduate Advisor's approval</description>
+      <forceAction>true</forceAction>
+      <responsibilities>
+        <responsibility>
+          <role>org.kuali.rice.kew.rule.NetworkIdRoleAttribute!networkId</role>
+          <approvePolicy>F</approvePolicy>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+	
+	<!-- Assistant Dean -->
+	<rule>
+      <name>UGS.Exception.AssistantDean</name>
+      <documentType>UGS.ExceptionMinor.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.AssistantDean</ruleTemplate>
+      <description>Rule to route to assistant dean</description>
+      <forceAction>true</forceAction>
+	   <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionAssistantDeanAttribute</attribute>
+          <ruleTemplate>UGS.Exception.AssistantDean</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>RouteToAssistantDean</key>
+              <value>Yes</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.Exception.AssistantDean</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>	
+
+	<!-- Associate Dean -->
+	<rule>
+      <name>UGS.Exception.AssociatetDean</name>
+      <documentType>UGS.ExceptionMinor.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.AssociateDean</ruleTemplate>
+      <description>Rule to route to associate dean</description>
+      <forceAction>true</forceAction>
+	   <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSExceptionAssociateDeanAttribute</attribute>
+          <ruleTemplate>UGS.Exception.AssociateDean</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>RouteToAssociateDean</key>
+              <value>Yes</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.Exception.AssociateDean</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>	
+	
+	<!--First stop at UGS Node for IN-->
+	<rule>
+      <name>UGS.Exception.UGS1.IN</name>
+      <documentType>UGS.ExceptionMinor.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.UGS1</ruleTemplate>
+      <description>First UGS approval for the Exception edoc</description>
+      <forceAction>true</forceAction>
+	   <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSCampusAttribute</attribute>
+          <ruleTemplate>UGS.Exception.UGS1</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>campus</key>
+              <value>IN</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.Exception.UGS1.IN</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+	
+	<!--First stop at UGS for BL-->
+	<rule>
+      <name>UGS.Exception.UGS1.BL</name>
+      <documentType>UGS.ExceptionMinor.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.UGS1</ruleTemplate>
+      <description>First UGS approval for the Exception edoc</description>
+      <forceAction>true</forceAction>
+	   <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSCampusAttribute</attribute>
+          <ruleTemplate>UGS.Exception.UGS1</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>campus</key>
+              <value>BL</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.Exception.UGS1.BL</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+	
+	<!--Final Node IN-->
+	<rule>
+      <name>UGS.Exception.UGS2.IN</name>
+      <documentType>UGS.ExceptionMinor.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.UGS2</ruleTemplate>
+      <description>Final approval for the Exception edoc</description>
+      <forceAction>true</forceAction>
+	   <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSCampusAttribute</attribute>
+          <ruleTemplate>UGS.Exception.UGS2</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>campus</key>
+              <value>IN</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.Exception.UGS2.IN</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+	
+	<!--Final Node BL-->
+	<rule>
+      <name>UGS.Exception.UGS2.BL</name>
+      <documentType>UGS.ExceptionMinor.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.UGS2</ruleTemplate>
+      <description>Final approval for the Exception edoc</description>
+      <forceAction>true</forceAction>
+	   <ruleExtensions>
+        <ruleExtension>
+          <attribute>UGSCampusAttribute</attribute>
+          <ruleTemplate>UGS.Exception.UGS2</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>campus</key>
+              <value>BL</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.EXCEPTION">UGS.Exception.UGS2.BL</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+
+	<!-- Initiator FYI-->
+	 <rule>
+      <name>UGS.Exception.InitiatorFYI</name>
+      <documentType>UGS.ExceptionMinor.Doctype</documentType>
+      <ruleTemplate>UGS.Exception.InitiatorFYI</ruleTemplate>
+      <description>FYI notification of final approval</description>
+      <forceAction>true</forceAction>
+      <responsibilities>
+        <responsibility>
+          <role>org.kuali.rice.kew.rule.InitiatorRoleAttribute!INITIATOR</role>
+		   <approvePolicy>F</approvePolicy>
+          <actionRequested>F</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+  </rules>
+</data>

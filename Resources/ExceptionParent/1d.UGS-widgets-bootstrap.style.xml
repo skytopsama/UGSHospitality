@@ -1,0 +1,1281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="ns:workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="ns:workflow resource:WorkflowData"><styles xmlns="ns:workflow/Style" xsi:schemaLocation="ns:workflow/Style resource:Style"><style name="UGS-widgets-bootstrap"><xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:edl-func="xalan://org.kuali.rice.edl.framework.util.EDLFunctions" xmlns:xalan="http://xml.apache.org/xalan" version="1.0">
+                <xsl:output encoding="UTF-8" method="html" />
+                <xsl:variable name="globalReadOnly" select="/documentContent/documentState/editable != 'true'" />
+                <xsl:variable name="showAttachments" select="/documentContent/documentState/showAttachments" />
+                <xsl:variable name="pageTitle">
+                    <xsl:choose>
+                        <xsl:when test="$globalReadOnly = 'true'">Viewing Document</xsl:when>
+                        <xsl:otherwise>Editing Document</xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                <xsl:variable name="docTitle">
+                    <xsl:choose>
+                        <xsl:when test="//edlContent/edl/@title">
+                            <xsl:value-of select="//edlContent/edl/@title" />
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="//edlContent/edl/@name" />
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                <xsl:variable name="textInputTypes" select="'text color date datetime datetime-local email month number range search tel time url week'" />
+                <xsl:variable name="defaults">
+                    <text xmlns="" message="'title' must have a value" validator="non-blank" width="6" />
+                    <color xmlns="" message="Please enter a color in HTML syntax for 'title' (ex: #ffffff)" validator="color" width="2" />
+                    <date xmlns="" message="'title' must be a valid date (YYYY-MM-DD)" validator="date" width="3" />
+                    <datetime xmlns="" message="'title' must have a value" validator="non-blank" width="3" />
+                    <datetime-local xmlns="" message="'title' must have a value" validator="non-blank" width="3" />
+                    <email xmlns="" message="'title' must be a valid email address" validator="email" width="6" />
+                    <month xmlns="" message="'title' must have a value" validator="non-blank" width="3" />
+                    <number xmlns="" message="'title' must be a number" validator="integer" width="2" />
+                    <range xmlns="" message="'title' must have a value" validator="non-blank" width="3" />
+                    <search xmlns="" message="'title' must have a value" validator="non-blank" width="6" />
+                    <tel xmlns="" message="'title' must be a valid phone number" validator="phone" width="3" />
+                    <time xmlns="" message="'title' must be a valid time in 24 hour format (HH:MM)" validator="time" width="2" />
+                    <url xmlns="" message="'title' must be a valid URL" validator="url" width="6" />
+                    <week xmlns="" message="'title' must have a value" validator="non-blank" width="3" />
+                    <select xmlns="" message="Please select a value for 'title'" validator="non-blank" width="6" />
+                    <textarea xmlns="" message="'title' must have a value" validator="non-blank" width="6" />
+                    <radio xmlns="" message="Please select a value for 'title'" validator="radio" width="4" />
+                    <checkbox xmlns="" message="Please select a value for 'title'" validator="checkbox" width="4" />
+                </xsl:variable>
+                <xsl:variable name="submitMessage" select="'Your form has been submitted'" />
+                <xsl:variable name="approveMessage" select="'You have approved this form'" />
+                <xsl:variable name="disapproveMessage" select="'You have disapproved this form'" />
+                <xsl:variable name="cancelMessage" select="'You have canceled this form'" />
+                <xsl:variable name="blanketApproveMessage" select="'You have blanket approved this form'" />
+                <xsl:variable name="fyiMessage" select="'You have cleared your FYI for this form'" />
+                <xsl:variable name="acknowledgeMessage" select="'You have acknowledged this form'" />
+                <xsl:variable name="saveMessage" select="'Your form has been saved'" />
+                <xsl:variable name="completeMessage" select="'You have completed this form'" />
+                <xsl:variable name="documentDisapprovedMessage" select="'Your submission has been disapproved for the following reason(s):'" />
+                <xsl:strip-space elements="*" />
+                <xsl:template name="capitalizeString">
+                    <xsl:param name="value" />
+                    <xsl:variable name="upperLetters" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" />
+                    <xsl:variable name="lowerLetters" select="'abcdefghijklmnopqrstuvwxyz'" />
+                    <xsl:value-of select="concat(translate(substring($value, 1, 1), $lowerLetters, $upperLetters), translate(substring($value, 2), $upperLetters, $lowerLetters))" />
+                </xsl:template>
+                <xsl:template name="insertBreaks">
+                    <xsl:param name="value" />
+                    <xsl:choose>
+                        <xsl:when test="not(contains($value, '&#xA;'))">
+                            <xsl:copy-of select="$value" />
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="substring-before($value, '&#xA;')" />
+                            <br xmlns="" />
+                            <xsl:call-template name="insertBreaks">
+                                <xsl:with-param name="value" select="substring-after($value, '&#xA;')" />
+                            </xsl:call-template>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:template>
+                <xsl:template name="stringReplaceAll">
+                    <xsl:param name="text" />
+                    <xsl:param name="replace" />
+                    <xsl:param name="with" />
+                    <xsl:choose>
+                        <xsl:when test="contains($text, $replace)">
+                            <xsl:value-of select="substring-before($text,$replace)" />
+                            <xsl:value-of select="$with" />
+                            <xsl:call-template name="stringReplaceAll">
+                                <xsl:with-param name="text" select="substring-after($text,$replace)" />
+                                <xsl:with-param name="replace" select="$replace" />
+                                <xsl:with-param name="with" select="$with" />
+                            </xsl:call-template>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="$text" />
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:template>
+                <xsl:template name="htmlHead">
+                    <meta xmlns="" content="width=device-width, initial-scale=1.0" name="viewport" />
+                    <meta xmlns="" charset="utf-8" />
+                    <meta xmlns="" content="IE=edge" http-equiv="X-UA-Compatible" />
+                    <title xmlns="">
+                        <xsl:value-of select="$pageTitle" />
+                    </title>
+                    <link xmlns="" href="css/bootstrap.min.css" rel="stylesheet" />
+                    <link xmlns="" href="css/datepicker.css" rel="stylesheet" />
+                    <link xmlns="" href="css/bootstrap-timepicker.min.css" rel="stylesheet" />
+                    <link xmlns="" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+                    <link xmlns="" href="css/edoclite-bootstrap.css" rel="stylesheet" />
+					<link xmlns="" href="css/edoclite-bootstrap-print.css" media="print" rel="stylesheet" />
+                    <script xmlns="" src="js/jquery-2.0.3.min.js" type="text/javascript" />
+                    <script xmlns="" src="js/bootstrap.min.js" type="text/javascript" />
+                    <script xmlns="" src="js/bootstrap-datepicker.js" type="text/javascript" />
+                    <script xmlns="" src="js/bootstrap-timepicker.min.js" type="text/javascript" />
+                    <script xmlns="" src="js/edoclite-bootstrap.js" type="text/javascript" />
+                    <script xmlns="" src="../dwr/engine.js" type="text/javascript" />
+                    <script xmlns="" src="../dwr/interface/PersonService.js" type="text/javascript" />
+                    <xsl:if test="//edlContent/edl/javascript">
+                        <script xmlns="" type="text/javascript">
+                            <xsl:value-of select="//edlContent/edl/javascript" />
+                        </script>
+                    </xsl:if>
+                </xsl:template>
+                <xsl:template name="header">
+                    <xsl:variable name="documentStatus">
+                        <xsl:call-template name="capitalizeString">
+                            <xsl:with-param name="value" select="//documentState/workflowDocumentState/status" />
+                        </xsl:call-template>
+                    </xsl:variable>
+                    <div xmlns="" id="branding-bar">
+                        <div class="container">
+                            <a href="http://www.iu.edu" title="Indiana University">
+                                <img alt="IU" src="images/trident-tab.gif" />
+                                Indiana University
+                            </a>
+                        </div>
+                    </div>
+                    <div xmlns="" class="header-wrapper">
+                        <div class="container">
+                            <div class="page-header clearfix" id="page-header">
+                                <h1 class="pull-left">
+                                    <xsl:value-of select="$docTitle" />
+                                </h1>
+                                <div class="pull-right">
+                                    <table class="table" id="document-header">
+                                        <tr>
+                                            <th>Document ID:</th>
+                                            <td>
+                                                <xsl:value-of select="/documentContent/documentState/docId" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Document Status:</th>
+                                            <td>
+                                                <xsl:value-of select="$documentStatus" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Creation Date:</th>
+                                            <td>
+                                                <xsl:value-of select="//documentState/workflowDocumentState/createDate" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xsl:template>
+                <xsl:template name="hiddenParameters">
+                    <xsl:variable name="docId" select="/documentContent/documentState/docId" />
+                    <xsl:variable name="def" select="/documentContent/documentState/definition" />
+                    <xsl:variable name="docType" select="/documentContent/documentState/docType" />
+                    <xsl:variable name="style" select="/documentContent/documentState/style" />
+                    <xsl:variable name="incrementVersion" select="//edlContent/data/version[@current='true']/incrementVersion" />
+                    <xsl:variable name="currentPage" select="//currentPage" />
+                    <xsl:variable name="previousPage" select="//previousPage" />
+                    <xsl:if test="$incrementVersion = 'true'">
+                        <input xmlns="" name="incrementVersion" type="hidden" value="{$incrementVersion}" />
+                    </xsl:if>
+                    <xsl:choose>
+                        <xsl:when test="$docId">
+                            <input xmlns="" name="docId" type="hidden" value="{$docId}" />
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:if test="$docType">
+                                <input xmlns="" name="docType" type="hidden" value="{$docType}" />
+                            </xsl:if>
+                            <xsl:if test="$def">
+                                <input xmlns="" name="def" type="hidden" value="{$def}" />
+                            </xsl:if>
+                            <xsl:if test="$style">
+                                <input xmlns="" name="style" type="hidden" value="{$style}" />
+                            </xsl:if>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    <xsl:if test="$currentPage">
+                        <input xmlns="" name="edl.currentPage" type="hidden" value="{$currentPage}" />
+                    </xsl:if>
+                    <xsl:if test="$previousPage">
+                        <input xmlns="" name="edl.previousPage" type="hidden" value="{$previousPage}" />
+                    </xsl:if>
+                </xsl:template>
+                <xsl:template name="formMessages">
+                    <xsl:param name="message" />
+                    <div xmlns="" class="row">
+                        <div class="col-lg-12">
+                            <div class="alert alert-info text-center" id="form-info">
+                                <strong>
+                                    <xsl:value-of select="$message" />
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+                </xsl:template>
+                <xsl:template name="disapprovalMessages">
+                    <xsl:variable name="documentStatus">
+                        <xsl:call-template name="capitalizeString">
+                            <xsl:with-param name="value" select="//documentState/workflowDocumentState/status" />
+                        </xsl:call-template>
+                    </xsl:variable>
+                    <xsl:if test="$documentStatus = 'Disapproved'">
+                        <div xmlns="" class="col-lg-6">
+                            <div class="alert alert-danger" id="disapprovalMessages">
+                                <strong>
+<xsl:value-of select="$documentDisapprovedMessage" />
+</strong>
+                                <xsl:call-template name="viewAnnotations" />
+                            </div>
+                        </div>
+                    </xsl:if>
+                </xsl:template>
+                <xsl:template name="validationMessages">
+                    <div xmlns="" class="row">
+                        <div class="col-lg-6 collapse">
+                            <div class="alert alert-danger" id="form-errors" style="display: none;">
+                                <strong>There are some errors in your form:</strong>
+                                <ul />
+                            </div>
+                        </div>
+                        <div class="col-lg-6 collapse">
+                            <div class="alert alert-warning" id="form-warnings" style="display: none;">
+                                <strong>There are some warnings in your form:</strong>
+                                <ul />
+                            </div>
+                        </div>
+                    </div>
+                </xsl:template>
+                <xsl:template name="buttons">
+                    <div xmlns="" class="row" style="margin-top: 25px;">
+                        <div class="col-lg-12 text-center">
+                            <div class="form-group" id="buttons">
+                                <xsl:variable name="docId" select="/documentContent/documentState/docId" />
+                                <xsl:variable name="reloadFunction">
+                                    <xsl:choose>
+                                        <xsl:when test="$globalReadOnly">confirmReload</xsl:when>
+                                        <xsl:otherwise>reloadDocument</xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:variable>
+                                <button class="btn btn-default" id="reloadButton" onclick="return {$reloadFunction}('{$docId}');">Reload</button>
+                                <xsl:value-of select="' '" />
+                                <xsl:if test="//documentState/actionsPossible/cancel">
+                                    <button class="btn btn-default" id="cancelButton" name="userAction" onclick="return cancelDocument();" title="Cancel" value="cancel">Cancel</button>
+                                    <xsl:value-of select="' '" />
+                                </xsl:if>
+                                <xsl:if test="//documentState/actionsPossible/save and not($globalReadOnly)">
+                                    <button class="btn btn-default" id="saveButton" name="userAction" title="Save" value="save">Save</button>
+                                    <xsl:value-of select="' '" />
+                                </xsl:if>
+                                <xsl:if test="//documentState/actionsPossible/fyi">
+                                    <button class="btn btn-primary" id="fyiButton" name="userAction" title="FYI" value="fyi">Clear FYI</button>
+                                    <xsl:value-of select="' '" />
+                                </xsl:if>
+                                <xsl:if test="//documentState/actionsPossible/complete">
+                                    <button class="btn btn-primary" id="completeButton" name="userAction" title="Complete" value="complete">Complete</button>
+                                    <xsl:value-of select="' '" />
+                                </xsl:if>
+                                <xsl:if test="//documentState/actionsPossible/acknowledge">
+                                    <button class="btn btn-primary" id="acknowledgeButton" name="userAction" title="Acknowledge" value="acknowledge">Acknowledge</button>
+                                    <xsl:value-of select="' '" />
+                                </xsl:if>
+                                <xsl:if test="//documentState/actionsPossible/disapprove">
+                                    <button class="btn btn-primary" id="disapproveButton" name="userAction" title="Disapprove" value="disapprove">Disapprove</button>
+                                    <!--<button class="btn btn-primary" id="disapproveModal" title="Disapprove" value="disapprove" onclick="return showAnnotationDialog">Disapprove</button>-->
+                                    <xsl:value-of select="' '" />
+                                </xsl:if>
+                                <xsl:if test="//documentState/actionsPossible/approve">
+                                    <button class="btn btn-primary" id="approveButton" name="userAction" title="Approve" value="approve">Approve</button>
+                                    <xsl:value-of select="' '" />
+                                </xsl:if>
+                                <xsl:if test="//documentState/actionsPossible/blanketApprove">
+                                    <button class="btn btn-primary" id="blanketApproveButton" name="userAction" title="Blanket Approve" value="blanket approve">Blanket Approve</button>
+                                    <xsl:value-of select="' '" />
+                                </xsl:if>
+                                <xsl:if test="//documentState/actionsPossible/route">
+                                    <button class="btn btn-primary" id="submitButton" name="userAction" title="Submit" value="submit">Submit</button>
+                                </xsl:if>
+								<!-- DRD added Return to Previous functionality below -->
+								<xsl:if test="//documentState/actionsPossible/returnToPrevious">
+                                    <button class="btn btn-primary" id="returnToPrevious" name="userAction" title="Submit" value="returnToPrevious">Return To Previous</button>
+                                </xsl:if>
+								<xsl:if test="//documentState/actionsPossible/returnToPrevious">
+										<select name="previousNode">
+											<xsl:for-each select="//documentState/previousNodes/node">
+												<option value="{.}">
+													<xsl:value-of select="." />
+												</option>
+											</xsl:for-each>
+										</select>
+										<xsl:text>                 					 </xsl:text>
+								</xsl:if>
+								<!-- ___________________________________________________________________________________ -->
+                            </div>
+                        </div>
+                    </div>
+                </xsl:template>
+                <xsl:template name="footer">
+                    <div xmlns="" id="footer">
+                        <div class="container">
+                            <a class="block-iu" href="http://www.iu.edu/" title="Indiana University">
+                                <img alt="IU" height="26" src="images/block-iu.png" width="22" />
+                            </a>
+                            <a href="http://www.iu.edu/copyright/index.shtml">Copyright</a> ©
+                            <script type="text/javascript">
+                                var theDate=new Date();
+                                document.write(theDate.getFullYear());
+                            </script>
+                            <span> The Trustees of <a href="http://www.iu.edu/" title="Indiana University">Indiana University</a>, </span>
+                            <span>
+                                <a href="http://www.iu.edu/copyright/complaints.shtml">Copyright Complaints</a>
+                            </span>
+                            <a class="pull-right" href="http://rice.kuali.org">Powered by eDocLite</a>
+                        </div>
+                    </div>
+                </xsl:template>
+                <xsl:template name="dialogs">
+                    <div xmlns="" aria-hidden="true" class="modal fade" id="processing-dialog" role="dialog" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <h3 class="text-center">
+                                        <img alt="Loading" src="../krad/images/loading.gif" title="Loading" /> Processing...</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div xmlns="" aria-hidden="true" class="modal fade" id="warning-dialog" role="dialog" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button aria-hidden="true" class="close" data-dismiss="modal" type="button">
+                                        <xsl:text disable-output-escaping="yes">&amp;times;</xsl:text>
+                                    </button>
+                                    <h4 class="modal-title">Warnings Present</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>There are some input fields with invalid data on your form.  These fields are not required so you can submit the form now, but those fields will be cleared.  If you would prefer to fix the problems please click the "Back to Form" button and correct the fields which have been marked yellow.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default" data-dismiss="modal">Back to form</button>
+                                    <button class="btn btn-primary" onclick="submitWithWarnings();">Proceed</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div xmlns="" aria-hidden="true" class="modal fade" id="cancel-dialog" role="dialog" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button aria-hidden="true" class="close" data-dismiss="modal" type="button">
+                                        <xsl:text disable-output-escaping="yes">&amp;times;</xsl:text>
+                                    </button>
+                                    <h4 class="modal-title">Confirm Cancellation</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Are you sure you wish to cancel this form?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default" data-dismiss="modal">Back to form</button>
+                                    <button class="btn btn-primary" onclick="confirmCancel();">Proceed</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div xmlns="" aria-hidden="true" class="modal fade" id="reload-dialog" role="dialog" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button aria-hidden="true" class="close" data-dismiss="modal" type="button">
+                                        <xsl:text disable-output-escaping="yes">&amp;times;</xsl:text>
+                                    </button>
+                                    <h4 class="modal-title">Confirm Reload</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>If you reload the document you will lose any unsaved changes.  Are you sure you wish to proceed?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default" data-dismiss="modal">Back to form</button>
+                                    <button class="btn btn-primary" id="confirm-reload">Proceed</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xsl:template>
+                <xsl:template name="fieldHelp">
+                    <xsl:param name="name" />
+                    <xsl:param name="title" />
+                    <xsl:if test="./help/text">
+                        <xsl:variable name="helpTitle">
+                            <xsl:choose>
+                                <xsl:when test="./help/@title">
+                                    <xsl:value-of select="./help/@title" />
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="$title" />
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:variable>
+                        <xsl:variable name="helpLinkText">
+                            <xsl:choose>
+                                <xsl:when test="./help/@linkText">
+                                    <xsl:value-of select="./help/@linkText" />
+                                </xsl:when>
+                                <xsl:otherwise>Help</xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:variable>
+                        <a xmlns="" class="help-link" data-target="#{$name}Modal" data-toggle="modal" href="#">
+                            <xsl:value-of select="$helpLinkText" />
+                        </a>
+                        <div xmlns="" aria-hidden="true" aria-labelledby="{$name}ModalLabel" class="modal fade" id="{$name}Modal" role="dialog" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button aria-hidden="true" class="close" data-dismiss="modal" type="button">
+                                            <xsl:text disable-output-escaping="yes">&amp;times;</xsl:text>
+                                        </button>
+                                        <h4 class="modal-title" id="{$name}ModalLabel">
+                                            <xsl:value-of select="$helpLinkText" /> - <xsl:value-of select="$helpTitle" />
+                                        </h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            <xsl:call-template name="insertBreaks">
+                                                <xsl:with-param name="value" select="./help/text" />
+                                            </xsl:call-template>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </xsl:if>
+                </xsl:template>
+                <xsl:template match="/">
+                    <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text>
+                    <html xmlns="" lang="en">
+                        <head>
+                            <xsl:call-template name="htmlHead" />
+                        </head>
+                        <body>
+                            <xsl:call-template name="header" />
+                            <div class="content-wrapper">
+                                <form accept-charset="UTF-8" action="EDocLite" class="form-horizontal" enctype="multipart/form-data" id="edoclite" method="POST" novalidate="novalidate" onsubmit="return validateAndSubmitForm();">
+                                    <xsl:call-template name="hiddenParameters" />
+                                    <div class="content container">
+                                        <xsl:if test="/documentContent/actionTaken">
+                                            <xsl:variable name="formMessage">
+                                                <xsl:choose>
+                                                    <xsl:when test="/documentContent/actionTaken = 'route'">
+                                                        <xsl:value-of select="$submitMessage" />
+                                                    </xsl:when>
+                                                    <xsl:when test="/documentContent/actionTaken = 'approve'">
+                                                        <xsl:value-of select="$approveMessage" />
+                                                    </xsl:when>
+                                                    <xsl:when test="/documentContent/actionTaken = 'disapprove'">
+                                                        <xsl:value-of select="$disapproveMessage" />
+                                                    </xsl:when>
+                                                    <xsl:when test="/documentContent/actionTaken = 'cancel'">
+                                                        <xsl:value-of select="$cancelMessage" />
+                                                    </xsl:when>
+                                                    <xsl:when test="/documentContent/actionTaken = 'blanketApprove'">
+                                                        <xsl:value-of select="$blanketApproveMessage" />
+                                                    </xsl:when>
+                                                    <xsl:when test="/documentContent/actionTaken = 'fyi'">
+                                                        <xsl:value-of select="$fyiMessage" />
+                                                    </xsl:when>
+                                                    <xsl:when test="/documentContent/actionTaken = 'acknowledge'">
+                                                        <xsl:value-of select="$acknowledgeMessage" />
+                                                    </xsl:when>
+                                                    <xsl:when test="/documentContent/actionTaken = 'save'">
+                                                        <xsl:value-of select="$saveMessage" />
+                                                    </xsl:when>
+                                                    <xsl:when test="/documentContent/actionTaken = 'complete'">
+                                                        <xsl:value-of select="$completeMessage" />
+                                                    </xsl:when>
+                                                </xsl:choose>
+                                            </xsl:variable>
+                                            <xsl:if test="$formMessage != ''">
+                                                <!--<div class="row">-->
+                                                <xsl:call-template name="formMessages">
+                                                    <xsl:with-param name="message" select="$formMessage" />
+                                                </xsl:call-template>
+                                                <!--</div>-->
+                                            </xsl:if>
+                                        </xsl:if>
+                                        <xsl:call-template name="mainBody" />
+										<!-- DRD this is the only line changed. Below-->
+                                        <xsl:call-template name="buttons" />
+                                    </div>
+                                </form>
+                            </div>
+                            <xsl:call-template name="footer" />
+                            <xsl:call-template name="dialogs" />
+                        </body>
+                    </html>
+                </xsl:template>
+                <xsl:template name="accordionWidget">
+                    <xsl:param name="id" />
+                    <xsl:param name="pages" />
+                    <div xmlns="" class="row">
+                        <div class="col-lg-12">
+                            <div class="panel-group accordion" id="{$id}">
+                                <xsl:for-each select="xalan:nodeset($pages)/page">
+                                    <xsl:variable name="pageId" select="./@id" />
+                                    <xsl:variable name="pageTitle" select="./@title" />
+                                    <xsl:variable name="classes">
+                                        <xsl:if test="position() = 1">in</xsl:if>
+                                    </xsl:variable>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a class="accordion-header" data-parent="#{$id}" data-toggle="collapse" href="#{$pageId}">
+                                                    <xsl:value-of select="$pageTitle" />
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div class="panel-collapse collapse {$classes}" id="{$pageId}">
+                                            <div class="panel-body">
+                                                <div style="padding: 0 15px;">
+                                                    <xsl:copy-of select="./*" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </xsl:for-each>
+                            </div>
+                        </div>
+                    </div>
+                </xsl:template>
+                <xsl:template name="inlineWidget">
+                    <xsl:param name="body" />
+                    <div xmlns="" class="row">
+                        <xsl:copy-of select="xalan:nodeset($body)/div[@class='row']/*" />
+                    </div>
+                </xsl:template>
+                <xsl:template name="extendedOptionWidget">
+                    <xsl:param name="controlWidget" />
+                    <xsl:param name="optionsWidget" />
+                    <xsl:variable name="classes" select="xalan:nodeset($controlWidget)/div[@class='row']/div/@class" />
+                    <div xmlns="" class="row">
+                        <div class="{$classes}">
+                            <div class="form-group">
+                                <div data-role="extended-options-selectors">
+                                    <xsl:copy-of select="xalan:nodeset($controlWidget)/div[@class='row']/div/div[@class='form-group']/*" />
+                                </div>
+                                <div class="container" data-role="extended-options">
+                                    <xsl:if test="not(xalan:nodeset($optionsWidget)/div[@class='row']/div/div[@class='form-group']/p[@class='form-control-static'])">
+                                        <xsl:attribute name="style">display: none;</xsl:attribute>
+                                    </xsl:if>
+                                    <xsl:copy-of select="xalan:nodeset($optionsWidget)/div[@class='row']/div/div[@class='form-group']/*[not(self::label) and not(self::br)]" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xsl:template>
+                <xsl:template name="widget">
+                    <xsl:param name="fieldName" />
+                    <xsl:param name="readOnly" />
+                    <xsl:param name="default" />
+                    <xsl:param name="hidden" />
+                    <xsl:for-each select="//fieldDef[@name=$fieldName]">
+                        <xsl:choose>
+                            <xsl:when test="position() != 1">
+                                <div xmlns="" class="alert alert-danger">fieldDef Name:  <xsl:value-of select="$fieldName" /> is  duplicated!</div>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:variable name="inputType" select="display/type" />
+                                <xsl:variable name="title" select="./@title" />
+                                <xsl:variable name="validationRequired" select="validation/@required = 'true'" />
+                                <xsl:variable name="validator" select="normalize-space(validation/@validator)" />
+                                <xsl:variable name="validationRegex" select="normalize-space(validation/regex)" />
+                                <xsl:variable name="customValidator" select="normalize-space(validation/customValidator)" />
+                                <xsl:variable name="defaultValidator" select="xalan:nodeset($defaults)/*[local-name() = $inputType]/@validator" />
+                                <xsl:variable name="fieldValidator">
+                                    <xsl:choose>
+                                        <xsl:when test="$validator != ''">
+                                            <xsl:value-of select="$validator" />
+                                        </xsl:when>
+                                        <xsl:when test="$validationRegex != ''">
+                                            <xsl:value-of select="'regex'" />
+                                        </xsl:when>
+                                        <xsl:when test="$customValidator != ''">
+                                            <xsl:value-of select="'custom'" />
+                                        </xsl:when>
+                                        <xsl:when test="$validationRequired">
+                                            <xsl:value-of select="$defaultValidator" />
+                                        </xsl:when>
+                                        <xsl:otherwise />
+                                    </xsl:choose>
+                                </xsl:variable>
+                                <xsl:variable name="message">
+                                    <xsl:choose>
+                                        <xsl:when test="validation/message">
+                                            <xsl:value-of select="normalize-space(validation/message)" />
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:call-template name="stringReplaceAll">
+                                                <xsl:with-param name="text" select="xalan:nodeset($defaults)/*[local-name() = $inputType]/@message" />
+                                                <xsl:with-param name="replace" select="'title'" />
+                                                <xsl:with-param name="with" select="$title" />
+                                            </xsl:call-template>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:variable>
+                                <xsl:variable name="userValue" select="//edlContent/data/version[@current='true']/field[@name=current()/@name]/value" />
+                                <xsl:variable name="hasUserValue" select="boolean($userValue)" />
+                                <xsl:variable name="value">
+                                    <xsl:choose>
+                                        <xsl:when test="$hasUserValue">
+                                            <xsl:value-of select="$userValue" />
+                                        </xsl:when>
+                                        <xsl:when test="$default">
+                                            <xsl:value-of select="$default" />
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:value-of select="value" />
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:variable>
+                                <xsl:variable name="widgetWidth" select="''" />
+                                <xsl:variable name="fieldWidth">
+                                    <xsl:choose>
+                                        <xsl:when test="display/meta[name='size']/value">
+                                            <xsl:value-of select="display/meta[name='size']/value" />
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:value-of select="xalan:nodeset($defaults)/*[local-name() = $inputType]/@width" />
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:variable>
+                                <xsl:variable name="fieldOffset">
+                                    <xsl:choose>
+                                        <xsl:when test="display/meta[name='offset']/value">
+                                            <xsl:value-of select="display/meta[name='offset']/value" />
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:value-of select="'1'" />
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:variable>
+                                <xsl:choose>
+                                    <xsl:when test="$hidden = 'true' or $inputType = 'hidden'">
+                                        <xsl:call-template name="hiddenWidget">
+                                            <xsl:with-param name="name" select="$fieldName" />
+                                            <xsl:with-param name="value" select="$value" />
+                                            <xsl:with-param name="required" select="$validationRequired" />
+                                            <xsl:with-param name="validator" select="$fieldValidator" />
+                                            <xsl:with-param name="validationRegex" select="$validationRegex" />
+                                            <xsl:with-param name="customValidator" select="$customValidator" />
+                                            <xsl:with-param name="validationMessage" select="$message" />
+                                        </xsl:call-template>
+                                    </xsl:when>
+                                    <xsl:when test="contains($textInputTypes, $inputType)">
+                                        <xsl:call-template name="textInputWidget">
+                                            <xsl:with-param name="name" select="$fieldName" />
+                                            <xsl:with-param name="title" select="$title" />
+                                            <xsl:with-param name="value" select="$value" />
+                                            <xsl:with-param name="type" select="$inputType" />
+                                            <xsl:with-param name="width" select="$fieldWidth" />
+                                            <xsl:with-param name="offset" select="$fieldOffset" />
+                                            <xsl:with-param name="readOnly" select="$globalReadOnly or $readOnly" />
+                                            <xsl:with-param name="required" select="$validationRequired" />
+                                            <xsl:with-param name="validator" select="$fieldValidator" />
+                                            <xsl:with-param name="validationRegex" select="$validationRegex" />
+                                            <xsl:with-param name="customValidator" select="$customValidator" />
+                                            <xsl:with-param name="validationMessage" select="$message" />
+                                        </xsl:call-template>
+                                    </xsl:when>
+                                    <xsl:when test="$inputType = 'select'">
+                                        <xsl:call-template name="selectWidget">
+                                            <xsl:with-param name="name" select="$fieldName" />
+                                            <xsl:with-param name="title" select="$title" />
+                                            <xsl:with-param name="value" select="$value" />
+                                            <xsl:with-param name="width" select="$fieldWidth" />
+                                            <xsl:with-param name="offset" select="$fieldOffset" />
+                                            <xsl:with-param name="readOnly" select="$globalReadOnly or $readOnly" />
+                                            <xsl:with-param name="required" select="$validationRequired" />
+                                            <xsl:with-param name="validator" select="$fieldValidator" />
+                                            <xsl:with-param name="validationRegex" select="$validationRegex" />
+                                            <xsl:with-param name="customValidator" select="$customValidator" />
+                                            <xsl:with-param name="validationMessage" select="$message" />
+                                        </xsl:call-template>
+                                    </xsl:when>
+                                    <xsl:when test="$inputType = 'textarea'">
+                                        <xsl:call-template name="textAreaWidget">
+                                            <xsl:with-param name="name" select="$fieldName" />
+                                            <xsl:with-param name="title" select="$title" />
+                                            <xsl:with-param name="value" select="$value" />
+                                            <xsl:with-param name="width" select="$fieldWidth" />
+                                            <xsl:with-param name="offset" select="$fieldOffset" />
+                                            <xsl:with-param name="readOnly" select="$globalReadOnly or $readOnly" />
+                                            <xsl:with-param name="required" select="$validationRequired" />
+                                            <xsl:with-param name="validator" select="$fieldValidator" />
+                                            <xsl:with-param name="validationRegex" select="$validationRegex" />
+                                            <xsl:with-param name="customValidator" select="$customValidator" />
+                                            <xsl:with-param name="validationMessage" select="$message" />
+                                        </xsl:call-template>
+                                    </xsl:when>
+                                    <xsl:when test="$inputType = 'radio'">
+                                        <xsl:call-template name="radioWidget">
+                                            <xsl:with-param name="name" select="$fieldName" />
+                                            <xsl:with-param name="title" select="$title" />
+                                            <xsl:with-param name="value" select="$value" />
+                                            <xsl:with-param name="width" select="$fieldWidth" />
+                                            <xsl:with-param name="offset" select="$fieldOffset" />
+                                            <xsl:with-param name="readOnly" select="$globalReadOnly or $readOnly" />
+                                            <xsl:with-param name="required" select="$validationRequired" />
+                                            <xsl:with-param name="validator" select="$fieldValidator" />
+                                            <xsl:with-param name="validationRegex" select="$validationRegex" />
+                                            <xsl:with-param name="customValidator" select="$customValidator" />
+                                            <xsl:with-param name="validationMessage" select="$message" />
+                                        </xsl:call-template>
+                                    </xsl:when>
+                                    <xsl:when test="$inputType = 'checkbox'">
+                                        <xsl:call-template name="checkBoxWidget">
+                                            <xsl:with-param name="name" select="$fieldName" />
+                                            <xsl:with-param name="title" select="$title" />
+                                            <xsl:with-param name="width" select="$fieldWidth" />
+                                            <xsl:with-param name="offset" select="$fieldOffset" />
+                                            <xsl:with-param name="readOnly" select="$globalReadOnly or $readOnly" />
+                                            <xsl:with-param name="required" select="$validationRequired" />
+                                            <xsl:with-param name="validator" select="$fieldValidator" />
+                                            <xsl:with-param name="validationRegex" select="$validationRegex" />
+                                            <xsl:with-param name="customValidator" select="$customValidator" />
+                                            <xsl:with-param name="validationMessage" select="$message" />
+                                        </xsl:call-template>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <div xmlns="" class="alert alert-danger">Could not find template to render</div>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:for-each>
+                </xsl:template>
+                <xsl:template name="textInputWidget">
+                    <xsl:param name="name" />
+                    <xsl:param name="title" />
+                    <xsl:param name="value" />
+                    <xsl:param name="width" />
+                    <xsl:param name="offset" />
+                    <xsl:param name="type" />
+                    <xsl:param name="readOnly" />
+                    <xsl:param name="required" />
+                    <xsl:param name="validator" />
+                    <xsl:param name="validationRegex" />
+                    <xsl:param name="customValidator" />
+                    <xsl:param name="validationMessage" />
+                    <div xmlns="" class="row">
+                        <div class="col-lg-{$width} col-lg-offset-{$offset}">
+                            <div class="form-group">
+                                <label class="control-label" for="{$name}">
+                                    <xsl:value-of select="$title" />
+                                </label>
+                                <xsl:call-template name="fieldHelp">
+                                    <xsl:with-param name="name" select="$name" />
+                                    <xsl:with-param name="title" select="$title" />
+                                </xsl:call-template>
+                                <xsl:choose>
+                                    <xsl:when test="$readOnly = 'true'">
+                                        <xsl:if test="$value != ''">
+                                            <input id="{$name}" name="{$name}" type="hidden" value="{$value}" />
+                                            <p class="form-control-static">
+                                                <xsl:value-of select="$value" />
+                                            </p>
+                                        </xsl:if>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <input class="form-control" id="{$name}" name="{$name}" type="{$type}">
+                                            <xsl:if test="$value != ''">
+                                                <xsl:attribute name="value">
+                                                    <xsl:value-of select="$value" />
+                                                </xsl:attribute>
+                                            </xsl:if>
+                                            <xsl:if test="$required = 'true'">
+                                                <xsl:attribute name="data-role">required</xsl:attribute>
+                                            </xsl:if>
+                                            <xsl:if test="$validator != ''">
+                                                <xsl:attribute name="data-validator">
+                                                    <xsl:value-of select="$validator" />
+                                                </xsl:attribute>
+                                                <xsl:choose>
+                                                    <xsl:when test="$validator = 'regex' and $validationRegex != ''">
+                                                        <xsl:attribute name="data-validator-regex">
+                                                            <xsl:value-of select="$validationRegex" />
+                                                        </xsl:attribute>
+                                                    </xsl:when>
+                                                    <xsl:when test="$validator = 'custom' and $customValidator != ''">
+                                                        <xsl:attribute name="data-validator-custom">
+                                                            <xsl:value-of select="$customValidator" />
+                                                        </xsl:attribute>
+                                                    </xsl:when>
+                                                </xsl:choose>
+                                                <xsl:if test="$validationMessage != ''">
+                                                    <xsl:attribute name="data-validation-message">
+                                                        <xsl:value-of select="$validationMessage" />
+                                                    </xsl:attribute>
+                                                </xsl:if>
+                                            </xsl:if>
+                                            <xsl:for-each select="./display/meta">
+                                                <xsl:attribute name="{./name}">
+                                                    <xsl:value-of select="./value" />
+                                                </xsl:attribute>
+                                            </xsl:for-each>
+                                        </input>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </div>
+                        </div>
+                    </div>
+                </xsl:template>
+                <xsl:template name="selectWidget">
+                    <xsl:param name="name" />
+                    <xsl:param name="title" />
+                    <xsl:param name="value" />
+                    <xsl:param name="width" />
+                    <xsl:param name="offset" />
+                    <xsl:param name="required" />
+                    <xsl:param name="validator" />
+                    <xsl:param name="validationRegex" />
+                    <xsl:param name="customValidator" />
+                    <xsl:param name="validationMessage" />
+                    <xsl:param name="readOnly" />
+                    <div xmlns="" class="row">
+                        <div class="col-lg-{$width} col-lg-offset-{$offset}">
+                            <div class="form-group">
+                                <label class="control-label" for="{$name}">
+                                    <xsl:value-of select="$title" />
+                                </label>
+                                <xsl:call-template name="fieldHelp">
+                                    <xsl:with-param name="name" select="$name" />
+                                    <xsl:with-param name="title" select="$title" />
+                                </xsl:call-template>
+                                <xsl:choose>
+                                    <xsl:when test="$readOnly = 'true'">
+                                        <input id="{$name}" name="{$name}" type="hidden" value="{$value}" />
+                                        <xsl:if test="$value != ''">
+                                            <p class="form-control-static">
+                                                <xsl:variable name="displayValue">
+                                                    <xsl:value-of select="./display/values[. = $value]/@title" />
+                                                </xsl:variable>
+                                                <xsl:choose>
+                                                    <xsl:when test="$displayValue != ''">
+                                                        <xsl:value-of select="./display/values[. = $value]/@title" />
+                                                    </xsl:when>
+                                                    <xsl:otherwise>
+                                                        <xsl:value-of select="$value" />
+                                                    </xsl:otherwise>
+                                                </xsl:choose>
+                                            </p>
+                                        </xsl:if>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <select class="form-control" id="{$name}" name="{$name}">
+                                            <xsl:if test="$required = 'true'">
+                                                <xsl:attribute name="data-role">required</xsl:attribute>
+                                            </xsl:if>
+                                            <xsl:if test="$validator != ''">
+                                                <xsl:attribute name="data-validator">
+                                                    <xsl:value-of select="$validator" />
+                                                </xsl:attribute>
+                                                <xsl:choose>
+                                                    <xsl:when test="$validator = 'regex' and $validationRegex != ''">
+                                                        <xsl:attribute name="data-validator-regex">
+                                                            <xsl:value-of select="$validationRegex" />
+                                                        </xsl:attribute>
+                                                    </xsl:when>
+                                                    <xsl:when test="$validator = 'custom' and $customValidator != ''">
+                                                        <xsl:attribute name="data-validator-custom">
+                                                            <xsl:value-of select="$customValidator" />
+                                                        </xsl:attribute>
+                                                    </xsl:when>
+                                                </xsl:choose>
+                                                <xsl:if test="$validationMessage != ''">
+                                                    <xsl:attribute name="data-validation-message">
+                                                        <xsl:value-of select="$validationMessage" />
+                                                    </xsl:attribute>
+                                                </xsl:if>
+                                            </xsl:if>
+                                            <xsl:for-each select="./display/meta[name != 'size']">
+                                                <xsl:attribute name="{./name}">
+                                                    <xsl:value-of select="./value" />
+                                                </xsl:attribute>
+                                            </xsl:for-each>
+                                            <xsl:for-each select="./display/values">
+                                                <xsl:variable name="optionTitle">
+                                                    <xsl:choose>
+                                                        <xsl:when test="@title">
+                                                            <xsl:value-of select="@title" />
+                                                        </xsl:when>
+                                                        <xsl:when test="@name">
+                                                            <xsl:value-of select="@name" />
+                                                        </xsl:when>
+                                                        <xsl:otherwise>
+                                                            <xsl:value-of select="." />
+                                                        </xsl:otherwise>
+                                                    </xsl:choose>
+                                                </xsl:variable>
+                                                <option value="{.}">
+                                                    <xsl:if test="$value != '' and . = $value">
+                                                        <xsl:attribute name="selected">selected</xsl:attribute>
+                                                    </xsl:if>
+                                                    <xsl:value-of select="$optionTitle" />
+                                                </option>
+                                            </xsl:for-each>
+                                        </select>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </div>
+                        </div>
+                    </div>
+                </xsl:template>
+                <xsl:template name="textAreaWidget">
+                    <xsl:param name="name" />
+                    <xsl:param name="title" />
+                    <xsl:param name="value" />
+                    <xsl:param name="width" />
+                    <xsl:param name="offset" />
+                    <xsl:param name="required" />
+                    <xsl:param name="readOnly" />
+                    <xsl:param name="validator" />
+                    <xsl:param name="validationRegex" />
+                    <xsl:param name="customValidator" />
+                    <xsl:param name="validationMessage" />
+                    <div xmlns="" class="row">
+                        <div class="col-lg-{$width} col-lg-offset-{$offset}">
+                            <div class="form-group">
+                                <label class="control-label" for="{$name}">
+                                    <xsl:value-of select="$title" />
+                                </label>
+                                <xsl:call-template name="fieldHelp">
+                                    <xsl:with-param name="name" select="$name" />
+                                    <xsl:with-param name="title" select="$title" />
+                                </xsl:call-template>
+                                <xsl:choose>
+                                    <xsl:when test="$readOnly = 'true'">
+                                        <input id="{$name}" name="{$name}" type="hidden" value="{$value}" />
+                                        <p class="form-control-static">
+                                            <xsl:call-template name="insertBreaks">
+                                                <xsl:with-param name="value" select="$value" />
+                                            </xsl:call-template>
+                                            <!--<xsl:value-of select="$value" />-->
+                                        </p>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <textarea class="form-control" id="{$name}" name="{$name}">
+                                            <xsl:if test="$required = 'true'">
+                                                <xsl:attribute name="data-role">required</xsl:attribute>
+                                            </xsl:if>
+                                            <xsl:if test="$validator != ''">
+                                                <xsl:attribute name="data-validator">
+                                                    <xsl:value-of select="$validator" />
+                                                </xsl:attribute>
+                                                <xsl:choose>
+                                                    <xsl:when test="$validator = 'regex' and $validationRegex != ''">
+                                                        <xsl:attribute name="data-validator-regex">
+                                                            <xsl:value-of select="$validationRegex" />
+                                                        </xsl:attribute>
+                                                    </xsl:when>
+                                                    <xsl:when test="$validator = 'custom' and $customValidator != ''">
+                                                        <xsl:attribute name="data-validator-custom">
+                                                            <xsl:value-of select="$customValidator" />
+                                                        </xsl:attribute>
+                                                    </xsl:when>
+                                                </xsl:choose>
+                                                <xsl:if test="$validationMessage != ''">
+                                                    <xsl:attribute name="data-validation-message">
+                                                        <xsl:value-of select="$validationMessage" />
+                                                    </xsl:attribute>
+                                                </xsl:if>
+                                            </xsl:if>
+                                            <xsl:for-each select="./display/meta">
+                                                <xsl:attribute name="{./name}">
+                                                    <xsl:value-of select="./value" />
+                                                </xsl:attribute>
+                                            </xsl:for-each>
+                                            <xsl:value-of select="$value" />
+                                        </textarea>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </div>
+                        </div>
+                    </div>
+                </xsl:template>
+                <xsl:template name="radioWidget">
+                    <xsl:param name="name" />
+                    <xsl:param name="title" />
+                    <xsl:param name="value" />
+                    <xsl:param name="width" />
+                    <xsl:param name="offset" />
+                    <xsl:param name="readOnly" />
+                    <xsl:param name="required" />
+                    <xsl:param name="validator" />
+                    <xsl:param name="validationRegex" />
+                    <xsl:param name="customValidator" />
+                    <xsl:param name="validationMessage" />
+                    <div xmlns="" class="row">
+                        <div class="col-lg-{$width} col-lg-offset-{$offset}">
+                            <div class="form-group">
+                                <label class="control-label" for="{$name}">
+                                    <xsl:value-of select="$title" />
+                                </label>
+                                <xsl:call-template name="fieldHelp">
+                                    <xsl:with-param name="name" select="$name" />
+                                    <xsl:with-param name="title" select="$title" />
+                                </xsl:call-template>
+                                <br />
+                                <xsl:choose>
+                                    <xsl:when test="$readOnly = 'true'">
+                                        <xsl:if test="$value != ''">
+                                            <input id="{$name}" name="{$name}" type="hidden" value="{$value}" />
+                                            <p class="form-control-static">
+                                                <xsl:value-of select="./display/values[. = $value]/@title" />
+                                            </p>
+                                        </xsl:if>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:variable name="align" select="./display/meta[name='align']/value" />
+                                        <xsl:for-each select="./display/values">
+                                            <xsl:variable name="optionTitle">
+                                                <xsl:choose>
+                                                    <xsl:when test="@title">
+                                                        <xsl:value-of select="@title" />
+                                                    </xsl:when>
+                                                    <xsl:when test="@name">
+                                                        <xsl:value-of select="@name" />
+                                                    </xsl:when>
+                                                    <xsl:otherwise>
+                                                        <xsl:value-of select="." />
+                                                    </xsl:otherwise>
+                                                </xsl:choose>
+                                            </xsl:variable>
+                                            <xsl:variable name="input">
+                                                <input name="{$name}" type="radio" value="{.}">
+                                                    <xsl:if test="$required = 'true' and position() = 1">
+                                                        <xsl:attribute name="data-role">required</xsl:attribute>
+                                                    </xsl:if>
+                                                    <xsl:if test="$validator != '' and position() = 1">
+                                                        <xsl:attribute name="data-validator">
+                                                            <xsl:value-of select="$validator" />
+                                                        </xsl:attribute>
+                                                        <xsl:choose>
+                                                            <xsl:when test="$validator = 'regex' and $validationRegex != ''">
+                                                                <xsl:attribute name="data-validator-regex">
+                                                                    <xsl:value-of select="$validationRegex" />
+                                                                </xsl:attribute>
+                                                            </xsl:when>
+                                                            <xsl:when test="$validator = 'custom' and $customValidator != ''">
+                                                                <xsl:attribute name="data-validator-custom">
+                                                                    <xsl:value-of select="$customValidator" />
+                                                                </xsl:attribute>
+                                                            </xsl:when>
+                                                        </xsl:choose>
+                                                        <xsl:if test="$validationMessage != ''">
+                                                            <xsl:attribute name="data-validation-message">
+                                                                <xsl:value-of select="$validationMessage" />
+                                                            </xsl:attribute>
+                                                        </xsl:if>
+                                                    </xsl:if>
+                                                    <xsl:if test="$value != '' and . = $value">
+                                                        <xsl:attribute name="checked">checked</xsl:attribute>
+                                                    </xsl:if>
+                                                </input>
+                                                <xsl:value-of select="$optionTitle" />
+                                            </xsl:variable>
+                                            <xsl:choose>
+                                                <xsl:when test="$align = 'vertical'">
+                                                    <div class="radio">
+                                                        <label>
+                                                            <xsl:copy-of select="$input" />
+                                                        </label>
+                                                    </div>
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                    <label class="radio-inline">
+                                                        <xsl:copy-of select="$input" />
+                                                    </label>
+                                                </xsl:otherwise>
+                                            </xsl:choose>
+                                        </xsl:for-each>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </div>
+                        </div>
+                    </div>
+                </xsl:template>
+                <xsl:template name="checkBoxWidget">
+                    <xsl:param name="name" />
+                    <xsl:param name="title" />
+                    <xsl:param name="width" />
+                    <xsl:param name="offset" />
+                    <xsl:param name="readOnly" />
+                    <xsl:param name="required" />
+                    <xsl:param name="validator" />
+                    <xsl:param name="validationRegex" />
+                    <xsl:param name="customValidator" />
+                    <xsl:param name="validationMessage" />
+                    <div xmlns="" class="row">
+                        <div class="col-lg-{$width} col-lg-offset-{$offset}">
+                            <div class="form-group">
+                                <label class="control-label">
+                                    <xsl:value-of select="$title" />
+                                </label>
+                                <xsl:call-template name="fieldHelp">
+                                    <xsl:with-param name="name" select="$name" />
+                                    <xsl:with-param name="title" select="$title" />
+                                </xsl:call-template>
+                                <br />
+                                <xsl:variable name="align" select="./display/meta[name='align']/value" />
+                                <xsl:for-each select="./display/values">
+                                    <xsl:variable name="checked">
+                                        <xsl:choose>
+                                            <xsl:when test="//edlContent/data/version[@current='true']/field[@name=current()/../../@name and value=current()]">true</xsl:when>
+                                            <xsl:when test=". = ../../value">true</xsl:when>
+                                            <xsl:otherwise>false</xsl:otherwise>
+                                        </xsl:choose>
+                                    </xsl:variable>
+                                    <xsl:variable name="optionTitle">
+                                        <xsl:choose>
+                                            <xsl:when test="@title">
+                                                <xsl:value-of select="@title" />
+                                            </xsl:when>
+                                            <xsl:when test="@name">
+                                                <xsl:value-of select="@name" />
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:value-of select="current()" />
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </xsl:variable>
+                                    <xsl:choose>
+                                        <xsl:when test="$readOnly = 'true'">
+                                            <xsl:if test="$checked = 'true'">
+                                                <input name="{$name}" type="hidden" value="{.}" />
+                                                <p class="form-control-static">
+                                                    <xsl:value-of select="$optionTitle" />
+                                                </p>
+                                            </xsl:if>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:variable name="input">
+                                                <input name="{$name}" type="checkbox" value="{.}">
+                                                    <xsl:if test="$required = 'true' and position() = 1">
+                                                        <xsl:attribute name="data-role">required</xsl:attribute>
+                                                    </xsl:if>
+                                                    <xsl:if test="$validator != '' and position() = 1">
+                                                        <xsl:attribute name="data-validator">
+                                                            <xsl:value-of select="$validator" />
+                                                        </xsl:attribute>
+                                                        <xsl:choose>
+                                                            <xsl:when test="$validator = 'regex' and $validationRegex != ''">
+                                                                <xsl:attribute name="data-validator-regex">
+                                                                    <xsl:value-of select="$validationRegex" />
+                                                                </xsl:attribute>
+                                                            </xsl:when>
+                                                            <xsl:when test="$validator = 'custom' and $customValidator != ''">
+                                                                <xsl:attribute name="data-validator-custom">
+                                                                    <xsl:value-of select="$customValidator" />
+                                                                </xsl:attribute>
+                                                            </xsl:when>
+                                                        </xsl:choose>
+                                                        <xsl:if test="$validationMessage != ''">
+                                                            <xsl:attribute name="data-validation-message">
+                                                                <xsl:value-of select="$validationMessage" />
+                                                            </xsl:attribute>
+                                                        </xsl:if>
+                                                    </xsl:if>
+                                                    <xsl:if test="$checked = 'true'">
+                                                        <xsl:attribute name="checked">checked</xsl:attribute>
+                                                    </xsl:if>
+                                                </input>
+                                                <xsl:value-of select="$optionTitle" />
+                                            </xsl:variable>
+                                            <xsl:choose>
+                                                <xsl:when test="$align = 'horizontal'">
+                                                    <label class="checkbox-inline">
+                                                        <xsl:copy-of select="$input" />
+                                                    </label>
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <xsl:copy-of select="$input" />
+                                                        </label>
+                                                    </div>
+                                                </xsl:otherwise>
+                                            </xsl:choose>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:for-each>
+                            </div>
+                        </div>
+                    </div>
+                </xsl:template>
+                <xsl:template name="hiddenWidget">
+                    <xsl:param name="name" />
+                    <xsl:param name="value" />
+                    <xsl:param name="required" />
+                    <xsl:param name="validator" />
+                    <xsl:param name="validationRegex" />
+                    <xsl:param name="customValidator" />
+                    <xsl:param name="validationMessage" />
+                    <input xmlns="" id="{$name}" name="{$name}" type="hidden" value="{$value}">
+                        <xsl:if test="$required = 'true'">
+                            <xsl:attribute name="data-role">required</xsl:attribute>
+                        </xsl:if>
+                        <xsl:if test="$validator != ''">
+                            <xsl:attribute name="data-validator">
+                                <xsl:value-of select="$validator" />
+                            </xsl:attribute>
+                            <xsl:choose>
+                                <xsl:when test="$validator = 'regex' and $validationRegex != ''">
+                                    <xsl:attribute name="data-validator-regex">
+                                        <xsl:value-of select="$validationRegex" />
+                                    </xsl:attribute>
+                                </xsl:when>
+                                <xsl:when test="$validator = 'custom' and $customValidator != ''">
+                                    <xsl:attribute name="data-validator-custom">
+                                        <xsl:value-of select="$customValidator" />
+                                    </xsl:attribute>
+                                </xsl:when>
+                            </xsl:choose>
+                            <xsl:if test="$validationMessage != ''">
+                                <xsl:attribute name="data-validation-message">
+                                    <xsl:value-of select="$validationMessage" />
+                                </xsl:attribute>
+                            </xsl:if>
+                        </xsl:if>
+                    </input>
+                </xsl:template>
+                <xsl:template name="viewAnnotations">
+                    <ul xmlns="">
+                        <xsl:for-each select="//edlContent/data/version[@current='true']/annotation">
+                            <li>
+<xsl:value-of select="." />
+</li>
+                        </xsl:for-each>
+                    </ul>
+                </xsl:template>
+                <xsl:template name="addAnnotation">
+                    <xsl:variable name="currentAnnotation" select="//edlContent/data/version[@current='true']/currentAnnotation" />
+                    <div xmlns="" aria-hidden="true" class="modal fade" id="annotations-dialog" role="dialog" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    Please provide an explanation for disapproving this document<br />
+                                    <textarea class="form-control" id="annotationExplanation" name="annotation" onkeyup="setDisapproveButtonState()">
+                                        <xsl:value-of select="$currentAnnotation" />
+                                    </textarea>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default" data-dismiss="modal">Back to form</button>
+                                    <xsl:choose>
+                                        <xsl:when test="$currentAnnotation">
+                                            <button class="btn btn-primary" id="annotationDisapproveButton" name="userAction" onclick="return confirmAnnotationDialog();" title="Disapprove" value="disapprove">Disapprove</button>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <button class="btn btn-primary" disabled="disabled" id="annotationDisapproveButton" name="userAction" onclick="return confirmAnnotationDialog();" title="Disapprove" value="disapprove">Disapprove</button>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xsl:template>
+            </xsl:stylesheet></style></styles></data>
