@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="ns:workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="ns:workflow resource:WorkflowData">
+  <rules xmlns="ns:workflow/Rule" xsi:schemaLocation="ns:workflow/Rule resource:Rule">
+
+	<!--Final Node-->
+	<rule>
+      <name>UGS.Hospitality.UGS1</name>
+      <documentType>UGS.Hospitality.Doctype</documentType>
+      <ruleTemplate>UGS.Hospitality.UGS1</ruleTemplate>
+      <description>Final approval for the Hospitality edoc</description>
+      <forceAction>true</forceAction>
+	   <ruleExtensions><!-- Since Kim receives requests from BL and IN Campus Attr is not necessary -->
+        <ruleExtension>
+          <attribute>UGSCampusAttribute</attribute>
+          <ruleTemplate>UGS.Exception.UGS2</ruleTemplate>
+          <ruleExtensionValues>
+            <ruleExtensionValue>
+              <key>campus</key>
+              <value>BL</value>
+            </ruleExtensionValue>
+          </ruleExtensionValues>
+        </ruleExtension>
+      </ruleExtensions>
+      <responsibilities>
+        <responsibility>
+          <groupName namespace="UGS.HOSPITALITY">UGS.Hospitality.UGS1</groupName>
+          <actionRequested>A</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+
+	<!-- Initiator FYI-->
+	 <rule>
+      <name>UGS.Hospitality.InitiatorFYI</name>
+      <documentType>UGS.Hospitality.Doctype</documentType>
+      <ruleTemplate>UGS.Hospitality.InitiatorFYI</ruleTemplate>
+      <description>FYI notification of final approval</description>
+      <forceAction>true</forceAction>
+      <responsibilities>
+        <responsibility>
+          <role>org.kuali.rice.kew.rule.InitiatorRoleAttribute!INITIATOR</role>
+		   <approvePolicy>F</approvePolicy>
+          <actionRequested>F</actionRequested>
+          <priority>1</priority>
+        </responsibility>
+      </responsibilities>
+    </rule>
+
+
+  </rules>
+</data>
