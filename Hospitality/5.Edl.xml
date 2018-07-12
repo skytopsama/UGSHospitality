@@ -303,6 +303,227 @@
           <message>Please enter your e-mail address in the correct name@domain.com format</message>
         </validation>
       </fieldDef>
+
+      <!-- Hospitality fielddefs -->
+      <fieldDef name="reimburseName" title="Business / Person to Reimburse">
+        <display>
+          <type>text</type>
+          <meta>
+            <name>size</name>
+            <value>2</value>
+          </meta>
+        </display>
+        <validation required="true" />
+      </fieldDef>
+
+      <fieldDef name="reimburseTitle" title="Title">
+        <display>
+          <type>text</type>
+          <meta>
+            <name>size</name>
+            <value>2</value>
+          </meta>
+        </display>
+        <validation required="true" />
+      </fieldDef>
+
+      <fieldDef name="reimburseAddress" title="Address">
+        <display>
+          <type>text</type>
+          <meta>
+            <name>size</name>
+            <value>2</value>
+          </meta>
+        </display>
+        <validation required="true" />
+      </fieldDef>
+
+      <fieldDef name="functionName" title="Function Name">
+        <display>
+          <type>text</type>
+          <meta>
+            <name>size</name>
+            <value>2</value>
+          </meta>
+        </display>
+        <validation required="true" />
+      </fieldDef>
+
+      <fieldDef name="functionDate" title="Function Date">
+        <display>
+          <type>text</type>
+          <meta>
+            <name>size</name>
+            <value>2</value>
+          </meta>
+        </display>
+        <validation required="true" />
+      </fieldDef>
+
+      <fieldDef name="functionBegin" title="Function Begin Time">
+        <display>
+          <type>text</type>
+          <meta>
+            <name>size</name>
+            <value>2</value>
+          </meta>
+        </display>
+        <validation required="true" />
+      </fieldDef>
+
+      <fieldDef name="functionEnd" title="Function End Time">
+        <display>
+          <type>text</type>
+          <meta>
+            <name>size</name>
+            <value>2</value>
+          </meta>
+        </display>
+        <validation required="true" />
+      </fieldDef>
+
+      <fieldDef name="functionLoc" title="Function Location">
+        <display>
+          <type>textarea</type>
+          <meta>
+            <name>rows</name>
+            <value>3</value>
+          </meta>
+		  <meta>
+			<name>cols</name>
+			<value>45</value>
+		  </meta>
+        </display>
+        <validation required="true" />
+      </fieldDef>
+
+      <fieldDef name="functionPurpose" title="Purpose /Benfit to the University">
+        <display>
+          <type>textarea</type>
+          <meta>
+            <name>rows</name>
+            <value>2</value>
+          </meta>
+		  <meta>
+			<name>cols</name>
+			<value>45</value>
+		  </meta>
+        </display>
+        <validation required="true" />
+      </fieldDef>
+
+      <fieldDef name="numberAttending" title="Number of Persons Attending">
+        <display>
+          <type>text</type>
+          <meta>
+            <name>size</name>
+            <value>2</value>
+          </meta>
+        </display>
+        <validation required="true" />
+      </fieldDef>
+
+      <fieldDef name="numberEmp" title="Univeristy Employees">
+        <display>
+          <type>text</type>
+          <meta>
+            <name>size</name>
+            <value>2</value>
+          </meta>
+        </display>
+        <validation required="true" />
+      </fieldDef>
+
+      <fieldDef name="numberStds" title="# Students">
+        <display>
+          <type>text</type>
+          <meta>
+            <name>size</name>
+            <value>2</value>
+          </meta>
+        </display>
+        <validation required="true" />
+      </fieldDef>
+
+      <fieldDef name="numberNon" title="# Non University Persons">
+        <display>
+          <type>text</type>
+          <meta>
+            <name>size</name>
+            <value>2</value>
+          </meta>
+        </display>
+        <validation required="true" />
+      </fieldDef>
+
+      <fieldDef name="extConsultantName" title="Name of External Training Consultant (if applicable)">
+        <display>
+          <type>text</type>
+          <meta>
+            <name>size</name>
+            <value>2</value>
+          </meta>
+        </display>
+        <validation required="true" />
+      </fieldDef>
+
+      <fieldDef name="extConsultantCo" title="Company of External Training Consultant">
+        <display>
+          <type>text</type>
+          <meta>
+            <name>size</name>
+            <value>2</value>
+          </meta>
+        </display>
+        <validation required="true" />
+      </fieldDef>
+
+      <fieldDef name="accountNum" title="Account # to be Charged">
+        <display>
+          <type>text</type>
+          <meta>
+            <name>size</name>
+            <value>2</value>
+          </meta>
+        </display>
+        <validation required="true" />
+      </fieldDef>
+
+      <fieldDef name="dateSubmitted" title="Date Submitted">
+        <display>
+          <type>text</type>
+          <meta>
+            <name>size</name>
+            <value>2</value>
+          </meta>
+        </display>
+        <validation required="true" />
+      </fieldDef>
+
+      <fieldDef name="accountManagerSign" title="Account Manager Signature">
+        <display>
+          <type>text</type>
+          <meta>
+            <name>size</name>
+            <value>2</value>
+          </meta>
+        </display>
+        <validation required="true" />
+      </fieldDef>
+
+      <fieldDef name="fiscalOfficerSign" title="Fiscal Officer Signature">
+        <display>
+          <type>text</type>
+          <meta>
+            <name>size</name>
+            <value>2</value>
+          </meta>
+        </display>
+        <validation required="true" />
+      </fieldDef>
+
+      <!-- end -->
+
       <fieldDef attributeName="UGSCampusAttribute" name="campus" title="Campus">
         <display>
           <type>select</type>
@@ -864,41 +1085,114 @@
              </xsl:with-param>
            </xsl:call-template>
          </div>
-          <!-- Major/Department 1 information-->
-          <div xmlns="" id="FirstMajor">
-            <h3>First Major</h3>
+         <!-- Contact Information-->
+             <div xmlns="" id="Attendance">
+               <h3>Contact Information</h3>
+               <xsl:call-template name="inlineWidget">
+                 <xsl:with-param name="body">
+                   <xsl:call-template name="widget">
+                     <xsl:with-param name="fieldName" select="'reimburseName'" />
+   				  <xsl:with-param name="readOnly" select="$isNotAtNodeInitiated" />
+                   </xsl:call-template>
+                   <xsl:call-template name="widget">
+                    <xsl:with-param name="fieldName" select="'reimburseTitle'" />
+   				 <xsl:with-param name="readOnly" select="$isNotAtNodeInitiated" />
+                   </xsl:call-template>
+                   <xsl:call-template name="widget">
+                    <xsl:with-param name="fieldName" select="'reimburseAddress'" />
+   				 <xsl:with-param name="readOnly" select="$isNotAtNodeInitiated" />
+                   </xsl:call-template>
+                 </xsl:with-param>
+               </xsl:call-template>
+   		  </div>
+          <!-- Event information-->
+          <div xmlns="" id="Event Info">
+            <h3>Event Info</h3>
+            <xsl:call-template name="widget">
+              <xsl:with-param name="fieldName" select="'functionName'" />
+      <xsl:with-param name="readOnly" select="$isNotAtNodeInitiated" />
+            </xsl:call-template>
             <xsl:call-template name="inlineWidget">
               <xsl:with-param name="body">
                 <xsl:call-template name="widget">
-                  <xsl:with-param name="fieldName" select="'department1'" />
+                  <xsl:with-param name="fieldName" select="'functionDate'" />
 				  <xsl:with-param name="readOnly" select="$isNotAtNodeInitiated" />
                 </xsl:call-template>
                 <xsl:call-template name="widget">
-                 <xsl:with-param name="fieldName" select="'major1'" />
+                 <xsl:with-param name="fieldName" select="'functionBegin'" />
 				 <xsl:with-param name="readOnly" select="$isNotAtNodeInitiated" />
                 </xsl:call-template>
                 <xsl:call-template name="widget">
-                 <xsl:with-param name="fieldName" select="'concentration1'" />
+                 <xsl:with-param name="fieldName" select="'functionEnd'" />
+				 <xsl:with-param name="readOnly" select="$isNotAtNodeInitiated" />
+                </xsl:call-template>
+              </xsl:with-param>
+            </xsl:call-template>
+            <xsl:call-template name="widget">
+              <xsl:with-param name="fieldName" select="'functionLoc'" />
+      <xsl:with-param name="readOnly" select="$isNotAtNodeInitiated" />
+            </xsl:call-template>
+            <xsl:call-template name="widget">
+              <xsl:with-param name="fieldName" select="'functionPurpose'" />
+      <xsl:with-param name="readOnly" select="$isNotAtNodeInitiated" />
+            </xsl:call-template>
+
+		  </div>
+		  <!-- Event Attendance information-->
+          <div xmlns="" id="Attendance">
+            <h3>Event Attendance Information</h3>
+            <xsl:call-template name="widget">
+              <xsl:with-param name="fieldName" select="'numberAttending'" />
+      <xsl:with-param name="readOnly" select="$isNotAtNodeInitiated" />
+            </xsl:call-template>
+            <xsl:call-template name="inlineWidget">
+              <xsl:with-param name="body">
+                <xsl:call-template name="widget">
+                  <xsl:with-param name="fieldName" select="'numberEmp'" />
+				  <xsl:with-param name="readOnly" select="$isNotAtNodeInitiated" />
+                </xsl:call-template>
+                <xsl:call-template name="widget">
+                 <xsl:with-param name="fieldName" select="'numberStds'" />
+				 <xsl:with-param name="readOnly" select="$isNotAtNodeInitiated" />
+                </xsl:call-template>
+                <xsl:call-template name="widget">
+                 <xsl:with-param name="fieldName" select="'numberNon'" />
 				 <xsl:with-param name="readOnly" select="$isNotAtNodeInitiated" />
                 </xsl:call-template>
               </xsl:with-param>
             </xsl:call-template>
 		  </div>
-		  <!-- Major/Department 2 information-->
-          <div xmlns="" id="SecondMajor">
-            <h3>Second Major</h3>
+      <!-- Account and Financial Expense information-->
+          <div xmlns="" id="Financial">
+            <h3>Account and Financial Expense Information</h3>
+            <xsl:call-template name="widget">
+              <xsl:with-param name="fieldName" select="'extConsultantName'" />
+      <xsl:with-param name="readOnly" select="$isNotAtNodeInitiated" />
+            </xsl:call-template>
+            <xsl:call-template name="widget">
+              <xsl:with-param name="fieldName" select="'extConsultantCo'" />
+      <xsl:with-param name="readOnly" select="$isNotAtNodeInitiated" />
+            </xsl:call-template>
             <xsl:call-template name="inlineWidget">
               <xsl:with-param name="body">
                 <xsl:call-template name="widget">
-                  <xsl:with-param name="fieldName" select="'department2'" />
+                  <xsl:with-param name="fieldName" select="'accountNum'" />
 				  <xsl:with-param name="readOnly" select="$isNotAtNodeInitiated" />
                 </xsl:call-template>
                 <xsl:call-template name="widget">
-                 <xsl:with-param name="fieldName" select="'major2'" />
+                 <xsl:with-param name="fieldName" select="'dateSubmitted'" />
 				 <xsl:with-param name="readOnly" select="$isNotAtNodeInitiated" />
                 </xsl:call-template>
+              </xsl:with-param>
+            </xsl:call-template>
+            <xsl:call-template name="inlineWidget">
+              <xsl:with-param name="body">
                 <xsl:call-template name="widget">
-                 <xsl:with-param name="fieldName" select="'concentration2'" />
+                  <xsl:with-param name="fieldName" select="'accountManagerSign'" />
+				  <xsl:with-param name="readOnly" select="$isNotAtNodeInitiated" />
+                </xsl:call-template>
+                <xsl:call-template name="widget">
+                 <xsl:with-param name="fieldName" select="'fiscalOfficerSign'" />
 				 <xsl:with-param name="readOnly" select="$isNotAtNodeInitiated" />
                 </xsl:call-template>
               </xsl:with-param>
@@ -937,34 +1231,7 @@
               <xsl:with-param name="fieldName" select="'major2Title'" />
 	    </xsl:call-template>
 	  </div>
-		   <!-- Requested Minor Information -->
-          <div xmlns="" id="MinorInformation">
-            <h3>Information on Requested Minor</h3>
-        <xsl:call-template name="inlineWidget">
-          <xsl:with-param name="body">
-            <xsl:call-template name="widget">
-              <xsl:with-param name="fieldName" select="'minorTitle'" />
-			  <xsl:with-param name="readOnly" select="$isEditableField" />
-            </xsl:call-template>
-            <xsl:call-template name="widget">
-              <xsl:with-param name="fieldName" select="'minorRep1NetID'" />
-			  <xsl:with-param name="readOnly" select="$isEditableNetID" />
-            </xsl:call-template>
-          </xsl:with-param>
-        </xsl:call-template>
-            <xsl:call-template name="widget">
-              <xsl:with-param name="fieldName" select="'minorPurpose'" />
-			  <xsl:with-param name="readOnly" select="$isEditableField" />
-            </xsl:call-template>
-			<xsl:call-template name="widget">
-              <xsl:with-param name="fieldName" select="'minorExamined'" />
-			  <xsl:with-param name="readOnly" select="$isEditableField" />
-            </xsl:call-template>
-            <xsl:call-template name="widget">
-              <xsl:with-param name="fieldName" select="'minorHours'" />
-        <xsl:with-param name="readOnly" select="$isEditableField" />
-            </xsl:call-template>
-          </div>
+
 		  <!-- Coursework info -->
 		  <div xmlns="" id="Coursework">
             <h3>Coursework used to satisfy the minor</h3>
@@ -1093,21 +1360,6 @@
 			</table>
           </div>
 		     <!-- Requested Minor Information -->
-		  <div xmlns="" id="DepartmentalInformation">
-			<h3>Department Information</h3>
-            <div id="RouteToAssistantDean">
-              <xsl:call-template name="widget">
-                <xsl:with-param name="fieldName" select="'RouteToAssistantDean'" />
-				<xsl:with-param name="readOnly" select="$notAtUGS1" />
-              </xsl:call-template>
-		    </div>
-			<div id="RouteToAssociateDean">
-              <xsl:call-template name="widget">
-                <xsl:with-param name="fieldName" select="'RouteToAssociateDean'" />
-			    <xsl:with-param name="readOnly" select="$notAtAssistantDean" />
-              </xsl:call-template>
-		    </div>
-		  </div>
         <xsl:call-template name="notes" />
 		</xsl:template>
   </xsl:stylesheet></style><association><docType>UGS.Hospitality.Doctype</docType><definition>UGS.Hospitality.EDL</definition><style>UGS.Hospitality.Style</style><active>true</active></association></edoclite></data>
